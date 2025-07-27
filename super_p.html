@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Супер Память – Натуральная поддержка памяти, мозга и кровообращения
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #16a34a; /* Green-600 */
+        --secondary-color: #4ade80; /* Green-400 */
+        --accent-color: #facc15; /* Yellow-400 */
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+      }
+      .section-gradient {
+        background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+      }
+      .cta-button {
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px 0 rgba(250, 204, 21, 0.5);
+      }
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px 0 rgba(250, 204, 21, 0.6);
+      }
+      .countdown-box {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .lang-switch-button.active {
+        background-color: var(--accent-color);
+        color: #1f2937;
+      }
+      .lang-ru,
+      .lang-uz,
+      .lang-en {
+        display: none;
+      }
+      html[lang='ru'] .lang-ru,
+      html[lang='uz'] .lang-uz,
+      html[lang='en'] .lang-en {
+        display: block;
+      }
+      .faq-question {
+        cursor: pointer;
+      }
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+      }
+      .testimonial-card {
+        border-left: 4px solid var(--primary-color);
+      }
+      .discount-bubble {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        background-color: #ef4444; /* red-500 */
+        color: white;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 900;
+        transform: rotate(15deg);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Language Switcher -->
+    <div class="bg-green-800 text-white py-2">
+      <div class="container mx-auto px-6 flex justify-center items-center">
+        <div class="flex border border-gray-400 rounded-full">
+          <button
+            id="lang-ru-btn"
+            class="lang-switch-button px-4 py-1 text-sm font-semibold rounded-l-full"
+          >
+            Русский
+          </button>
+          <button
+            id="lang-uz-btn"
+            class="lang-switch-button px-4 py-1 text-sm font-semibold"
+          >
+            O'zbekcha
+          </button>
+          <button
+            id="lang-en-btn"
+            class="lang-switch-button px-4 py-1 text-sm font-semibold rounded-r-full"
+          >
+            English
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. Hero Section -->
+    <header class="hero-gradient text-white py-12 sm:py-20">
+      <div
+        class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-8"
+      >
+        <div class="lg:w-1/2 text-center lg:text-left">
+          <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">
+            <span class="lang-ru">СУПЕР ПАМЯТЬ</span>
+            <span class="lang-uz">SUPER PAMYAT</span>
+            <span class="lang-en">SUPER MEMORY</span>
+          </h1>
+          <p
+            class="text-lg md:text-2xl font-light mb-8 max-w-xl mx-auto lg:mx-0"
+          >
+            <span class="lang-ru"
+              >Натуральный комплекс для улучшения памяти, работы мозга и
+              кровообращения.</span
+            >
+            <span class="lang-uz"
+              >Miya faoliyati, xotira va qon aylanishi uchun tabiiy
+              majmua.</span
+            >
+            <span class="lang-en"
+              >A natural supplement for memory, brain function, and healthy
+              circulation.</span
+            >
+          </p>
+          <a
+            href="#order-form"
+            class="cta-button inline-block bg-yellow-400 text-green-900 font-bold py-4 px-8 rounded-lg text-xl"
+          >
+            <span class="lang-ru">ЗАКАЗАТЬ СЕЙЧАС →</span>
+            <span class="lang-uz">HOZIROQ BUYURTMA BERING →</span>
+            <span class="lang-en">ORDER NOW →</span>
+          </a>
+          <p class="text-xs mt-4 opacity-80">
+            <span class="lang-ru">*Гарантируем анонимную доставку.</span>
+            <span class="lang-uz"
+              >*Anonim yetkazib berishni kafolatlaymiz.</span
+            >
+            <span class="lang-en">*Anonymous delivery guaranteed.</span>
+          </p>
+        </div>
+        <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
+          <div class="relative w-max">
+            <img
+              src="assets/img/bad.png"
+              alt="Изображение продукта Супер Память"
+              class="rounded-lg shadow-2xl max-w-xs md:max-w-sm"
+            />
+            <div class="discount-bubble">-50%</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 2. Why This Matters (Symptoms Section) -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4"
+          >
+            <span class="lang-ru">Почему эта проблема касается вас?</span>
+            <span class="lang-uz">Bu muammo sizga tanishmi?</span>
+            <span class="lang-en">Why this problem affects you?</span>
+          </h2>
+          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            <span class="lang-ru"
+              >Миллионы людей ежедневно сталкиваются с ухудшением памяти и
+              концентрации. Игнорирование этих сигналов может привести к
+              хронической усталости, стрессу и снижению качества жизни.</span
+            >
+            <span class="lang-uz"
+              >Millionlab odamlar har kuni xotira va diqqatning yomonlashuviga
+              duch kelishadi. Bu signallarga e'tiborsizlik surunkali charchoq,
+              stress va hayot sifatining pasayishiga olib kelishi mumkin.</span
+            >
+            <span class="lang-en"
+              >Millions of people face memory and concentration decline daily.
+              Ignoring these signals can lead to chronic fatigue, stress, and a
+              reduced quality of life.</span
+            >
+          </p>
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center"
+          >
+            <div class="flex flex-col items-center">
+              <img
+                class="w-24 h-24 rounded-full mb-4 object-cover"
+                src="assets/img/forgot.jpg"
+                alt="Забывчивость"
+              />
+              <p class="font-semibold text-gray-700">
+                <span class="lang-ru">Забывчивость</span
+                ><span class="lang-uz">Unutuvchanlik</span
+                ><span class="lang-en">Forgetfulness</span>
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                class="w-24 h-24 rounded-full mb-4 object-cover"
+                src="assets/img/tired.jpg"
+                alt="Усталость"
+              />
+              <p class="font-semibold text-gray-700">
+                <span class="lang-ru">Хроническая усталость</span
+                ><span class="lang-uz">Surunkali charchoq</span
+                ><span class="lang-en">Chronic Fatigue</span>
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                class="w-24 h-24 rounded-full mb-4 object-cover"
+                src="assets/img/anxious.jpg"
+                alt="Тревожность"
+              />
+              <p class="font-semibold text-gray-700">
+                <span class="lang-ru">Повышенная тревожность</span
+                ><span class="lang-uz">Kuchaygan xavotir</span
+                ><span class="lang-en">Increased Anxiety</span>
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                class="w-24 h-24 rounded-full mb-4 object-cover"
+                src="assets/img/ears.jpg"
+                alt="Шум в ушах"
+              />
+              <p class="font-semibold text-gray-700">
+                <span class="lang-ru">Шум в ушах</span
+                ><span class="lang-uz">Quloqlarda shovqin</span
+                ><span class="lang-en">Tinnitus</span>
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                class="w-24 h-24 rounded-full mb-4 object-cover"
+                src="assets/img/mess.jpg"
+                alt="Спутанность мыслей"
+              />
+              <p class="font-semibold text-gray-700">
+                <span class="lang-ru">Спутанность мыслей</span
+                ><span class="lang-uz">Fikrlarning chalkashishi</span
+                ><span class="lang-en">Brain Fog</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. How and Why It Works -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru">Как и почему «Супер Память» работает?</span>
+            <span class="lang-uz"
+              >"Super Pamyat" qanday va nima uchun ishlaydi?</span
+            >
+            <span class="lang-en">How and Why "Super Memory" Works?</span>
+          </h2>
+          <div
+            class="flex flex-col md:flex-row items-center justify-center gap-12"
+          >
+            <div class="md:w-1/3">
+              <img
+                src="assets/img/brain.jpg"
+                alt="Изображение мозга и нейронов"
+                class="rounded-lg shadow-xl"
+              />
+            </div>
+            <div class="md:w-2/3 space-y-8">
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-green-600 text-white text-xl font-bold rounded-full flex items-center justify-center"
+                >
+                  1
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-800">
+                    <span class="lang-ru">Улучшение кровообращения</span
+                    ><span class="lang-uz">Qon aylanishini yaxshilash</span
+                    ><span class="lang-en">Improves Blood Circulation</span>
+                  </h3>
+                  <p class="text-gray-600 mt-1">
+                    <span class="lang-ru"
+                      >Активные компоненты расширяют сосуды, обеспечивая мозг
+                      кислородом и питательными веществами.</span
+                    ><span class="lang-uz"
+                      >Faol moddalar qon tomirlarini kengaytiradi, miyani
+                      kislorod va ozuqa moddalari bilan ta'minlaydi.</span
+                    ><span class="lang-en"
+                      >Active components widen blood vessels, supplying the
+                      brain with oxygen and nutrients.</span
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-green-600 text-white text-xl font-bold rounded-full flex items-center justify-center"
+                >
+                  2
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-800">
+                    <span class="lang-ru">Восстановление нейронных связей</span
+                    ><span class="lang-uz">Neyron aloqalarini tiklash</span
+                    ><span class="lang-en">Restores Neural Connections</span>
+                  </h3>
+                  <p class="text-gray-600 mt-1">
+                    <span class="lang-ru"
+                      >Гинкго Билоба способствует регенерации нервных клеток и
+                      ускоряет передачу сигналов, что напрямую влияет на
+                      память.</span
+                    ><span class="lang-uz"
+                      >Ginkgo Biloba asab hujayralarining yangilanishiga yordam
+                      beradi va signallar uzatilishini tezlashtiradi, bu esa
+                      xotiraga bevosita ta'sir qiladi.</span
+                    ><span class="lang-en"
+                      >Ginkgo Biloba promotes nerve cell regeneration and speeds
+                      up signal transmission, directly impacting memory.</span
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-green-600 text-white text-xl font-bold rounded-full flex items-center justify-center"
+                >
+                  3
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-gray-800">
+                    <span class="lang-ru">Антиоксидантная защита</span
+                    ><span class="lang-uz">Antioksidant himoya</span
+                    ><span class="lang-en">Antioxidant Protection</span>
+                  </h3>
+                  <p class="text-gray-600 mt-1">
+                    <span class="lang-ru"
+                      >Комплекс нейтрализует свободные радикалы, защищая клетки
+                      мозга от повреждений и замедляя процессы старения.</span
+                    ><span class="lang-uz"
+                      >Majmua erkin radikallarni zararsizlantiradi, miya
+                      hujayralarini shikastlanishdan himoya qiladi va qarish
+                      jarayonlarini sekinlashtiradi.</span
+                    ><span class="lang-en"
+                      >The complex neutralizes free radicals, protecting brain
+                      cells from damage and slowing the aging process.</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-12 text-center bg-green-50 p-8 rounded-lg">
+            <p class="text-gray-700">
+              <span class="lang-ru"
+                >Формула разработана на базе клинических исследований
+                растительных экстрактов с участием неврологов и кардиологов.
+                Используются только растения, одобренные международными
+                ассоциациями фитотерапии, что обеспечивает безопасность даже при
+                длительном приеме.</span
+              ><span class="lang-uz"
+                >Formula nevrologlar va kardiologlar ishtirokida o'simlik
+                ekstraktlarining klinik tadqiqotlari asosida ishlab chiqilgan.
+                Faqat xalqaro fitoterapiya assotsiatsiyalari tomonidan
+                tasdiqlangan o'simliklar qo'llaniladi, bu esa uzoq muddatli
+                foydalanishda ham xavfsizlikni ta'minlaydi.</span
+              ><span class="lang-en"
+                >The formula was developed based on clinical studies of plant
+                extracts with the participation of neurologists and
+                cardiologists. Only plants approved by international
+                phytotherapy associations are used, ensuring safety even with
+                long-term use.</span
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. How "Super Memory" is useful for your health -->
+      <section class="section-gradient py-16">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru"
+              >Чем «Супер Память» полезен для вашего здоровья?</span
+            >
+            <span class="lang-uz"
+              >"Super Pamyat" sog'ligingiz uchun qanday foydali?</span
+            >
+            <span class="lang-en"
+              >How is "Super Memory" good for your health?</span
+            >
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="assets/img/brain2.jpg"
+                alt="Улучшает работу мозга"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6 text-center">
+                <h3 class="text-xl font-bold text-green-700 mb-3">
+                  <span class="lang-ru">Улучшает работу мозга</span
+                  ><span class="lang-uz">Miya faoliyatini yaxshilaydi</span
+                  ><span class="lang-en">Improves Brain Function</span>
+                </h3>
+                <p class="text-gray-600">
+                  <span class="lang-ru"
+                    >Активизирует зоны памяти, мышления и внимания.</span
+                  ><span class="lang-uz"
+                    >Xotira, fikrlash va diqqat zonalarini faollashtiradi.</span
+                  ><span class="lang-en"
+                    >Activates the zones of memory, thinking, and
+                    attention.</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="assets/img/heart.jpg"
+                alt="Укрепляет сердце и сосуды"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6 text-center">
+                <h3 class="text-xl font-bold text-green-700 mb-3">
+                  <span class="lang-ru">Укрепляет сердце и сосуды</span
+                  ><span class="lang-uz"
+                    >Yurak va qon tomirlarini mustahkamlaydi</span
+                  ><span class="lang-en">Strengthens Heart & Vessels</span>
+                </h3>
+                <p class="text-gray-600">
+                  <span class="lang-ru"
+                    >Снижает артериальное давление и поддерживает чистоту
+                    сосудов.</span
+                  ><span class="lang-uz"
+                    >Arterial bosimni pasaytiradi va qon tomirlarining
+                    tozaligini saqlaydi.</span
+                  ><span class="lang-en"
+                    >Lowers blood pressure and maintains vascular
+                    cleanliness.</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="assets/img/blood.jpg"
+                alt="Предотвращает тромбы"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6 text-center">
+                <h3 class="text-xl font-bold text-green-700 mb-3">
+                  <span class="lang-ru">Предотвращает тромбы</span
+                  ><span class="lang-uz"
+                    >Tromblar hosil bo'lishini oldini oladi</span
+                  ><span class="lang-en">Prevents Blood Clots</span>
+                </h3>
+                <p class="text-gray-600">
+                  <span class="lang-ru"
+                    >Разжижает кровь, улучшает ее текучесть и циркуляцию.</span
+                  ><span class="lang-uz"
+                    >Qonni suyultiradi, uning oquvchanligini va aylanishini
+                    yaxshilaydi.</span
+                  ><span class="lang-en"
+                    >Thins the blood, improving its fluidity and
+                    circulation.</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Ingredient Benefits -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru">Сила природы в каждой капсуле</span>
+            <span class="lang-uz">Har bir kapsulada tabiat kuchi</span>
+            <span class="lang-en">The Power of Nature in Every Capsule</span>
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center">
+              <img
+                src="assets/img/bloba.jpg"
+                class="mx-auto rounded-full mb-4"
+                alt="Иконка Гинкго Билоба"
+              />
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Гинкго Билоба</span
+                ><span class="lang-uz">Ginkgo Biloba</span
+                ><span class="lang-en">Ginkgo Biloba</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Улучшает мозговое кровообращение, повышает
+                  концентрацию.</span
+                ><span class="lang-uz"
+                  >Miya qon aylanishini yaxshilaydi, diqqatni
+                  kuchaytiradi.</span
+                ><span class="lang-en"
+                  >Improves cerebral circulation, enhances concentration.</span
+                >
+              </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center">
+              <img
+                src="assets/img/hawtoon.jpg"
+                class="mx-auto rounded-full mb-4"
+                alt="Иконка Боярышника"
+              />
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Цветки боярышника</span
+                ><span class="lang-uz">Do'lana gullari</span
+                ><span class="lang-en">Hawthorn Flowers</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Укрепляет сердечную мышцу и сосуды, нормализует ритм.</span
+                ><span class="lang-uz"
+                  >Yurak mushaklari va qon tomirlarini mustahkamlaydi.</span
+                ><span class="lang-en"
+                  >Strengthens the heart muscle and vessels, normalizes
+                  rhythm.</span
+                >
+              </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center">
+              <img
+                src="assets/img/wort.jpg"
+                class="mx-auto rounded-full mb-4"
+                alt="Иконка Зверобоя"
+              />
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Трава зверобоя</span
+                ><span class="lang-uz">Dalachoy o'ti</span
+                ><span class="lang-en">St. John's Wort</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Снижает тревожность и проявления депрессии.</span
+                ><span class="lang-uz"
+                  >Xavotir va depressiya belgilarini kamaytiradi.</span
+                ><span class="lang-en"
+                  >Reduces anxiety and symptoms of depression.</span
+                >
+              </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center">
+              <img
+                src="assets/img/rosemary.jpg"
+                class="mx-auto rounded-full mb-4"
+                alt="Иконка Розмарина"
+              />
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Трава розмарина</span
+                ><span class="lang-uz">Rozmarin o'ti</span
+                ><span class="lang-en">Rosemary Herb</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Мощный антиоксидант, защищает клетки мозга.</span
+                ><span class="lang-uz"
+                  >Kuchli antioksidant, miya hujayralarini himoya qiladi.</span
+                ><span class="lang-en"
+                  >A powerful antioxidant that protects brain cells.</span
+                >
+              </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center">
+              <img
+                src="assets/img/rhodiola.jpg"
+                class="mx-auto rounded-full mb-4"
+                alt="Иконка Родиолы розовой"
+              />
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Корень родиолы розовой</span
+                ><span class="lang-uz">Pushti radiola ildizi</span
+                ><span class="lang-en">Rhodiola Rosea Root</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Повышает умственную и физическую работоспособность.</span
+                ><span class="lang-uz"
+                  >Aqliy va jismoniy ish qobiliyatini oshiradi.</span
+                ><span class="lang-en"
+                  >Increases mental and physical performance.</span
+                >
+              </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center">
+              <img
+                src="assets/img/bearberry.jpg"
+                class="mx-auto rounded-full mb-4"
+                alt="Иконка Толокнянки"
+              />
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Трава толокнянки</span
+                ><span class="lang-uz">Tolknyanka o'ti</span
+                ><span class="lang-en">Bearberry Herb</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Снижает давление и улучшает выведение токсинов.</span
+                ><span class="lang-uz"
+                  >Qon bosimini pasaytiradi va toksinlarni chiqaradi.</span
+                ><span class="lang-en"
+                  >Lowers blood pressure and improves toxin removal.</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Who is it for? -->
+      <section class="section-gradient py-16">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru">Для кого подходит «Супер Память»?</span>
+            <span class="lang-uz">"Super Pamyat" kimlar uchun mos keladi?</span>
+            <span class="lang-en">Who is "Super Memory" for?</span>
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                class="w-full h-48 object-cover"
+                src="assets/img/seniors.jpg"
+                alt="Пожилые люди"
+              />
+              <div class="p-6">
+                <p>
+                  <span class="lang-ru"
+                    ><b>Пожилым людям</b> при снижении памяти и
+                    головокружениях.</span
+                  ><span class="lang-uz"
+                    ><b>Keksa yoshdagilar</b> uchun xotirasi pasayganda va boshi
+                    aylanganda.</span
+                  ><span class="lang-en"
+                    ><b>Seniors</b> with memory decline and dizziness.</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                class="w-full h-48 object-cover"
+                src="assets/img/students.jpg"
+                alt="Студенты"
+              />
+              <div class="p-6">
+                <p>
+                  <span class="lang-ru"
+                    ><b>Студентам и работникам умственного труда</b> для
+                    концентрации.</span
+                  ><span class="lang-uz"
+                    ><b>Talabalar va aqliy mehnat xodimlari</b> uchun diqqatni
+                    jamlashga.</span
+                  ><span class="lang-en"
+                    ><b>Students and knowledge workers</b> for
+                    concentration.</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                class="w-full h-48 object-cover"
+                src="assets/img/stroke.jpg"
+                alt="Восстановление после инсульта"
+              />
+              <div class="p-6">
+                <p>
+                  <span class="lang-ru"
+                    ><b>Тем, кто перенес инсульт,</b> для восстановления.</span
+                  ><span class="lang-uz"
+                    ><b>Insultni boshdan kechirganlar</b> uchun
+                    tiklanishga.</span
+                  ><span class="lang-en"
+                    ><b>Those recovering from a stroke</b> for
+                    rehabilitation.</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                class="w-full h-48 object-cover"
+                src="assets/img/pressure.jpg"
+                alt="Люди с гипертонией"
+              />
+              <div class="p-6">
+                <p>
+                  <span class="lang-ru"
+                    ><b>Людям с гипертонией</b> для нормализации давления.</span
+                  ><span class="lang-uz"
+                    ><b>Gipertoniyasi bor odamlar</b> uchun bosimni
+                    normallashtirishga.</span
+                  ><span class="lang-en"
+                    ><b>People with hypertension</b> to normalize
+                    pressure.</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                class="w-full h-48 object-cover"
+                src="assets/img/40.jpg"
+                alt="Люди после 40"
+              />
+              <div class="p-6">
+                <p>
+                  <span class="lang-ru"
+                    ><b>Всем после 40 лет</b> для профилактики сосудистых
+                    нарушений.</span
+                  ><span class="lang-uz"
+                    ><b>40 yoshdan oshgan barcha</b> uchun qon tomir
+                    kasalliklarining oldini olishga.</span
+                  ><span class="lang-en"
+                    ><b>Everyone over 40</b> for preventing vascular
+                    disorders.</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                class="w-full h-48 object-cover"
+                src="assets/img/teenagerss.jpg"
+                alt="Дети и подростки"
+              />
+              <div class="p-6">
+                <p>
+                  <span class="lang-ru"
+                    ><b>Детям и подросткам</b> для улучшения памяти и
+                    внимания.</span
+                  ><span class="lang-uz"
+                    ><b>Bolalar va o'smirlar</b> uchun xotira va diqqatni
+                    yaxshilashga.</span
+                  ><span class="lang-en"
+                    ><b>Children and teenagers</b> to improve memory and
+                    attention.</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Why This Product (USPs) -->
+      <section class="section-gradient py-16">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru">Почему выбирают «Супер Память»?</span>
+            <span class="lang-uz">Nima uchun "Super Pamyat"ni tanlashadi?</span>
+            <span class="lang-en">Why Choose "Super Memory"?</span>
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div
+                class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full"
+              >
+                <svg
+                  class="w-8 h-8 text-green-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">100% Натуральный</span
+                ><span class="lang-uz">100% Tabiiy</span
+                ><span class="lang-en">100% Natural</span>
+              </h3>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div
+                class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full"
+              >
+                <svg
+                  class="w-8 h-8 text-green-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Быстро действует</span
+                ><span class="lang-uz">Tez ta'sir qiladi</span
+                ><span class="lang-en">Fast-Acting</span>
+              </h3>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div
+                class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full"
+              >
+                <svg
+                  class="w-8 h-8 text-green-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Клинически доказано</span
+                ><span class="lang-uz">Klinik isbotlangan</span
+                ><span class="lang-en">Clinically Proven</span>
+              </h3>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div
+                class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full"
+              >
+                <svg
+                  class="w-8 h-8 text-green-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Безопасен</span
+                ><span class="lang-uz">Xavfsiz</span
+                ><span class="lang-en">Safe for Daily Use</span>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Expert Opinion -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <div
+            class="bg-green-50 rounded-lg shadow-xl p-8 md:p-12 md:flex items-center gap-12"
+          >
+            <div class="md:w-1/3 text-center mb-6 md:mb-0">
+              <img
+                src="assets/img/https://placehold.co/300x300/16a34a/ffffff?text=Врач"
+                alt="Фото врача"
+                class="rounded-full mx-auto w-48 h-48 object-cover shadow-lg border-4 border-white"
+              />
+            </div>
+            <div class="md:w-2/3">
+              <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                <span class="lang-ru">Мнение эксперта</span>
+                <span class="lang-uz">Mutaxassis fikri</span>
+                <span class="lang-en">Expert Opinion</span>
+              </h2>
+              <p class="text-gray-600 mb-4">
+                <span class="lang-ru"
+                  >«Я рекомендую «Супер Память» как эффективное и безопасное
+                  средство для профилактики возрастных изменений. Его
+                  натуральный состав комплексно воздействует на причину
+                  проблемы. Препарат улучшает микроциркуляцию в сосудах
+                  головного мозга, что жизненно важно для поддержания
+                  когнитивных функций в любом возрасте.»</span
+                >
+                <span class="lang-uz"
+                  >"Men "Super Pamyat"ni yoshga bog'liq o'zgarishlarning oldini
+                  olish uchun samarali va xavfsiz vosita sifatida tavsiya
+                  qilaman. Uning tabiiy tarkibi muammoning sababiga kompleks
+                  ta'sir ko'rsatadi. Preparat bosh miya tomirlarida
+                  mikrosirkulyatsiyani yaxshilaydi, bu har qanday yoshda
+                  kognitiv funktsiyalarni saqlab qolish uchun juda
+                  muhimdir."</span
+                >
+                <span class="lang-en"
+                  >"I recommend 'Super Memory' as an effective and safe means
+                  for preventing age-related changes. Its natural composition
+                  comprehensively addresses the root of the problem. The
+                  supplement improves microcirculation in the brain's blood
+                  vessels, which is vital for maintaining cognitive functions at
+                  any age."</span
+                >
+              </p>
+              <p class="font-bold text-green-800">Абдуллаев Рустам</p>
+              <p class="text-sm text-gray-500">
+                <span class="lang-ru">Врач-невролог, стаж 15 лет</span>
+                <span class="lang-uz"
+                  >Nevrolog shifokor, 15 yillik tajriba</span
+                >
+                <span class="lang-en">Neurologist, 15 years of experience</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Secondary Call to Action -->
+      <section class="bg-green-700 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold mb-6">
+            <span class="lang-ru"
+              >Готовы улучшить свою память и концентрацию?</span
+            >
+            <span class="lang-uz"
+              >Xotirangizni va diqqatingizni yaxshilashga tayyormisiz?</span
+            >
+            <span class="lang-en">Ready to improve your memory and focus?</span>
+          </h2>
+          <a
+            href="#order-form"
+            class="cta-button inline-block bg-yellow-400 text-green-900 font-bold py-4 px-8 rounded-lg text-xl"
+          >
+            <span class="lang-ru">ЗАКАЗАТЬ СО СКИДКОЙ →</span>
+            <span class="lang-uz">CHEGIRMA BILAN BUYURTMA BERING →</span>
+            <span class="lang-en">ORDER WITH A DISCOUNT →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 8. What It Does (Key Benefits Recap) -->
+      <section class="section-gradient py-16">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru">Что вы получите в результате?</span>
+            <span class="lang-uz">Natijada nima olasiz?</span>
+            <span class="lang-en">Here’s What You Get</span>
+          </h2>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-green-100 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
+              </div>
+              <p class="font-semibold">
+                <span class="lang-ru">Ясность ума</span
+                ><span class="lang-uz">Aql tiniqligi</span
+                ><span class="lang-en">Mental Clarity</span>
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-green-100 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  ></path>
+                </svg>
+              </div>
+              <p class="font-semibold">
+                <span class="lang-ru">Улучшение памяти</span
+                ><span class="lang-uz">Xotirani yaxshilash</span
+                ><span class="lang-en">Improved Memory</span>
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-green-100 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <p class="font-semibold">
+                <span class="lang-ru">Больше энергии</span
+                ><span class="lang-uz">Ko'proq energiya</span
+                ><span class="lang-en">More Energy</span>
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-green-100 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <p class="font-semibold">
+                <span class="lang-ru">Хорошее настроение</span
+                ><span class="lang-uz">Yaxshi kayfiyat</span
+                ><span class="lang-en">Better Mood</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Testimonials -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru">Отзывы наших клиентов</span>
+            <span class="lang-uz">Mijozlarimizning fikrlari</span>
+            <span class="lang-en">Customer Testimonials</span>
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg testimonial-card">
+              <p class="text-gray-600 mb-4">
+                <span class="lang-ru"
+                  >"Много лет работаю бухгалтером, к вечеру голова отказывалась
+                  соображать. 'Супер Память' реально оживил мозг! Стала меньше
+                  уставать, цифры запоминаются легче."</span
+                ><span class="lang-uz"
+                  >"Ko'p yillardan beri hisobchi bo'lib ishlayman, kechqurun
+                  boshim ishlashdan bosh tortardi. 'Super Pamyat' haqiqatan ham
+                  miyamni jonlantirdi! Kamroq charchay boshladim, raqamlar
+                  osonroq eslab qolinmoqda."</span
+                ><span class="lang-en"
+                  >"I've been an accountant for years, and by evening my brain
+                  would just shut down. 'Super Memory' truly revived my mind! I
+                  get less tired, and numbers are easier to remember."</span
+                >
+              </p>
+              <p class="font-bold text-green-800">
+                <span class="lang-ru">Бахора, 55 лет</span
+                ><span class="lang-uz">Bahora, 55 yosh</span
+                ><span class="lang-en">Bahora, 55</span>
+              </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg testimonial-card">
+              <p class="text-gray-600 mb-4">
+                <span class="lang-ru"
+                  >"Купила для отца, ему 75 лет. Раньше он часто терялся в
+                  разговорах. Через месяц приема стал шутить, вспоминать старые
+                  истории и даже разгадывать кроссворды. Спасибо!"</span
+                ><span class="lang-uz"
+                  >"Dadam uchun sotib oldim, yoshi 75 da. Ilgari u suhbatlarda
+                  tez-tez adashib qolardi. Bir oylik qabuldan so'ng u hazillasha
+                  boshladi, eski voqealarni esladi va hatto krossvordlarni yecha
+                  boshladi. Rahmat!"</span
+                ><span class="lang-en"
+                  >"I bought this for my 75-year-old father. He used to get lost
+                  in conversations. After a month, he started joking, recalling
+                  old stories, and even solving crosswords. Thank you!"</span
+                >
+              </p>
+              <p class="font-bold text-green-800">
+                <span class="lang-ru">Гульноза, 43 года</span
+                ><span class="lang-uz">Gulnoza, 43 yosh</span
+                ><span class="lang-en">Gulnoza, 43</span>
+              </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg testimonial-card">
+              <p class="text-gray-600 mb-4">
+                <span class="lang-ru"
+                  >"Готовлюсь к экзаменам, объем информации огромный. С этим
+                  комплексом стало гораздо проще учиться. Мысли ясные, и
+                  материал запоминается надолго. Рекомендую всем
+                  студентам!"</span
+                ><span class="lang-uz"
+                  >"Imtihonlarga tayyorlanyapman, ma'lumot hajmi juda katta.
+                  Ushbu majmua bilan o'qish ancha osonlashdi. Fikrim tiniq va
+                  material uzoq vaqt esda qoladi. Barcha talabalarga tavsiya
+                  qilaman!"</span
+                ><span class="lang-en"
+                  >"I'm studying for exams, and the amount of information is
+                  huge. This supplement made it much easier to learn. My
+                  thoughts are clear, and the material sticks. I recommend it to
+                  all students!"</span
+                >
+              </p>
+              <p class="font-bold text-green-800">
+                <span class="lang-ru">Шерзод, 21 год</span
+                ><span class="lang-uz">Sherzod, 21 yosh</span
+                ><span class="lang-en">Sherzod, 21</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. ORDER SECTION -->
+      <section id="order-form" class="hero-gradient text-white py-16 sm:py-20">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-5xl font-black mb-2">
+            <span class="lang-ru">Верните себе ясность ума!</span>
+            <span class="lang-uz">O'zingizga aql tiniqligini qaytaring!</span>
+            <span class="lang-en">Reclaim Your Mental Clarity!</span>
+          </h2>
+          <p class="text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto">
+            <span class="lang-ru"
+              >Закажите «Супер Память» прямо сейчас и воспользуйтесь
+              эксклюзивной скидкой 50%!</span
+            >
+            <span class="lang-uz"
+              >"Super Pamyat"ga hoziroq buyurtma bering va 50% eksklyuziv
+              chegirmadan foydalaning!</span
+            >
+            <span class="lang-en"
+              >Order "Super Memory" right now and take advantage of an exclusive
+              50% discount!</span
+            >
+          </p>
+
+          <div
+            class="max-w-md mx-auto bg-white/10 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/20"
+          >
+            <img
+              src="assets/img/bad.png"
+              alt="Продукт Супер Память"
+              class="w-1/2 mx-auto mb-4"
+            />
+            <p class="mb-4 text-yellow-300 font-bold">
+              <span class="lang-ru"
+                >Осталось <span id="stock-count">12</span> шт. по акции!</span
+              >
+              <span class="lang-uz"
+                >Aksiya bo'yicha <span id="stock-count-uz">12</span> dona
+                qoldi!</span
+              >
+              <span class="lang-en"
+                ><span id="stock-count-en">12</span> left in stock!</span
+              >
+            </p>
+
+            <div class="flex justify-center gap-4 my-4" id="countdown">
+              <div class="countdown-box p-3 rounded-lg text-center">
+                <span class="text-3xl font-bold" id="minutes">09</span
+                ><span class="block text-xs"
+                  ><span class="lang-ru">минут</span
+                  ><span class="lang-uz">daqiqa</span
+                  ><span class="lang-en">minutes</span></span
+                >
+              </div>
+              <div class="countdown-box p-3 rounded-lg text-center">
+                <span class="text-3xl font-bold" id="seconds">15</span
+                ><span class="block text-xs"
+                  ><span class="lang-ru">секунд</span
+                  ><span class="lang-uz">soniya</span
+                  ><span class="lang-en">seconds</span></span
+                >
+              </div>
+            </div>
+
+            <div class="my-4">
+              <span class="text-xl line-through opacity-70">780.000 СУМ</span>
+              <span class="text-4xl font-extrabold block text-yellow-300"
+                >390.000 СУМ</span
+              >
+            </div>
+
+            <form class="orderForm">
+              <div class="mb-4">
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-ru"
+                  placeholder="Ваше имя"
+                  required
+                />
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-uz"
+                  placeholder="Ismingiz"
+                  required
+                />
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-en"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-6">
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-ru"
+                  placeholder="Ваш номер телефона"
+                  required
+                />
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-uz"
+                  placeholder="Telefon raqamingiz"
+                  required
+                />
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-en"
+                  placeholder="Your Phone Number"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-yellow-400 text-green-900 font-bold py-4 px-6 rounded-lg text-xl cta-button"
+              >
+                <span class="lang-ru">Заказать со скидкой</span>
+                <span class="lang-uz">Chegirma bilan buyurtma berish</span>
+                <span class="lang-en">Order with discount</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto px-6 text-center text-sm">
+        <p class="mb-2">OOO "SHIFO NUR" | Производитель</p>
+        <p class="text-xs text-gray-400">
+          <span class="lang-ru"
+            >Биологически активная добавка. Не является лекарственным
+            средством.</span
+          >
+          <span class="lang-uz"
+            >Biologik faol qo'shimcha. Dori vositasi emas.</span
+          >
+          <span class="lang-en"
+            >Dietary supplement. Not a medicinal product.</span
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const langRuBtn = document.getElementById('lang-ru-btn');
+        const langUzBtn = document.getElementById('lang-uz-btn');
+        const langEnBtn = document.getElementById('lang-en-btn');
+        const html = document.documentElement;
+
+        // Language Switcher Logic
+        function setLanguage(lang) {
+          html.lang = lang;
+          langRuBtn.classList.toggle('active', lang === 'ru');
+          langUzBtn.classList.toggle('active', lang === 'uz');
+          langEnBtn.classList.toggle('active', lang === 'en');
+        }
+
+        // Set initial language from browser or default to 'ru'
+        const savedLang = localStorage.getItem('language') || 'ru';
+        setLanguage(savedLang);
+
+        langRuBtn.addEventListener('click', () => {
+          setLanguage('ru');
+          localStorage.setItem('language', 'ru');
+        });
+        langUzBtn.addEventListener('click', () => {
+          setLanguage('uz');
+          localStorage.setItem('language', 'uz');
+        });
+        langEnBtn.addEventListener('click', () => {
+          setLanguage('en');
+          localStorage.setItem('language', 'en');
+        });
+
+        // Countdown Timer
+        function startCountdown() {
+          const countdownElement = document.getElementById('countdown');
+          if (!countdownElement) return;
+
+          let timeInSeconds = 9 * 60 + 15; // 9 minutes 15 seconds
+
+          const timerInterval = setInterval(() => {
+            if (timeInSeconds <= 0) {
+              timeInSeconds = 9 * 60 + 15; // Reset timer
+            }
+
+            let minutes = Math.floor(timeInSeconds / 60);
+            let seconds = timeInSeconds % 60;
+
+            document.getElementById('minutes').textContent = minutes
+              .toString()
+              .padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds
+              .toString()
+              .padStart(2, '0');
+
+            timeInSeconds--;
+          }, 1000);
+        }
+        startCountdown();
+
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+          event.preventDefault();
+          const form = event.target;
+          const button = form.querySelector('button[type="submit"]');
+
+          const originalButtonText = {
+            ru: 'Заказать со скидкой',
+            uz: 'Chegirma bilan buyurtma berish',
+            en: 'Order with discount',
+          };
+          const sendingText = {
+            ru: 'Отправка...',
+            uz: 'Yuborilmoqda...',
+            en: 'Sending...',
+          };
+          const successText = {
+            ru: 'Заявка принята!',
+            uz: 'Buyurtma qabul qilindi!',
+            en: 'Order accepted!',
+          };
+
+          const currentLang = html.lang;
+
+          button.disabled = true;
+          button.querySelector(`.lang-${currentLang}`).textContent =
+            sendingText[currentLang];
+
+          setTimeout(() => {
+            form.reset();
+            button.classList.add('bg-green-500');
+            button.classList.remove('bg-yellow-400');
+            button.querySelector(`.lang-${currentLang}`).textContent =
+              successText[currentLang];
+
+            setTimeout(() => {
+              button.querySelector(`.lang-${currentLang}`).textContent =
+                originalButtonText[currentLang];
+              button.disabled = false;
+              button.classList.remove('bg-green-500');
+              button.classList.add('bg-yellow-400');
+            }, 3000);
+          }, 1500);
+        }
+
+        document.querySelectorAll('.orderForm').forEach((form) => {
+          form.addEventListener('submit', handleFormSubmit);
+        });
+      });
+    </script>
+  </body>
+</html>

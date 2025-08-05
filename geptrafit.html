@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Гептрафит – Натуральный комплекс для очищения, восстановления и защиты
+      печени
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #059669; /* Emerald-600 */
+        --secondary-color: #34d399; /* Emerald-400 */
+        --accent-color: #f59e0b; /* Amber-500 */
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f9fafb; /* gray-50 */
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+      }
+      .section-gradient {
+        background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%);
+      }
+      .cta-button {
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px 0 rgba(245, 158, 11, 0.5);
+      }
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px 0 rgba(245, 158, 11, 0.6);
+      }
+      .countdown-box {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .lang-switch-button.active {
+        background-color: var(--accent-color);
+        color: #1f2937;
+      }
+      .lang-ru,
+      .lang-uz,
+      .lang-en {
+        display: none;
+      }
+      html[lang='ru'] .lang-ru,
+      html[lang='uz'] .lang-uz,
+      html[lang='en'] .lang-en {
+        display: block;
+      }
+      .testimonial-card {
+        border-left: 4px solid var(--primary-color);
+      }
+      .discount-bubble {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        background-color: #ef4444; /* red-500 */
+        color: white;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 900;
+        transform: rotate(15deg);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Language Switcher -->
+    <div class="bg-emerald-800 text-white py-2">
+      <div class="container mx-auto px-6 flex justify-center items-center">
+        <div class="flex border border-gray-400 rounded-full">
+          <button
+            id="lang-ru-btn"
+            class="lang-switch-button px-4 py-1 text-sm font-semibold rounded-l-full"
+          >
+            Русский
+          </button>
+          <button
+            id="lang-uz-btn"
+            class="lang-switch-button px-4 py-1 text-sm font-semibold"
+          >
+            O'zbekcha
+          </button>
+          <button
+            id="lang-en-btn"
+            class="lang-switch-button px-4 py-1 text-sm font-semibold rounded-r-full"
+          >
+            English
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. Hero Section -->
+    <header class="hero-gradient text-white py-12 sm:py-20">
+      <div
+        class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-8"
+      >
+        <div class="lg:w-1/2 text-center lg:text-left">
+          <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">
+            <span class="lang-ru">ГЕПТРАФИТ</span>
+            <span class="lang-uz">GEPTRAFIT</span>
+            <span class="lang-en">GEPTRAFIT</span>
+          </h1>
+          <p
+            class="text-lg md:text-2xl font-light mb-8 max-w-xl mx-auto lg:mx-0"
+          >
+            <span class="lang-ru"
+              >Натуральный комплекс для очищения, восстановления и защиты
+              печени.</span
+            >
+            <span class="lang-uz"
+              >Jigarni tozalash, tiklash va himoya qilish uchun bioaktiv
+              kapsulalar.</span
+            >
+            <span class="lang-en"
+              >Natural Liver Cleanse and Repair Formula with Silymarin &
+              Phospholipids.</span
+            >
+          </p>
+          <a
+            href="#order-form"
+            class="cta-button inline-block bg-amber-500 text-emerald-900 font-bold py-4 px-8 rounded-lg text-xl"
+          >
+            <span class="lang-ru">ЗАКАЗАТЬ СЕЙЧАС →</span>
+            <span class="lang-uz">HOZIROQ BUYURTMA BERING →</span>
+            <span class="lang-en">ORDER NOW →</span>
+          </a>
+          <p class="text-xs mt-4 opacity-80">
+            <span class="lang-ru">*Гарантируем анонимную доставку.</span>
+            <span class="lang-uz"
+              >*Anonim yetkazib berishni kafolatlaymiz.</span
+            >
+            <span class="lang-en">*Anonymous delivery guaranteed.</span>
+          </p>
+        </div>
+        <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
+          <div class="relative w-max">
+            <img
+              src="assets/Geptrafit.png"
+              alt="Изображение продукта Гептрафит"
+              class="rounded-lg shadow-2xl max-w-xs md:max-w-sm"
+            />
+            <div class="discount-bubble">-50%</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 2. Why This Matters (Symptoms Section) -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4"
+          >
+            <span class="lang-ru">Почему здоровье печени так важно?</span>
+            <span class="lang-uz"
+              >Jigar salomatligi nima uchun bunchalik muhim?</span
+            >
+            <span class="lang-en">Why Is Liver Health So Important?</span>
+          </h2>
+          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            <span class="lang-ru"
+              >Печень — главный фильтр нашего организма. Ежедневно она
+              подвергается атаке токсинов, вредной пищи и стресса. Игнорирование
+              этих сигналов может привести к серьезным проблемам: от хронической
+              усталости до жирового гепатоза.</span
+            >
+            <span class="lang-uz"
+              >Jigar - tanamizning asosiy filtri. Har kuni u toksinlar, zararli
+              ovqatlar va stress hujumiga uchraydi. Ushbu signallarga e'tibor
+              bermaslik jiddiy muammolarga olib kelishi mumkin: surunkali
+              charchoqdan yog'li gepatozgacha.</span
+            >
+            <span class="lang-en"
+              >The liver is our body's main filter. Every day it is attacked by
+              toxins, unhealthy food, and stress. Ignoring these signals can
+              lead to serious problems, from chronic fatigue to fatty liver
+              disease.</span
+            >
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="flex flex-col items-center">
+              <img
+                class="w-24 h-24 rounded-full mb-4 object-cover"
+                src="assets/тяжесть.jpg"
+                alt="Тяжесть в боку"
+              />
+              <p class="font-semibold text-gray-700">
+                <span class="lang-ru">Тяжесть в боку</span
+                ><span class="lang-uz">Yonboshdagi og'irlik</span
+                ><span class="lang-en">Side Heaviness</span>
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                class="w-24 h-24 rounded-full mb-4 object-cover"
+                src="assets/tired-femalel.jpg"
+                alt="Усталость"
+              />
+              <p class="font-semibold text-gray-700">
+                <span class="lang-ru">Быстрая утомляемость</span
+                ><span class="lang-uz">Tez charchash</span
+                ><span class="lang-en">Fatigue</span>
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                class="w-24 h-24 rounded-full mb-4 object-cover"
+                src="assets/кожа.jpg"
+                alt="Проблемы с кожей"
+              />
+              <p class="font-semibold text-gray-700">
+                <span class="lang-ru">Проблемы с кожей</span
+                ><span class="lang-uz">Teri muammolari</span
+                ><span class="lang-en">Skin Problems</span>
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                class="w-24 h-24 rounded-full mb-4 object-cover"
+                src="assets/пищеварение.jpg"
+                alt="Плохое пищеварение"
+              />
+              <p class="font-semibold text-gray-700">
+                <span class="lang-ru">Плохое пищеварение</span
+                ><span class="lang-uz">Yomon hazm qilish</span
+                ><span class="lang-en">Poor Digestion</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Why This Product (USPs) -->
+      <section class="section-gradient py-16">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru">Почему выбирают «Гептрафит»?</span>
+            <span class="lang-uz">Nima uchun "Geptrafit"ni tanlashadi?</span>
+            <span class="lang-en">Why Choose "Geptrafit"?</span>
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div
+                class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-emerald-100 rounded-full"
+              >
+                <svg
+                  class="w-8 h-8 text-emerald-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h1a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.881 4.002l.023.023a1.5 1.5 0 002.121 2.121l.023.023-2.12 2.122a1.5 1.5 0 00-2.122-2.122l2.121-2.121zM12 11v9m0 0l-2-2m2 2l2-2"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Натуральный состав</span>
+                <span class="lang-uz">Tabiiy tarkib</span>
+                <span class="lang-en">Natural Ingredients</span>
+              </h3>
+              <p class="text-gray-600 text-sm">
+                <span class="lang-ru"
+                  >Силимарин, бетулин и фосфолипиды для безопасного
+                  восстановления.</span
+                ><span class="lang-uz"
+                  >Xavfsiz tiklanish uchun silimarin, betulin va
+                  fosfolipidlar.</span
+                ><span class="lang-en"
+                  >Silymarin, betulin, and phospholipids for safe
+                  recovery.</span
+                >
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div
+                class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-emerald-100 rounded-full"
+              >
+                <svg
+                  class="w-8 h-8 text-emerald-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Комплексное действие</span>
+                <span class="lang-uz">Kompleks ta'sir</span>
+                <span class="lang-en">Complex Action</span>
+              </h3>
+              <p class="text-gray-600 text-sm">
+                <span class="lang-ru"
+                  >Очищение, восстановление и защита печени в одном
+                  препарате.</span
+                ><span class="lang-uz"
+                  >Jigarni tozalash, tiklash va himoya qilish bir
+                  preparatda.</span
+                ><span class="lang-en"
+                  >Cleansing, restoring, and protecting the liver in one
+                  supplement.</span
+                >
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div
+                class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-emerald-100 rounded-full"
+              >
+                <svg
+                  class="w-8 h-8 text-emerald-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Повышает энергию</span>
+                <span class="lang-uz">Energiyani oshiradi</span>
+                <span class="lang-en">Boosts Energy</span>
+              </h3>
+              <p class="text-gray-600 text-sm">
+                <span class="lang-ru"
+                  >Улучшает общее самочувствие и борется с хронической
+                  усталостью.</span
+                ><span class="lang-uz"
+                  >Umumiy ahvolni yaxshilaydi va surunkali charchoq bilan
+                  kurashadi.</span
+                ><span class="lang-en"
+                  >Improves overall well-being and fights chronic fatigue.</span
+                >
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+              <div
+                class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-emerald-100 rounded-full"
+              >
+                <svg
+                  class="w-8 h-8 text-emerald-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Без побочных эффектов</span>
+                <span class="lang-uz">Nojo'ya ta'sirlarsiz</span>
+                <span class="lang-en">No Side Effects</span>
+              </h3>
+              <p class="text-gray-600 text-sm">
+                <span class="lang-ru"
+                  >Безопасен для длительного применения и профилактики.</span
+                ><span class="lang-uz"
+                  >Uzoq muddatli foydalanish va profilaktika uchun
+                  xavfsiz.</span
+                ><span class="lang-en"
+                  >Safe for long-term use and prevention.</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Ingredient Benefits -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru">Сила природы для вашей печени</span>
+            <span class="lang-uz">Jigaringiz uchun tabiat kuchi</span>
+            <span class="lang-en">The Power of Nature for Your Liver</span>
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+              class="bg-gray-50 p-6 rounded-lg shadow-sm text-center flex flex-col items-center"
+            >
+              <img
+                src="assets/силимарин.jpg"
+                class="w-32 h-32 rounded-full mb-4 object-cover"
+                alt="Иконка Силимарина"
+              />
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Силимарин</span>
+                <span class="lang-uz">Silimarin</span>
+                <span class="lang-en">Silymarin</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Мощный антиоксидант. Защищает клетки печени от токсинов и
+                  способствует их регенерации.</span
+                >
+                <span class="lang-uz"
+                  >Kuchli antioksidant. Jigar hujayralarini toksinlardan himoya
+                  qiladi va ularning yangilanishiga yordam beradi.</span
+                >
+                <span class="lang-en"
+                  >A powerful antioxidant. Protects liver cells from toxins and
+                  promotes their regeneration.</span
+                >
+              </p>
+            </div>
+            <div
+              class="bg-gray-50 p-6 rounded-lg shadow-sm text-center flex flex-col items-center"
+            >
+              <img
+                src="assets/бетулин.jpg"
+                class="w-32 h-32 rounded-full mb-4 object-cover"
+                alt="Иконка Бетулина"
+              />
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Бетулин</span>
+                <span class="lang-uz">Betulin</span>
+                <span class="lang-en">Betulin</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Нормализует жировой обмен, снижает уровень холестерина и
+                  предотвращает развитие жирового гепатоза.</span
+                >
+                <span class="lang-uz"
+                  >Yog 'almashinuvini normallashtiradi, xolesterin darajasini
+                  pasaytiradi va yog'li gepatoz rivojlanishining oldini
+                  oladi.</span
+                >
+                <span class="lang-en"
+                  >Normalizes fat metabolism, reduces cholesterol levels, and
+                  prevents the development of fatty liver disease.</span
+                >
+              </p>
+            </div>
+            <div
+              class="bg-gray-50 p-6 rounded-lg shadow-sm text-center flex flex-col items-center"
+            >
+              <img
+                src="assets/фосфолипиды.jpg"
+                class="w-32 h-32 rounded-full mb-4 object-cover"
+                alt="Иконка Фосфолипидов"
+              />
+              <h3 class="text-xl font-bold mb-2">
+                <span class="lang-ru">Фосфолипиды</span>
+                <span class="lang-uz">Fosfolipidlar</span>
+                <span class="lang-en">Phospholipids</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Являются строительным материалом для клеточных мембран
+                  печени, ускоряя их восстановление и улучшая функции.</span
+                >
+                <span class="lang-uz"
+                  >Jigar hujayra membranalarining qurilish materiali bo'lib,
+                  ularning tiklanishini tezlashtiradi va funktsiyalarini
+                  yaxshilaydi.</span
+                >
+                <span class="lang-en"
+                  >They are the building blocks for liver cell membranes,
+                  accelerating their recovery and improving function.</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Expert Opinion -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <div
+            class="bg-emerald-50 rounded-lg shadow-xl p-8 md:p-12 md:flex items-center gap-12"
+          >
+            <div class="md:w-1/3 text-center mb-6 md:mb-0">
+              <img
+                src="https://placehold.co/300x300/059669/ffffff?text=Врач"
+                alt="Фото врача-гепатолога"
+                class="rounded-full mx-auto w-48 h-48 object-cover shadow-lg border-4 border-white"
+              />
+            </div>
+            <div class="md:w-2/3">
+              <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                <span class="lang-ru">Мнение эксперта</span>
+                <span class="lang-uz">Mutaxassis fikri</span>
+                <span class="lang-en">Expert Opinion</span>
+              </h2>
+              <p class="text-gray-600 mb-4">
+                <span class="lang-ru"
+                  >«Гептрафит — это современный гепатопротектор, который я часто
+                  рекомендую своим пациентам. Его преимущество в комплексном
+                  подходе: он не просто снимает симптомы, а работает с причиной
+                  — восстанавливает поврежденные клетки печени и нормализует ее
+                  функции. Натуральный состав делает его безопасным для
+                  длительного приема, что особенно важно при хронических
+                  состояниях и для профилактики.»</span
+                >
+                <span class="lang-uz"
+                  >"Geptrafit - bu men bemorlarimga tez-tez tavsiya qiladigan
+                  zamonaviy gepatoprotektor. Uning afzalligi kompleks
+                  yondashuvida: u nafaqat simptomlarni yo'qotadi, balki sabab
+                  bilan ishlaydi - shikastlangan jigar hujayralarini tiklaydi va
+                  uning funktsiyalarini normallashtiradi. Tabiiy tarkibi uni
+                  uzoq muddatli qabul qilish uchun xavfsiz qiladi, bu ayniqsa
+                  surunkali holatlarda va profilaktika uchun muhimdir."</span
+                >
+                <span class="lang-en"
+                  >"Geptrafit is a modern hepatoprotector that I often recommend
+                  to my patients. Its advantage lies in its comprehensive
+                  approach: it doesn't just relieve symptoms but addresses the
+                  cause—restoring damaged liver cells and normalizing their
+                  function. Its natural composition makes it safe for long-term
+                  use, which is especially important for chronic conditions and
+                  prevention."</span
+                >
+              </p>
+              <p class="font-bold text-emerald-800">Каримов Алишер</p>
+              <p class="text-sm text-gray-500">
+                <span class="lang-ru">Врач-гепатолог, стаж 18 лет</span>
+                <span class="lang-uz"
+                  >Gepatolog shifokor, 18 yillik tajriba</span
+                >
+                <span class="lang-en"
+                  >Hepatologist, 18 years of experience</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Secondary Call to Action -->
+      <section class="bg-emerald-700 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold mb-6">
+            <span class="lang-ru"
+              >Готовы позаботиться о главном фильтре вашего организма?</span
+            >
+            <span class="lang-uz"
+              >Tanangizning asosiy filtri haqida qayg'urishga tayyormisiz?</span
+            >
+            <span class="lang-en"
+              >Ready to take care of your body's main filter?</span
+            >
+          </h2>
+          <a
+            href="#order-form"
+            class="cta-button inline-block bg-amber-500 text-emerald-900 font-bold py-4 px-8 rounded-lg text-xl"
+          >
+            <span class="lang-ru">ЗАКАЗАТЬ СО СКИДКОЙ →</span>
+            <span class="lang-uz">CHEGIRMA BILAN BUYURTMA BERING →</span>
+            <span class="lang-en">ORDER WITH A DISCOUNT →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 8. What It Does (Key Benefits Recap) -->
+      <section class="section-gradient py-16">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru">Что вы получите в результате?</span>
+            <span class="lang-uz">Natijada nima olasiz?</span>
+            <span class="lang-en">Here’s What You Get</span>
+          </h2>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-emerald-100 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-emerald-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              </div>
+              <p class="font-semibold">
+                <span class="lang-ru">Здоровая печень</span>
+                <span class="lang-uz">Sog'lom jigar</span>
+                <span class="lang-en">Healthy Liver</span>
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-emerald-100 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-emerald-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              </div>
+              <p class="font-semibold">
+                <span class="lang-ru">Лёгкость и комфорт</span>
+                <span class="lang-uz">Yengillik va qulaylik</span>
+                <span class="lang-en">Lightness & Comfort</span>
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-emerald-100 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-emerald-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              </div>
+              <p class="font-semibold">
+                <span class="lang-ru">Прилив энергии</span>
+                <span class="lang-uz">Energiya oqimi</span>
+                <span class="lang-en">Energy Boost</span>
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-emerald-100 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-emerald-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              </div>
+              <p class="font-semibold">
+                <span class="lang-ru">Усиленный иммунитет</span>
+                <span class="lang-uz">Kuchaytirilgan immunitet</span>
+                <span class="lang-en">Strengthened Immunity</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Testimonials -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru">Отзывы наших клиентов</span>
+            <span class="lang-uz">Mijozlarimizning fikrlari</span>
+            <span class="lang-en">Customer Testimonials</span>
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg testimonial-card">
+              <p class="text-gray-600 mb-4">
+                <span class="lang-ru"
+                  >"После курса антибиотиков чувствовал постоянную тяжесть в
+                  правом боку. Врач посоветовал Гептрафит. Через две недели
+                  почувствовал легкость, ушла усталость. Отличный препарат для
+                  восстановления!"</span
+                >
+                <span class="lang-uz"
+                  >"Antibiotiklar kursidan so'ng o'ng yonboshimda doimiy
+                  og'irlik his qildim. Shifokor Geptrafitni tavsiya qildi. Ikki
+                  haftadan so'ng yengillik his qildim, charchoq yo'qoldi.
+                  Tiklanish uchun ajoyib preparat!"</span
+                >
+                <span class="lang-en"
+                  >"After a course of antibiotics, I felt a constant heaviness
+                  in my right side. The doctor recommended Geptrafit. After two
+                  weeks, I felt light, and the fatigue was gone. An excellent
+                  supplement for recovery!"</span
+                >
+              </p>
+              <p class="font-bold text-emerald-800">
+                <span class="lang-ru">Тимур, 48 лет</span>
+                <span class="lang-uz">Timur, 48 yosh</span>
+                <span class="lang-en">Timur, 48</span>
+              </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg testimonial-card">
+              <p class="text-gray-600 mb-4">
+                <span class="lang-ru"
+                  >"У меня обнаружили жировой гепатоз. Помимо диеты, начала
+                  принимать Гептрафит. Улучшилось пищеварение, и анализы стали
+                  лучше. Чувствую себя бодрее, и кожа стала чище. Очень довольна
+                  результатом."</span
+                >
+                <span class="lang-uz"
+                  >"Menda yog'li gepatoz aniqlandi. Parhezdan tashqari,
+                  Geptrafit qabul qila boshladim. Hazm qilishim yaxshilandi va
+                  tahlillarim yaxshilandi. O'zimni tetikroq his qilyapman va
+                  terim toza bo'ldi. Natijadan juda mamnunman."</span
+                >
+                <span class="lang-en"
+                  >"I was diagnosed with fatty liver. In addition to my diet, I
+                  started taking Geptrafit. My digestion improved, and my tests
+                  got better. I feel more energetic, and my skin has cleared up.
+                  Very happy with the result."</span
+                >
+              </p>
+              <p class="font-bold text-emerald-800">
+                <span class="lang-ru">Наргиза, 52 года</span>
+                <span class="lang-uz">Nargiza, 52 yosh</span>
+                <span class="lang-en">Nargiza, 52</span>
+              </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg testimonial-card">
+              <p class="text-gray-600 mb-4">
+                <span class="lang-ru"
+                  >"Решил пройти курс детокса, выбрал Гептрафит из-за
+                  натурального состава. Эффект превзошел ожидания! Появилось
+                  больше энергии, ушла сонливость после еды. Буду принимать для
+                  профилактики."</span
+                >
+                <span class="lang-uz"
+                  >"Detoks kursini o'tishga qaror qildim, tabiiy tarkibi tufayli
+                  Geptrafitni tanladim. Samarasi kutilganidan ham oshib ketdi!
+                  Ko'proq energiya paydo bo'ldi, ovqatdan keyingi uyquchanlik
+                  yo'qoldi. Profilaktika uchun qabul qilaman."</span
+                >
+                <span class="lang-en"
+                  >"I decided to do a detox course and chose Geptrafit because
+                  of its natural ingredients. The effect exceeded my
+                  expectations! I have more energy, and the drowsiness after
+                  meals is gone. I will take it for prevention."</span
+                >
+              </p>
+              <p class="font-bold text-emerald-800">
+                <span class="lang-ru">Сардор, 35 лет</span>
+                <span class="lang-uz">Sardor, 35 yosh</span>
+                <span class="lang-en">Sardor, 35</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. ORDER SECTION -->
+      <section id="order-form" class="hero-gradient text-white py-16 sm:py-20">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-5xl font-black mb-2">
+            <span class="lang-ru">Защитите свою печень сегодня!</span>
+            <span class="lang-uz">Jigaringizni bugun himoya qiling!</span>
+            <span class="lang-en">Protect Your Liver Today!</span>
+          </h2>
+          <p class="text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto">
+            <span class="lang-ru"
+              >Закажите «Гептрафит» прямо сейчас и воспользуйтесь эксклюзивной
+              скидкой 50%!</span
+            >
+            <span class="lang-uz"
+              >"Geptrafit"ga hoziroq buyurtma bering va 50% eksklyuziv
+              chegirmadan foydalaning!</span
+            >
+            <span class="lang-en"
+              >Order "Geptrafit" right now and take advantage of an exclusive
+              50% discount!</span
+            >
+          </p>
+
+          <div
+            class="max-w-md mx-auto bg-white/10 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/20"
+          >
+            <img
+              src="assets/Geptrafit.png"
+              alt="Продукт Гептрафит"
+              class="w-1/2 mx-auto mb-4"
+            />
+            <p class="mb-4 text-amber-300 font-bold">
+              <span class="lang-ru"
+                >Осталось <span id="stock-count">12</span> шт. по акции!</span
+              >
+              <span class="lang-uz"
+                >Aksiya bo'yicha <span id="stock-count-uz">12</span> dona
+                qoldi!</span
+              >
+              <span class="lang-en"
+                ><span id="stock-count-en">12</span> left in stock!</span
+              >
+            </p>
+
+            <div class="flex justify-center gap-4 my-4" id="countdown">
+              <div class="countdown-box p-3 rounded-lg text-center">
+                <span class="text-3xl font-bold" id="minutes">09</span
+                ><span class="block text-xs"
+                  ><span class="lang-ru">минут</span
+                  ><span class="lang-uz">daqiqa</span
+                  ><span class="lang-en">minutes</span></span
+                >
+              </div>
+              <div class="countdown-box p-3 rounded-lg text-center">
+                <span class="text-3xl font-bold" id="seconds">15</span
+                ><span class="block text-xs"
+                  ><span class="lang-ru">секунд</span
+                  ><span class="lang-uz">soniya</span
+                  ><span class="lang-en">seconds</span></span
+                >
+              </div>
+            </div>
+
+            <div class="my-4">
+              <span class="text-xl line-through opacity-70">780.000 СУМ</span>
+              <span class="text-4xl font-extrabold block text-amber-300"
+                >390.000 СУМ</span
+              >
+            </div>
+
+            <form class="orderForm">
+              <div class="mb-4">
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 lang-ru"
+                  placeholder="Ваше имя"
+                  required
+                />
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 lang-uz"
+                  placeholder="Ismingiz"
+                  required
+                />
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 lang-en"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-6">
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 lang-ru"
+                  placeholder="Ваш номер телефона"
+                  required
+                />
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 lang-uz"
+                  placeholder="Telefon raqamingiz"
+                  required
+                />
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 lang-en"
+                  placeholder="Your Phone Number"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-amber-500 text-emerald-900 font-bold py-4 px-6 rounded-lg text-xl cta-button"
+              >
+                <span class="lang-ru">Заказать со скидкой</span>
+                <span class="lang-uz">Chegirma bilan buyurtma berish</span>
+                <span class="lang-en">Order with discount</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto px-6 text-center text-sm">
+        <p class="mb-2">OOO "SHIFO NUR" | Производитель</p>
+        <p class="text-xs text-gray-400">
+          <span class="lang-ru"
+            >Биологически активная добавка. Не является лекарственным
+            средством.</span
+          >
+          <span class="lang-uz"
+            >Biologik faol qo'shimcha. Dori vositasi emas.</span
+          >
+          <span class="lang-en"
+            >Dietary supplement. Not a medicinal product.</span
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const langRuBtn = document.getElementById('lang-ru-btn');
+        const langUzBtn = document.getElementById('lang-uz-btn');
+        const langEnBtn = document.getElementById('lang-en-btn');
+        const html = document.documentElement;
+
+        // Language Switcher Logic
+        function setLanguage(lang) {
+          html.lang = lang;
+          langRuBtn.classList.toggle('active', lang === 'ru');
+          langUzBtn.classList.toggle('active', lang === 'uz');
+          langEnBtn.classList.toggle('active', lang === 'en');
+        }
+
+        // Set initial language from local storage or default to 'ru'
+        const savedLang = localStorage.getItem('language') || 'ru';
+        setLanguage(savedLang);
+
+        langRuBtn.addEventListener('click', () => {
+          setLanguage('ru');
+          localStorage.setItem('language', 'ru');
+        });
+        langUzBtn.addEventListener('click', () => {
+          setLanguage('uz');
+          localStorage.setItem('language', 'uz');
+        });
+        langEnBtn.addEventListener('click', () => {
+          setLanguage('en');
+          localStorage.setItem('language', 'en');
+        });
+
+        // Countdown Timer
+        function startCountdown() {
+          const countdownElement = document.getElementById('countdown');
+          if (!countdownElement) return;
+
+          let timeInSeconds = 9 * 60 + 15; // 9 minutes 15 seconds
+
+          const timerInterval = setInterval(() => {
+            if (timeInSeconds <= 0) {
+              timeInSeconds = 9 * 60 + 15; // Reset timer
+            }
+
+            let minutes = Math.floor(timeInSeconds / 60);
+            let seconds = timeInSeconds % 60;
+
+            document.getElementById('minutes').textContent = minutes
+              .toString()
+              .padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds
+              .toString()
+              .padStart(2, '0');
+
+            timeInSeconds--;
+          }, 1000);
+        }
+        startCountdown();
+
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+          event.preventDefault();
+          const form = event.target;
+          const button = form.querySelector('button[type="submit"]');
+
+          const originalButtonText = {
+            ru: 'Заказать со скидкой',
+            uz: 'Chegirma bilan buyurtma berish',
+            en: 'Order with discount',
+          };
+          const sendingText = {
+            ru: 'Отправка...',
+            uz: 'Yuborilmoqda...',
+            en: 'Sending...',
+          };
+          const successText = {
+            ru: 'Заявка принята!',
+            uz: 'Buyurtma qabul qilindi!',
+            en: 'Order accepted!',
+          };
+
+          const currentLang = html.lang;
+
+          button.disabled = true;
+          button.querySelector(`.lang-${currentLang}`).textContent =
+            sendingText[currentLang];
+
+          setTimeout(() => {
+            form.reset();
+            button.classList.add('bg-emerald-500');
+            button.classList.remove('bg-amber-500');
+            button.querySelector(`.lang-${currentLang}`).textContent =
+              successText[currentLang];
+
+            setTimeout(() => {
+              button.querySelector(`.lang-${currentLang}`).textContent =
+                originalButtonText[currentLang];
+              button.disabled = false;
+              button.classList.remove('bg-emerald-500');
+              button.classList.add('bg-amber-500');
+            }, 3000);
+          }, 1500);
+        }
+
+        document.querySelectorAll('.orderForm').forEach((form) => {
+          form.addEventListener('submit', handleFormSubmit);
+        });
+      });
+    </script>
+  </body>
+</html>

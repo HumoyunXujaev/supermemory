@@ -140,14 +140,205 @@
         </div>
       </div>
     </div>
-
-    <!-- 1. Hero Section -->
     <header class="hero-gradient text-white py-12 sm:py-20">
+      <!-- Мобильная версия -->
+      <div class="container mx-auto px-6 text-center lg:hidden">
+        <!-- Логотип - первый элемент на мобилке -->
+        <div class="mb-6">
+          <img
+            src="assets/SUPER PAMYAT (3).png"
+            alt="Логотип Супер Память"
+            height="150"
+            width="200"
+            class="max-w-full h-auto mx-auto"
+          />
+        </div>
+
+        <!-- Описание -->
+        <p class="text-lg font-light mb-8 max-w-xl mx-auto">
+          <span class="lang-ru"
+            >Натуральный комплекс для улучшения памяти, работы мозга и
+            кровообращения.</span
+          >
+          <span class="lang-uz"
+            >Miya faoliyati, xotira va qon aylanishi uchun tabiiy majmua.</span
+          >
+          <span class="lang-en"
+            >A natural supplement for memory, brain function, and healthy
+            circulation.</span
+          >
+        </p>
+
+        <!-- Изображение продукта -->
+        <div class="mb-8 flex justify-center">
+          <div class="relative w-max">
+            <img
+              src="assets/img/bad.png"
+              alt="Изображение продукта Супер Память"
+              class="rounded-lg shadow-2xl max-w-xs"
+              width="150"
+              height="150"
+            />
+            <div class="discount-bubble">-50%</div>
+          </div>
+        </div>
+
+        <!-- Кнопка заказа -->
+        <div>
+          <a
+            href="#order-form"
+            class="cta-button inline-block bg-yellow-400 text-green-900 font-bold py-4 px-8 rounded-lg text-xl"
+          >
+            <span class="lang-ru">ЗАКАЗАТЬ СЕЙЧАС →</span>
+            <span class="lang-uz">HOZIROQ BUYURTMA BERING →</span>
+            <span class="lang-en">ORDER NOW →</span>
+          </a>
+
+          <p class="text-xs mt-4 opacity-80">
+            <span class="lang-ru">*Гарантируем анонимную доставку.</span>
+            <span class="lang-uz"
+              >*Anonim yetkazib berishni kafolatlaymiz.</span
+            >
+            <span class="lang-en">*Anonymous delivery guaranteed.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Десктопная версия -->
+      <div
+        class="container mx-auto px-6 hidden lg:flex lg:flex-row items-center gap-8"
+      >
+        <div class="lg:w-1/2 text-left">
+          <!-- Логотип -->
+          <div class="mb-6">
+            <img
+              src="assets/SUPER PAMYAT (3).png"
+              alt="Логотип Супер Память"
+              height="150"
+              width="200"
+              class="max-w-full h-auto"
+            />
+          </div>
+
+          <!-- Описание -->
+          <p class="text-2xl font-light mb-8 max-w-xl">
+            <span class="lang-ru"
+              >Натуральный комплекс для улучшения памяти, работы мозга и
+              кровообращения.</span
+            >
+            <span class="lang-uz"
+              >Miya faoliyati, xotira va qon aylanishi uchun tabiiy
+              majmua.</span
+            >
+            <span class="lang-en"
+              >A natural supplement for memory, brain function, and healthy
+              circulation.</span
+            >
+          </p>
+
+          <!-- Кнопка заказа -->
+          <div>
+            <a
+              href="#order-form"
+              class="cta-button inline-block bg-yellow-400 text-green-900 font-bold py-4 px-8 rounded-lg text-xl"
+            >
+              <span class="lang-ru">ЗАКАЗАТЬ СЕЙЧАС →</span>
+              <span class="lang-uz">HOZIROQ BUYURTMA BERING →</span>
+              <span class="lang-en">ORDER NOW →</span>
+            </a>
+            <p class="text-xs mt-4 opacity-80">
+              <span class="lang-ru">*Гарантируем анонимную доставку.</span>
+              <span class="lang-uz"
+                >*Anonim yetkazib berishni kafolatlaymiz.</span
+              >
+              <span class="lang-en">*Anonymous delivery guaranteed.</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Изображение продукта справа на десктопе -->
+        <div class="lg:w-1/2 flex justify-center">
+          <div class="relative w-max">
+            <img
+              src="assets/img/bad.png"
+              alt="Изображение продукта Супер Память"
+              class="rounded-lg shadow-2xl max-w-sm"
+              width="150"
+              height="150"
+            />
+            <div class="discount-bubble">-50%</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- 1. Hero Section -->
+    <!-- <header class="hero-gradient text-white py-12 sm:py-20">
       <div
         class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-8"
       >
         <div class="lg:w-1/2 text-center lg:text-left order-2 lg:order-1">
-          <!-- <div class="mb-6 flex justify-center lg:justify-start">
+          <div class="mb-6 flex justify-center lg:justify-start order-1">
+            <img
+              src="assets/SUPER PAMYAT (3).png"
+              alt="Логотип Супер Память"
+              height="150"
+              width="200"
+              class="max-w-full h-auto"
+            />
+          </div>
+
+          <p
+            class="text-lg md:text-2xl font-light mb-8 max-w-xl mx-auto lg:mx-0 order-3"
+          >
+            <span class="lang-ru"
+              >Натуральный комплекс для улучшения памяти, работы мозга и
+              кровообращения.</span
+            >
+            <span class="lang-uz"
+              >Miya faoliyati, xotira va qon aylanishi uchun tabiiy
+              majmua.</span
+            >
+            <span class="lang-en"
+              >A natural supplement for memory, brain function, and healthy
+              circulation.</span
+            >
+          </p>
+
+          <div class="order-4">
+            <a
+              href="#order-form"
+              class="cta-button inline-block bg-yellow-400 text-green-900 font-bold py-4 px-8 rounded-lg text-xl"
+            >
+              <span class="lang-ru">ЗАКАЗАТЬ СЕЙЧАС →</span>
+              <span class="lang-uz">HOZIROQ BUYURTMA BERING →</span>
+              <span class="lang-en">ORDER NOW →</span>
+            </a>
+            <p class="text-xs mt-4 opacity-80">
+              <span class="lang-ru">*Гарантируем анонимную доставку.</span>
+              <span class="lang-uz"
+                >*Anonim yetkazib berishni kafolatlaymiz.</span
+              >
+              <span class="lang-en">*Anonymous delivery guaranteed.</span>
+            </p>
+          </div>
+        </div>
+        <div
+          class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center order-1 lg:order-2"
+        >
+          <div class="relative w-max">
+            <img
+              src="assets/img/bad.png"
+              alt="Изображение продукта Супер Память"
+              class="rounded-lg shadow-2xl max-w-xs md:max-w-sm"
+              width="150"
+              height="150"
+            />
+            <div class="discount-bubble">-50%</div>
+          </div>
+        </div>
+      </div>
+    </header> -->
+    <!-- <div class="mb-6 flex justify-center lg:justify-start">
             <!-- <a href="#" aria-label="Super pamyat">
               <img
                 src="assets/SUPER PAMYAT (3).png"
@@ -156,8 +347,9 @@
                 height="50"
               />
             </a> -->
-          <!-- </div> -->
-          <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">
+    <!-- </div> -->
+
+    <!-- <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">
             <span class="lang-ru">СУПЕР ПАМЯТЬ</span>
             <span class="lang-uz">SUPER PAMYAT</span>
             <span class="lang-en">SUPER MEMORY</span>
@@ -210,7 +402,7 @@
           </div>
         </div>
       </div>
-    </header>
+    </header> -->
 
     <main>
       <!-- 2. Why This Matters (Symptoms Section) -->

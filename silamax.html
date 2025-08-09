@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Сила Макс Люкс – Натуральная формула для потенции, энергии и здоровья простаты
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #7f5af0; /* A strong purple for a masculine, premium feel */
+        --secondary-color: #d4af37; /* Gold/Amber for "Lux" accent */
+        --accent-color: #f59e0b; /* A brighter gold for hover effects */
+        --background-dark: #111827; /* Gray-900 */
+        --background-light: #1f2937; /* Gray-800 */
+        --text-light: #f9fafb; /* Gray-50 */
+        --text-medium: #d1d5db; /* Gray-300 */
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background-dark);
+        color: var(--text-light);
+      }
+      .hero-gradient {
+        background: radial-gradient(circle, #1f2937, #111827);
+      }
+      .section-gradient {
+        background: linear-gradient(180deg, var(--background-light) 0%, var(--background-dark) 100%);
+      }
+      .cta-button {
+        transition: all 0.3s ease;
+        background-color: var(--secondary-color);
+        color: var(--background-dark);
+        font-weight: 700;
+        box-shadow: 0 4px 15px 0 rgba(212, 175, 55, 0.4);
+      }
+      .cta-button:hover {
+        transform: translateY(-3px);
+        background-color: var(--accent-color);
+        box-shadow: 0 6px 20px 0 rgba(245, 158, 11, 0.5);
+      }
+      .countdown-box {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .lang-switch-button {
+        color: var(--text-medium);
+        border-color: #4b5563; /* Gray-600 */
+      }
+      .lang-switch-button.active {
+        background-color: var(--primary-color);
+        color: var(--text-light);
+        border-color: var(--primary-color);
+      }
+      .lang-ru,
+      .lang-uz,
+      .lang-en {
+        display: none;
+      }
+      html[lang='ru'] .lang-ru,
+      html[lang='uz'] .lang-uz,
+      html[lang='en'] .lang-en {
+        display: block;
+      }
+      .testimonial-card {
+        border-left: 4px solid var(--primary-color);
+        background-color: var(--background-light);
+      }
+      .discount-bubble {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        background-color: #ef4444; /* red-500 */
+        color: white;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 900;
+        transform: rotate(15deg);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar with Logo and Language Switcher -->
+    <div class="bg-black py-2">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <a href="#" aria-label="Sila Max Lux Home">
+            <img src="assets/SILA MAX.png" alt="Sila Max Lux" width="150" height="30">
+        </a>
+        <!-- Language buttons -->
+        <div class="flex border border-gray-600 rounded-full">
+          <button
+            id="lang-ru-btn"
+            class="lang-switch-button px-4 py-1 text-sm font-semibold rounded-l-full"
+          >
+            Русский
+          </button>
+          <button
+            id="lang-uz-btn"
+            class="lang-switch-button px-4 py-1 text-sm font-semibold"
+          >
+            O'zbekcha
+          </button>
+          <button
+            id="lang-en-btn"
+            class="lang-switch-button px-4 py-1 text-sm font-semibold rounded-r-full"
+          >
+            English
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. Hero Section -->
+    <header class="hero-gradient text-white py-12 sm:py-20">
+      <div
+        class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-8"
+      >
+        <div class="lg:w-1/2 text-center lg:text-left">
+          <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight text-white">
+            <span class="lang-ru">СИЛА МАКС ЛЮКС</span>
+            <span class="lang-uz">SILA MAX LUX</span>
+            <span class="lang-en">SILA MAX LUX</span>
+          </h1>
+          <p
+            class="text-lg md:text-2xl font-light mb-8 max-w-xl mx-auto lg:mx-0 text-gray-300"
+          >
+            <span class="lang-ru"
+              >Натуральная формула для мужской силы, потенции, энергии и здоровья простаты.</span
+            >
+            <span class="lang-uz"
+              >Erkak kuchi, potentsiya va prostata salomatligi uchun tabiiy kapsula.</span
+            >
+            <span class="lang-en"
+              >Natural Male Enhancement for Energy, Potency & Prostate Health.</span
+            >
+          </p>
+          <a
+            href="#order-form"
+            class="cta-button inline-block font-bold py-4 px-8 rounded-lg text-xl"
+          >
+            <span class="lang-ru">ЗАКАЗАТЬ СЕЙЧАС →</span>
+            <span class="lang-uz">HOZIROQ BUYURTMA BERING →</span>
+            <span class="lang-en">ORDER NOW →</span>
+          </a>
+          <p class="text-xs mt-4 opacity-70">
+            <span class="lang-ru">*Анонимная доставка для вашего комфорта.</span>
+            <span class="lang-uz"
+              >*Sizning qulayligingiz uchun anonim yetkazib berish.</span
+            >
+            <span class="lang-en">*Anonymous delivery for your comfort.</span>
+          </p>
+        </div>
+        <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
+          <div class="relative w-max">
+            <img
+              src="https://placehold.co/400x450/111827/d4af37?text=Сила+Макс"
+              alt="Изображение продукта Сила Макс Люкс"
+              class="rounded-lg shadow-2xl max-w-xs md:max-w-sm"
+            />
+            <div class="discount-bubble">-50%</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 2. Why This Matters (Symptoms Section) -->
+      <section class="py-16 bg-background-dark">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-white mb-4"
+          >
+            <span class="lang-ru">Узнаете эти тревожные сигналы?</span>
+            <span class="lang-uz">Ushbu tashvishli signallarni taniysizmi?</span>
+            <span class="lang-en">Do You Recognize These Alarming Signals?</span>
+          </h2>
+          <p class="text-center text-gray-400 mb-12 max-w-3xl mx-auto">
+            <span class="lang-ru"
+              >Снижение либидо, усталость, проблемы в постели и неуверенность в себе — это не норма. Это признаки того, что мужское здоровье нуждается в поддержке. Игнорирование этих проблем может привести к простатиту, импотенции и психологическим комплексам.</span
+            >
+            <span class="lang-uz"
+              >Libidoning pasayishi, charchoq, yotoqdagi muammolar va o'ziga ishonchsizlik - bu norma emas. Bu erkaklar salomatligi qo'llab-quvvatlashga muhtojligining belgilari. Ushbu muammolarni e'tiborsiz qoldirish prostatit, impotensiya va psixologik komplekslarga olib kelishi mumkin.</span
+            >
+            <span class="lang-en"
+              >Decreased libido, fatigue, problems in bed, and lack of self-confidence are not normal. These are signs that men's health needs support. Ignoring these problems can lead to prostatitis, impotence, and psychological issues.</span
+            >
+          </p>
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+          >
+            <div class="flex flex-col items-center p-4 bg-background-light rounded-lg">
+              <div class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20">
+                 <svg class="w-10 h-10 text-secondary-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.166 1.318m5.754-7.728a4.47 4.47 0 00-5.754 0m5.754 0a3.375 3.375 0 01-4.242 0m4.242 0a3.375 3.375 0 00-4.242 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <p class="font-semibold text-white">
+                <span class="lang-ru">Слабая эрекция</span
+                ><span class="lang-uz">Zaif erektsiya</span
+                ><span class="lang-en">Weak Erection</span>
+              </p>
+            </div>
+            <div class="flex flex-col items-center p-4 bg-background-light rounded-lg">
+              <div class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20">
+                 <svg class="w-10 h-10 text-secondary-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <p class="font-semibold text-white">
+                <span class="lang-ru">Быстрая усталость</span
+                ><span class="lang-uz">Tez charchash</span
+                ><span class="lang-en">Quick Fatigue</span>
+              </p>
+            </div>
+            <div class="flex flex-col items-center p-4 bg-background-light rounded-lg">
+              <div class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20">
+                <svg class="w-10 h-10 text-secondary-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.572L16.5 21.75l-.398-1.178a3.375 3.375 0 00-2.456-2.456L12.75 18l1.178-.398a3.375 3.375 0 002.456-2.456L16.5 14.25l.398 1.178a3.375 3.375 0 002.456 2.456L20.25 18l-1.178.398a3.375 3.375 0 00-2.456 2.456z" /></svg>
+              </div>
+              <p class="font-semibold text-white">
+                <span class="lang-ru">Низкое либидо</span
+                ><span class="lang-uz">Past libido</span
+                ><span class="lang-en">Low Libido</span>
+              </p>
+            </div>
+            <div class="flex flex-col items-center p-4 bg-background-light rounded-lg">
+              <div class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20">
+                <svg class="w-10 h-10 text-secondary-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" /></svg>
+              </div>
+              <p class="font-semibold text-white">
+                <span class="lang-ru">Проблемы с простатой</span
+                ><span class="lang-uz">Prostata muammolari</span
+                ><span class="lang-en">Prostate Issues</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Detailed Product Advantages (How it Works) -->
+      <section class="section-gradient py-16">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-white mb-12"
+          >
+            <span class="lang-ru">Как «Сила Макс Люкс» возвращает мужскую силу?</span>
+            <span class="lang-uz">"Sila Max Lux" erkak kuchini qanday qaytaradi?</span>
+            <span class="lang-en">How Does "Sila Max Lux" Restore Male Power?</span>
+          </h2>
+          <div
+            class="flex flex-col md:flex-row items-center justify-center gap-12"
+          >
+            <div class="md:w-1/3">
+              <img
+                src="https://placehold.co/500x500/1f2937/d4af37?text=ЭНЕРГИЯ"
+                alt="Изображение энергии и силы"
+                class="rounded-lg shadow-xl"
+              />
+            </div>
+            <div class="md:w-2/3 space-y-8">
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-secondary-color text-background-dark text-xl font-bold rounded-full flex items-center justify-center"
+                >
+                  1
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">
+                    <span class="lang-ru">Стимуляция тестостерона</span>
+                    <span class="lang-uz">Testosteronni rag'batlantirish</span>
+                    <span class="lang-en">Testosterone Stimulation</span>
+                  </h3>
+                  <p class="text-gray-400 mt-1">
+                    <span class="lang-ru">Натуральные компоненты активизируют выработку главного мужского гормона, что напрямую влияет на либидо, энергию и уверенность в себе.</span>
+                    <span class="lang-uz">Tabiiy komponentlar asosiy erkak gormoni ishlab chiqarilishini faollashtiradi, bu esa libidoga, energiyaga va o'ziga ishonchga bevosita ta'sir qiladi.</span>
+                    <span class="lang-en">Natural components activate the production of the main male hormone, which directly affects libido, energy, and self-confidence.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-secondary-color text-background-dark text-xl font-bold rounded-full flex items-center justify-center"
+                >
+                  2
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">
+                    <span class="lang-ru">Улучшение кровообращения</span>
+                    <span class="lang-uz">Qon aylanishini yaxshilash</span>
+                    <span class="lang-en">Improved Blood Circulation</span>
+                  </h3>
+                  <p class="text-gray-400 mt-1">
+                    <span class="lang-ru">Препарат усиливает приток крови к органам малого таза, обеспечивая мощную и стабильную эрекцию и предотвращая застойные явления в простате.</span>
+                    <span class="lang-uz">Preparat kichik tos a'zolariga qon oqimini kuchaytiradi, kuchli va barqaror erektsiyani ta'minlaydi va prostatada turg'unlikni oldini oladi.</span>
+                    <span class="lang-en">The supplement enhances blood flow to the pelvic organs, ensuring a powerful and stable erection and preventing stagnation in the prostate.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-secondary-color text-background-dark text-xl font-bold rounded-full flex items-center justify-center"
+                >
+                  3
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">
+                    <span class="lang-ru">Поддержка здоровья простаты</span>
+                    <span class="lang-uz">Prostata salomatligini qo'llab-quvvatlash</span>
+                    <span class="lang-en">Prostate Health Support</span>
+                  </h3>
+                  <p class="text-gray-400 mt-1">
+                    <span class="lang-ru">Активные вещества снимают воспаление, нормализуют мочеиспускание и служат эффективной профилактикой простатита и аденомы простаты.</span>
+                    <span class="lang-uz">Faol moddalar yallig'lanishni yengillashtiradi, siyishni normallashtiradi va prostatit va prostata adenomasining samarali profilaktikasi bo'lib xizmat qiladi.</span>
+                    <span class="lang-en">Active substances relieve inflammation, normalize urination, and serve as an effective prevention of prostatitis and prostate adenoma.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Expert Opinion -->
+      <section class="py-16 bg-background-dark">
+        <div class="container mx-auto px-6">
+          <div
+            class="bg-background-light rounded-lg shadow-xl p-8 md:p-12 md:flex items-center gap-12"
+          >
+            <div class="md:w-1/3 text-center mb-6 md:mb-0">
+              <img
+                src="https://placehold.co/300x300/7f5af0/ffffff?text=Врач"
+                alt="Фото врача-уролога"
+                class="rounded-full mx-auto w-48 h-48 object-cover shadow-lg border-4 border-background-dark"
+              />
+            </div>
+            <div class="md:w-2/3">
+              <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                <span class="lang-ru">Мнение эксперта</span>
+                <span class="lang-uz">Mutaxassis fikri</span>
+                <span class="lang-en">Expert Opinion</span>
+              </h2>
+              <p class="text-gray-400 mb-4">
+                <span class="lang-ru"
+                  >«Современный ритм жизни, стресс и возраст неизбежно сказываются на мужском здоровье. Я рекомендую «Сила Макс Люкс» как комплексное решение. Он не просто дает временный эффект, а работает с причиной проблемы: нормализует гормональный фон, улучшает кровоснабжение и защищает простату. Это безопасный и надежный способ вернуть мужчине уверенность, энергию и полноценную интимную жизнь.»</span
+                >
+                <span class="lang-uz"
+                  >"Zamonaviy hayot tarzi, stress va yosh muqarrar ravshda erkaklar salomatligiga ta'sir qiladi. Men "Sila Max Lux" ni kompleks yechim sifatida tavsiya qilaman. U nafaqat vaqtinchalik samara beradi, balki muammoning sababi bilan ishlaydi: gormonal fonni normallashtiradi, qon ta'minotini yaxshilaydi va prostatani himoya qiladi. Bu erkakka ishonch, energiya va to'laqonli intim hayotni qaytarishning xavfsiz va ishonchli usuli."</span
+                >
+                <span class="lang-en"
+                  >"The modern rhythm of life, stress, and age inevitably affect men's health. I recommend 'Sila Max Lux' as a comprehensive solution. It doesn't just provide a temporary effect but addresses the root of the problem: it normalizes hormonal balance, improves blood supply, and protects the prostate. It is a safe and reliable way to restore a man's confidence, energy, and a full intimate life."</span
+                >
+              </p>
+              <p class="font-bold text-secondary-color">Искандаров Тимур</p>
+              <p class="text-sm text-gray-500">
+                <span class="lang-ru">Врач-уролог, андролог, стаж 17 лет</span>
+                <span class="lang-uz"
+                  >Urolog-androlog shifokori, 17 yillik tajriba</span
+                >
+                <span class="lang-en">Urologist-Andrologist, 17 years of experience</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Secondary Call to Action -->
+      <section class="bg-primary-color text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold mb-6">
+            <span class="lang-ru"
+              >Готовы пробудить свою мужскую силу?</span>
+            <span class="lang-uz"
+              >Erkaklik kuchingizni uyg'otishga tayyormisiz?</span
+            >
+            <span class="lang-en">Ready to awaken your male power?</span>
+          </h2>
+          <a
+            href="#order-form"
+            class="cta-button inline-block font-bold py-4 px-8 rounded-lg text-xl"
+          >
+            <span class="lang-ru">ВЕРНУТЬ УВЕРЕННОСТЬ →</span>
+            <span class="lang-uz">ISHONCHNI QAYTARISH →</span>
+            <span class="lang-en">REGAIN CONFIDENCE →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 8. What It Does (Key Benefits Recap) -->
+      <section class="section-gradient py-16">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-white mb-12"
+          >
+            <span class="lang-ru">Что вы получите в результате?</span>
+            <span class="lang-uz">Natijada nima olasiz?</span>
+            <span class="lang-en">Here’s What You Get</span>
+          </h2>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto"
+          >
+            <div class="flex items-center gap-4 p-4 bg-background-dark rounded-lg">
+              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full">
+                <svg class="w-6 h-6 text-secondary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              </div>
+              <p class="font-semibold text-white">
+                <span class="lang-ru">Мощная потенция</span>
+                <span class="lang-uz">Kuchli potentsiya</span>
+                <span class="lang-en">Powerful Potency</span>
+              </p>
+            </div>
+            <div class="flex items-center gap-4 p-4 bg-background-dark rounded-lg">
+              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full">
+                 <svg class="w-6 h-6 text-secondary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M12 21a9 9 0 100-18 9 9 0 000 18z"></path></svg>
+              </div>
+              <p class="font-semibold text-white">
+                <span class="lang-ru">Уверенность в себе</span>
+                <span class="lang-uz">O'ziga ishonch</span>
+                <span class="lang-en">Self-Confidence</span>
+              </p>
+            </div>
+            <div class="flex items-center gap-4 p-4 bg-background-dark rounded-lg">
+              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full">
+                 <svg class="w-6 h-6 text-secondary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"></path></svg>
+              </div>
+              <p class="font-semibold text-white">
+                <span class="lang-ru">Здоровая простата</span>
+                <span class="lang-uz">Sog'lom prostata</span>
+                <span class="lang-en">Healthy Prostate</span>
+              </p>
+            </div>
+            <div class="flex items-center gap-4 p-4 bg-background-dark rounded-lg">
+              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full">
+                 <svg class="w-6 h-6 text-secondary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
+              </div>
+              <p class="font-semibold text-white">
+                <span class="lang-ru">Яркая интимная жизнь</span>
+                <span class="lang-uz">Yorqin intim hayot</span>
+                <span class="lang-en">Vibrant Intimate Life</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Testimonials -->
+      <section class="py-16 bg-background-dark">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-white mb-12"
+          >
+            <span class="lang-ru">Что говорят мужчины</span>
+            <span class="lang-uz">Erkaklar nima deydi</span>
+            <span class="lang-en">What Men Are Saying</span>
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="testimonial-card p-6 rounded-lg">
+              <p class="text-gray-400 mb-4">
+                <span class="lang-ru"
+                  >"После 45 лет почувствовал, что былая сила уходит. Жена нашла 'Сила Макс Люкс'. Сначала был скептичен, но результат превзошел все ожидания. Снова чувствую себя на 20 лет моложе! Спасибо!"</span
+                >
+                <span class="lang-uz"
+                  >"45 yoshdan keyin avvalgi kuchim ketayotganini his qildim. Xotinim "Sila Maks Lyuks" ni topdi. Avvaliga shubha bilan qaradim, ammo natija barcha kutganlarimdan oshib ketdi. Yana o'zimni 20 yosh yoshroq his qilyapman! Rahmat!"</span
+                >
+                <span class="lang-en"
+                  >"After 45, I felt my former strength leaving me. My wife found 'Sila Max Lux'. I was skeptical at first, but the result exceeded all expectations. I feel 20 years younger again! Thank you!"</span
+                >
+              </p>
+              <p class="font-bold text-secondary-color">
+                <span class="lang-ru">Алишер, 52 года</span>
+                <span class="lang-uz">Alisher, 52 yosh</span>
+                <span class="lang-en">Alisher, 52</span>
+              </p>
+            </div>
+            <div class="testimonial-card p-6 rounded-lg">
+              <p class="text-gray-400 mb-4">
+                <span class="lang-ru"
+                  >"Стресс на работе сказался на интимной жизни. Было стыдно перед партнершей. Этот препарат вернул мне уверенность. Никаких побочек, только стабильный и надежный результат. Рекомендую."</span
+                >
+                <span class="lang-uz"
+                  >"Ishdagi stress intim hayotimga ta'sir qildi. Sherigim oldida uyalardim. Ushbu preparat menga ishonchni qaytardi. Hech qanday nojo'ya ta'sirlar yo'q, faqat barqaror va ishonchli natija. Tavsiya qilaman."</span
+                >
+                <span class="lang-en"
+                  >"Stress at work affected my intimate life. I was ashamed in front of my partner. This supplement gave me back my confidence. No side effects, just a stable and reliable result. I recommend it."</span
+                >
+              </p>
+              <p class="font-bold text-secondary-color">
+                <span class="lang-ru">Санжар, 38 лет</span>
+                <span class="lang-uz">Sanjar, 38 yosh</span>
+                <span class="lang-en">Sanjar, 38</span>
+              </p>
+            </div>
+            <div class="testimonial-card p-6 rounded-lg">
+              <p class="text-gray-400 mb-4">
+                <span class="lang-ru"
+                  >"Начал принимать для профилактики простатита по совету врача. Заметил, что не только ушли неприятные симптомы, но и в целом появилось больше энергии и сил. Отличный комплекс для мужского здоровья."</span
+                >
+                <span class="lang-uz"
+                  >"Shifokor maslahati bilan prostatit profilaktikasi uchun qabul qila boshladim. Nafaqat yoqimsiz simptomlar yo'qolganini, balki umuman olganda ko'proq energiya va kuch paydo bo'lganini payqadim. Erkaklar salomatligi uchun ajoyib kompleks."</span
+                >
+                <span class="lang-en"
+                  >"I started taking it for prostatitis prevention on my doctor's advice. I noticed that not only did the unpleasant symptoms disappear, but I also had more energy and strength overall. An excellent complex for men's health."</span
+                >
+              </p>
+              <p class="font-bold text-secondary-color">
+                <span class="lang-ru">Виктор, 60 лет</span>
+                <span class="lang-uz">Viktor, 60 yosh</span>
+                <span class="lang-en">Victor, 60</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. ORDER SECTION -->
+      <section id="order-form" class="hero-gradient text-white py-16 sm:py-20">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-5xl font-black mb-2 text-white">
+            <span class="lang-ru">Верните себе силу настоящего мужчины!</span>
+            <span class="lang-uz">Haqiqiy erkak kuchini qaytaring!</span>
+            <span class="lang-en">Reclaim the Power of a Real Man!</span>
+          </h2>
+          <p class="text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto text-gray-300">
+            <span class="lang-ru"
+              >Закажите «Сила Макс Люкс» сегодня и получите скидку 50% на первый курс!</span
+            >
+            <span class="lang-uz"
+              >"Sila Max Lux"ga bugun buyurtma bering va birinchi kurs uchun 50% chegirma oling!</span
+            >
+            <span class="lang-en"
+              >Order "Sila Max Lux" today and get a 50% discount on your first course!</span
+            >
+          </p>
+
+          <div
+            class="max-w-md mx-auto bg-background-light/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/10"
+          >
+            <img
+              src="https://placehold.co/400x450/111827/d4af37?text=Сила+Макс"
+              alt="Продукт Сила Макс Люкс"
+              class="w-1/2 mx-auto mb-4"
+            />
+            <p class="mb-4 text-secondary-color font-bold">
+              <span class="lang-ru"
+                >Осталось <span id="stock-count">12</span> шт. по акции!</span
+              >
+              <span class="lang-uz"
+                >Aksiya bo'yicha <span id="stock-count-uz">12</span> dona qoldi!</span
+              >
+              <span class="lang-en"
+                ><span id="stock-count-en">12</span> left in stock!</span
+              >
+            </p>
+
+            <div class="flex justify-center gap-4 my-4" id="countdown">
+              <div class="countdown-box p-3 rounded-lg text-center">
+                <span class="text-3xl font-bold" id="minutes">09</span
+                ><span class="block text-xs"
+                  ><span class="lang-ru">минут</span
+                  ><span class="lang-uz">daqiqa</span
+                  ><span class="lang-en">minutes</span></span
+                >
+              </div>
+              <div class="countdown-box p-3 rounded-lg text-center">
+                <span class="text-3xl font-bold" id="seconds">15</span
+                ><span class="block text-xs"
+                  ><span class="lang-ru">секунд</span
+                  ><span class="lang-uz">soniya</span
+                  ><span class="lang-en">seconds</span></span
+                >
+              </div>
+            </div>
+
+            <div class="my-4">
+              <span class="text-xl line-through opacity-70">780.000 СУМ</span>
+              <span class="text-4xl font-extrabold block text-secondary-color"
+                >390.000 СУМ</span
+              >
+            </div>
+
+            <form class="orderForm">
+              <div class="mb-4">
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg bg-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary-color lang-ru"
+                  placeholder="Ваше имя"
+                  required
+                />
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg bg-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary-color lang-uz"
+                  placeholder="Ismingiz"
+                  required
+                />
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg bg-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary-color lang-en"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-6">
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 rounded-lg bg-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary-color lang-ru"
+                  placeholder="Ваш номер телефона"
+                  required
+                />
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 rounded-lg bg-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary-color lang-uz"
+                  placeholder="Telefon raqamingiz"
+                  required
+                />
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 rounded-lg bg-gray-200 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary-color lang-en"
+                  placeholder="Your Phone Number"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full font-bold py-4 px-6 rounded-lg text-xl cta-button"
+              >
+                <span class="lang-ru">Заказать со скидкой</span>
+                <span class="lang-uz">Chegirma bilan buyurtma berish</span>
+                <span class="lang-en">Order with discount</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-black text-white py-6">
+      <div class="container mx-auto px-6 text-center text-sm">
+        <p class="mb-2">OOO "SHIFO NUR" | Производитель</p>
+        <p class="text-xs text-gray-400">
+          <span class="lang-ru"
+            >Биологически активная добавка. Не является лекарственным
+            средством.</span
+          >
+          <span class="lang-uz"
+            >Biologik faol qo'shimcha. Dori vositasi emas.</span
+          >
+          <span class="lang-en"
+            >Dietary supplement. Not a medicinal product.</span
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const langRuBtn = document.getElementById('lang-ru-btn');
+        const langUzBtn = document.getElementById('lang-uz-btn');
+        const langEnBtn = document.getElementById('lang-en-btn');
+        const html = document.documentElement;
+
+        // Language Switcher Logic
+        function setLanguage(lang) {
+          html.lang = lang;
+          langRuBtn.classList.toggle('active', lang === 'ru');
+          langUzBtn.classList.toggle('active', lang === 'uz');
+          langEnBtn.classList.toggle('active', lang === 'en');
+        }
+
+        // Set initial language from local storage or default to 'ru'
+        const savedLang = localStorage.getItem('language') || 'ru';
+        setLanguage(savedLang);
+
+        langRuBtn.addEventListener('click', () => {
+          setLanguage('ru');
+          localStorage.setItem('language', 'ru');
+        });
+        langUzBtn.addEventListener('click', () => {
+          setLanguage('uz');
+          localStorage.setItem('language', 'uz');
+        });
+        langEnBtn.addEventListener('click', () => {
+          setLanguage('en');
+          localStorage.setItem('language', 'en');
+        });
+
+        // Countdown Timer
+        function startCountdown() {
+          const countdownElement = document.getElementById('countdown');
+          if (!countdownElement) return;
+
+          let timeInSeconds = 9 * 60 + 15; // 9 minutes 15 seconds
+
+          const timerInterval = setInterval(() => {
+            if (timeInSeconds <= 0) {
+              timeInSeconds = 9 * 60 + 15; // Reset timer
+            }
+
+            let minutes = Math.floor(timeInSeconds / 60);
+            let seconds = timeInSeconds % 60;
+
+            document.getElementById('minutes').textContent = minutes
+              .toString()
+              .padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds
+              .toString()
+              .padStart(2, '0');
+
+            timeInSeconds--;
+          }, 1000);
+        }
+        startCountdown();
+
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+          event.preventDefault();
+          const form = event.target;
+          const button = form.querySelector('button[type="submit"]');
+
+          const originalButtonText = {
+            ru: 'Заказать со скидкой',
+            uz: 'Chegirma bilan buyurtma berish',
+            en: 'Order with discount',
+          };
+          const sendingText = {
+            ru: 'Отправка...',
+            uz: 'Yuborilmoqda...',
+            en: 'Sending...',
+          };
+          const successText = {
+            ru: 'Заявка принята!',
+            uz: 'Buyurtma qabul qilindi!',
+            en: 'Order accepted!',
+          };
+
+          const currentLang = html.lang;
+
+          button.disabled = true;
+          button.style.backgroundColor = '#10b981'; // Green-500 for success
+          button.querySelector(`.lang-${currentLang}`).textContent =
+            sendingText[currentLang];
+
+          setTimeout(() => {
+            form.reset();
+            button.querySelector(`.lang-${currentLang}`).textContent =
+              successText[currentLang];
+
+            setTimeout(() => {
+              button.querySelector(`.lang-${currentLang}`).textContent =
+                originalButtonText[currentLang];
+              button.disabled = false;
+              button.style.backgroundColor = 'var(--secondary-color)'; // Revert to original color
+            }, 3000);
+          }, 1500);
+        }
+
+        document.querySelectorAll('.orderForm').forEach((form) => {
+          form.addEventListener('submit', handleFormSubmit);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Венофит – Натуральное очищение сосудов, нормализация давления и кровообращения
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #16a34a; /* Green-600 */
+        --secondary-color: #4ade80; /* Green-400 */
+        --accent-color: #facc15; /* Yellow-400 */
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f9fafb; /* gray-50 */
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+      }
+      .section-gradient {
+        background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+      }
+      .cta-button {
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px 0 rgba(250, 204, 21, 0.5);
+      }
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px 0 rgba(250, 204, 21, 0.6);
+      }
+      .countdown-box {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .lang-switch-button.active {
+        background-color: var(--accent-color);
+        color: #1f2937;
+      }
+      .lang-ru,
+      .lang-uz,
+      .lang-en {
+        display: none;
+      }
+      html[lang='ru'] .lang-ru,
+      html[lang='uz'] .lang-uz,
+      html[lang='en'] .lang-en {
+        display: block;
+      }
+      .testimonial-card {
+        border-left: 4px solid var(--primary-color);
+      }
+      .discount-bubble {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        background-color: #ef4444; /* red-500 */
+        color: white;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 900;
+        transform: rotate(15deg);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Language Switcher -->
+    <div class="bg-green-800 text-white py-2">
+      <div class="container mx-auto px-6 flex justify-center items-center">
+        <div class="flex border border-gray-400 rounded-full">
+          <button
+            id="lang-ru-btn"
+            class="lang-switch-button px-4 py-1 text-sm font-semibold rounded-l-full"
+          >
+            Русский
+          </button>
+          <button
+            id="lang-uz-btn"
+            class="lang-switch-button px-4 py-1 text-sm font-semibold"
+          >
+            O'zbekcha
+          </button>
+          <button
+            id="lang-en-btn"
+            class="lang-switch-button px-4 py-1 text-sm font-semibold rounded-r-full"
+          >
+            English
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. Hero Section -->
+    <header class="hero-gradient text-white py-12 sm:py-20">
+      <div
+        class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-8"
+      >
+        <div class="lg:w-1/2 text-center lg:text-left">
+          <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">
+            <span class="lang-ru">ВЕНОФИТ</span>
+            <span class="lang-uz">VENOFIT</span>
+            <span class="lang-en">VENOFIT</span>
+          </h1>
+          <p
+            class="text-lg md:text-2xl font-light mb-8 max-w-xl mx-auto lg:mx-0"
+          >
+            <span class="lang-ru"
+              >Натуральное очищение сосудов, нормализация давления и кровообращения.</span
+            >
+            <span class="lang-uz"
+              >Qon aylanishi, qon bosimi va toksinlarni tozalash uchun tabiiy kapsula.</span
+            >
+            <span class="lang-en"
+              >Natural Blood Circulation & Vascular Cleanse for Heart and Pressure Support.</span
+            >
+          </p>
+          <a
+            href="#order-form"
+            class="cta-button inline-block bg-yellow-400 text-green-900 font-bold py-4 px-8 rounded-lg text-xl"
+          >
+            <span class="lang-ru">ЗАКАЗАТЬ СЕЙЧАС →</span>
+            <span class="lang-uz">HOZIROQ BUYURTMA BERING →</span>
+            <span class="lang-en">ORDER NOW →</span>
+          </a>
+          <p class="text-xs mt-4 opacity-80">
+            <span class="lang-ru">*Гарантируем анонимную доставку.</span>
+            <span class="lang-uz"
+              >*Anonim yetkazib berishni kafolatlaymiz.</span
+            >
+            <span class="lang-en">*Anonymous delivery guaranteed.</span>
+          </p>
+        </div>
+        <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
+          <div class="relative w-max">
+            <img
+              src="assets/Venofit.png"
+              alt="Изображение продукта Венофит"
+              class="rounded-lg shadow-2xl max-w-xs md:max-w-sm"
+            />
+            <div class="discount-bubble">-50%</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 2. Why This Matters (Symptoms Section) -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4"
+          >
+            <span class="lang-ru">Ваши сосуды — дороги жизни. Они в безопасности?</span>
+            <span class="lang-uz">Sizning tomirlaringiz - hayot yo'llari. Ular xavfsizmi?</span>
+            <span class="lang-en">Your Vessels are Life's Highways. Are They Safe?</span>
+          </h2>
+          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            <span class="lang-ru"
+              >Высокое давление, головные боли, хроническая усталость, тяжесть в груди — это сигналы SOS от вашего организма. Загрязненные сосуды и густая кровь могут привести к инфаркту или инсульту. Не ждите катастрофы, действуйте сейчас.</span
+            >
+            <span class="lang-uz"
+              >Yuqori qon bosimi, bosh og'rig'i, surunkali charchoq, ko'krakdagi og'irlik - bular sizning tanangizdan kelayotgan SOS signallari. Ifloslangan qon tomirlari va quyuq qon infarkt yoki insultga olib kelishi mumkin. Falokatni kutmang, hozir harakat qiling.</span
+            >
+            <span class="lang-en"
+              >High blood pressure, headaches, chronic fatigue, chest heaviness—these are SOS signals from your body. Clogged vessels and thick blood can lead to a heart attack or stroke. Don't wait for a disaster, act now.</span
+            >
+          </p>
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+          >
+            <div class="flex flex-col items-center">
+              <img
+                class="w-24 h-24 rounded-full mb-4 object-cover"
+                src="assets/img/pressure.jpg"
+                alt="Высокое давление"
+              />
+              <p class="font-semibold text-gray-700">
+                <span class="lang-ru">Высокое давление</span
+                ><span class="lang-uz">Yuqori qon bosimi</span
+                ><span class="lang-en">High Pressure</span>
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                class="w-24 h-24 rounded-full mb-4 object-cover"
+                src="assets/complex.jpg"
+                alt="Головная боль"
+              />
+              <p class="font-semibold text-gray-700">
+                <span class="lang-ru">Головные боли</span
+                ><span class="lang-uz">Bosh og'rig'i</span
+                ><span class="lang-en">Headaches</span>
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                class="w-24 h-24 rounded-full mb-4 object-cover"
+                src="assets/tired-femalel.jpg"
+                alt="Хроническая усталость"
+              />
+              <p class="font-semibold text-gray-700">
+                <span class="lang-ru">Хроническая усталость</span
+                ><span class="lang-uz">Surunkali charchoq</span
+                ><span class="lang-en">Chronic Fatigue</span>
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                class="w-24 h-24 rounded-full mb-4 object-cover"
+                src="assets/жажда.jpg"
+                alt="Высокий холестерин"
+              />
+              <p class="font-semibold text-gray-700">
+                <span class="lang-ru">Высокий холестерин</span
+                ><span class="lang-uz">Yuqori xolesterin</span
+                ><span class="lang-en">High Cholesterol</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4-Stage System -->
+      <section class="section-gradient py-16">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru">4-х этапная система очищения с Венофит</span>
+            <span class="lang-uz">Venofit bilan 4 bosqichli tozalash tizimi</span>
+            <span class="lang-en">4-Stage Cleansing System with Venofit</span>
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Stage 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+              <div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full text-green-600 text-3xl font-bold">1</div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2"><span class="lang-ru">Детоксикация</span><span class="lang-uz">Detoksikatsiya</span><span class="lang-en">Detoxification</span></h3>
+              <p class="text-gray-600"><span class="lang-ru">Мягкое выведение токсинов и шлаков из крови и стенок сосудов.</span><span class="lang-uz">Qon va tomir devorlaridan toksinlar va shlaklarni yumshoq chiqarish.</span><span class="lang-en">Gentle removal of toxins and waste from the blood and vessel walls.</span></p>
+            </div>
+            <!-- Stage 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+              <div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full text-green-600 text-3xl font-bold">2</div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2"><span class="lang-ru">Устранение бляшек</span><span class="lang-uz">Plaklarni yo'q qilish</span><span class="lang-en">Plaque Removal</span></h3>
+              <p class="text-gray-600"><span class="lang-ru">Растворение холестериновых отложений, восстановление эластичности и просвета сосудов.</span><span class="lang-uz">Xolesterin birikmalarini eritish, tomirlarning elastikligi va bo'shlig'ini tiklash.</span><span class="lang-en">Dissolving cholesterol deposits, restoring vessel elasticity and clearance.</span></p>
+            </div>
+            <!-- Stage 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+              <div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full text-green-600 text-3xl font-bold">3</div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2"><span class="lang-ru">Активация кровотока</span><span class="lang-uz">Qon oqimini faollashtirish</span><span class="lang-en">Blood Flow Activation</span></h3>
+              <p class="text-gray-600"><span class="lang-ru">Снижение вязкости крови, улучшение микроциркуляции и снабжения органов кислородом.</span><span class="lang-uz">Qonning yopishqoqligini kamaytirish, mikrosirkulyatsiyani yaxshilash va organlarni kislorod bilan ta'minlash.</span><span class="lang-en">Reducing blood viscosity, improving microcirculation and oxygen supply to organs.</span></p>
+            </div>
+            <!-- Stage 4 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+              <div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full text-green-600 text-3xl font-bold">4</div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2"><span class="lang-ru">Укрепление</span><span class="lang-uz">Mustahkamlash</span><span class="lang-en">Strengthening</span></h3>
+              <p class="text-gray-600"><span class="lang-ru">Восстановление клеток сердца и мозга, повышение их выносливости и защита от будущих нагрузок.</span><span class="lang-uz">Yurak va miya hujayralarini tiklash, ularning chidamliligini oshirish va kelajakdagi yuklamalardan himoya qilish.</span><span class="lang-en">Restoring heart and brain cells, increasing their endurance and protecting against future stress.</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Expert Opinion -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <div
+            class="bg-green-50 rounded-lg shadow-xl p-8 md:p-12 md:flex items-center gap-12"
+          >
+            <div class="md:w-1/3 text-center mb-6 md:mb-0">
+              <img
+                src="https://placehold.co/300x300/16a34a/ffffff?text=Врач"
+                alt="Фото врача-кардиолога"
+                class="rounded-full mx-auto w-48 h-48 object-cover shadow-lg border-4 border-white"
+              />
+            </div>
+            <div class="md:w-2/3">
+              <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                <span class="lang-ru">Мнение эксперта</span>
+                <span class="lang-uz">Mutaxassis fikri</span>
+                <span class="lang-en">Expert Opinion</span>
+              </h2>
+              <p class="text-gray-600 mb-4">
+                <span class="lang-ru"
+                  >«Состояние сосудов напрямую влияет на продолжительность и качество жизни. Я рекомендую Венофит как натуральное и безопасное средство для комплексной поддержки сердечно-сосудистой системы. Его 4-этапная формула не просто борется с симптомами, такими как давление, а устраняет первопричину — очищает сосуды от токсинов и холестерина. Это эффективная профилактика инфарктов и инсультов, доступная каждому.»</span
+                >
+                <span class="lang-uz"
+                  >"Tomirlarning holati hayot davomiyligi va sifatiga bevosita ta'sir qiladi. Men Venofitni yurak-qon tomir tizimini kompleks qo'llab-quvvatlash uchun tabiiy va xavfsiz vosita sifatida tavsiya qilaman. Uning 4 bosqichli formulasi nafaqat bosim kabi simptomlar bilan kurashadi, balki asosiy sababni bartaraf etadi - tomirlarni toksinlar va xolesterindan tozalaydi. Bu har kim uchun mavjud bo'lgan infarkt va insultlarning samarali profilaktikasi."</span
+                >
+                <span class="lang-en"
+                  >"The condition of blood vessels directly affects the length and quality of life. I recommend Venofit as a natural and safe remedy for comprehensive support of the cardiovascular system. Its 4-stage formula doesn't just fight symptoms like pressure, but eliminates the root cause—cleansing the vessels of toxins and cholesterol. This is an effective prevention of heart attacks and strokes, available to everyone."</span
+                >
+              </p>
+              <p class="font-bold text-green-800">Алиева Дильноза</p>
+              <p class="text-sm text-gray-500">
+                <span class="lang-ru">Врач-кардиолог, стаж 25 лет</span>
+                <span class="lang-uz"
+                  >Kardiolog shifokor, 25 yillik tajriba</span
+                >
+                <span class="lang-en">Cardiologist, 25 years of experience</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Secondary Call to Action -->
+      <section class="bg-green-700 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold mb-6">
+            <span class="lang-ru"
+              >Готовы дать своим сосудам вторую молодость?</span>
+            <span class="lang-uz"
+              >Tomirlaringizga ikkinchi yoshlikni berishga tayyormisiz?</span
+            >
+            <span class="lang-en">Ready to give your vessels a second youth?</span>
+          </h2>
+          <a
+            href="#order-form"
+            class="cta-button inline-block bg-yellow-400 text-green-900 font-bold py-4 px-8 rounded-lg text-xl"
+          >
+            <span class="lang-ru">ЗАКАЗАТЬ СО СКИДКОЙ →</span>
+            <span class="lang-uz">CHEGIRMA BILAN BUYURTMA BERING →</span>
+            <span class="lang-en">ORDER WITH A DISCOUNT →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Expected Results Timeline -->
+      <section class="section-gradient py-16">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru">Что вы почувствуете уже в первый месяц?</span>
+            <span class="lang-uz">Birinchi oyda nimalarni his qilasiz?</span>
+            <span class="lang-en">What will you feel in the first month?</span>
+          </h2>
+          <div class="max-w-4xl mx-auto">
+            <div class="relative pl-8 py-4 border-l-2 border-green-500">
+                <div class="absolute -left-4 top-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
+                <h3 class="text-xl font-bold text-gray-800"><span class="lang-ru">1-я неделя</span><span class="lang-uz">1-hafta</span><span class="lang-en">Week 1</span></h3>
+                <p class="text-gray-600"><span class="lang-ru">Начинается очищение крови. Вы можете заметить изменение запаха стула и цвета мочи — это выходит первая партия токсинов.</span><span class="lang-uz">Qonni tozalash boshlanadi. Axlat hidi va siydik rangining o'zgarishini sezishingiz mumkin - bu toksinlarning birinchi partiyasi chiqadi.</span><span class="lang-en">Blood cleansing begins. You may notice a change in the smell of your stool and the color of your urine—this is the first batch of toxins being eliminated.</span></p>
+            </div>
+            <div class="relative pl-8 py-4 border-l-2 border-green-500">
+                <div class="absolute -left-4 top-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
+                <h3 class="text-xl font-bold text-gray-800"><span class="lang-ru">2-я неделя</span><span class="lang-uz">2-hafta</span><span class="lang-en">Week 2</span></h3>
+                <p class="text-gray-600"><span class="lang-ru">Снижаются головные боли и головокружение, улучшается сон. Давление начинает стабилизироваться.</span><span class="lang-uz">Bosh og'rig'i va bosh aylanishi kamayadi, uyqu yaxshilanadi. Qon bosimi barqarorlasha boshlaydi.</span><span class="lang-en">Headaches and dizziness decrease, sleep improves. Blood pressure begins to stabilize.</span></p>
+            </div>
+            <div class="relative pl-8 py-4 border-l-2 border-green-500">
+                <div class="absolute -left-4 top-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
+                <h3 class="text-xl font-bold text-gray-800"><span class="lang-ru">3-я неделя</span><span class="lang-uz">3-hafta</span><span class="lang-en">Week 3</span></h3>
+                <p class="text-gray-600"><span class="lang-ru">Улучшается дыхание, исчезают боли в груди. Кровь полностью очищается, работа сердца и мозга приходит в норму.</span><span class="lang-uz">Nafas olish yaxshilanadi, ko'krakdagi og'riqlar yo'qoladi. Qon to'liq tozalanadi, yurak va miya faoliyati normallashadi.</span><span class="lang-en">Breathing improves, chest pains disappear. The blood is completely cleansed, and heart and brain function return to normal.</span></p>
+            </div>
+             <div class="relative pl-8 py-4 border-l-2 border-green-500">
+                <div class="absolute -left-4 top-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
+                <h3 class="text-xl font-bold text-gray-800"><span class="lang-ru">4-я неделя и далее</span><span class="lang-uz">4-hafta va undan keyin</span><span class="lang-en">Week 4 and beyond</span></h3>
+                <p class="text-gray-600"><span class="lang-ru">Полная нормализация показателей крови: давление, холестерин и сахар в норме. Вы чувствуете прилив сил и энергии.</span><span class="lang-uz">Qon ko'rsatkichlarining to'liq normallashishi: qon bosimi, xolesterin va qand miqdori me'yorda. Siz kuch va energiya oqimini his qilasiz.</span><span class="lang-en">Complete normalization of blood parameters: pressure, cholesterol, and sugar are normal. You feel a surge of strength and energy.</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Testimonials -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
+          >
+            <span class="lang-ru">Отзывы наших клиентов</span>
+            <span class="lang-uz">Mijozlarimizning fikrlari</span>
+            <span class="lang-en">Customer Testimonials</span>
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg testimonial-card">
+              <p class="text-gray-600 mb-4">
+                <span class="lang-ru"
+                  >"Гипертоник со стажем. Давление скакало постоянно. После курса Венофита цифры на тонометре радуют, как никогда. Прошли головные боли, и я снова могу работать на даче без одышки."</span
+                >
+                <span class="lang-uz"
+                  >"Tajribali gipertonikman. Qon bosimim doim o'ynab turardi. Venofit kursidan so'ng tonometrdagi raqamlar hech qachongidek xursand qilmoqda. Bosh og'rig'im o'tib ketdi va men yana bog'da hansiramasdan ishlay olaman."</span
+                >
+                <span class="lang-en"
+                  >"I'm a long-time hypertensive patient. My pressure was always fluctuating. After a course of Venofit, the numbers on the tonometer are pleasing like never before. The headaches are gone, and I can work in the garden again without shortness of breath."</span
+                >
+              </p>
+              <p class="font-bold text-green-800">
+                <span class="lang-ru">Ботир, 65 лет</span>
+                <span class="lang-uz">Botir, 65 yosh</span>
+                <span class="lang-en">Botir, 65</span>
+              </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg testimonial-card">
+              <p class="text-gray-600 mb-4">
+                <span class="lang-ru"
+                  >"Работаю водителем, постоянный стресс и мало движения. Начал чувствовать тяжесть в груди. Венофит помог! Чувствую себя легче, ушла усталость, стал лучше спать. Отличное средство для профилактики."</span
+                >
+                <span class="lang-uz"
+                  >"Haydovchi bo'lib ishlayman, doimiy stress va kam harakat. Ko'kragimda og'irlik his qila boshladim. Venofit yordam berdi! O'zimni yengilroq his qilyapman, charchoq yo'qoldi, yaxshiroq uxlay boshladim. Profilaktika uchun ajoyib vosita."</span
+                >
+                <span class="lang-en"
+                  >"I work as a driver, constant stress and little movement. I started to feel heaviness in my chest. Venofit helped! I feel lighter, the fatigue is gone, and I sleep better. An excellent preventive remedy."</span
+                >
+              </p>
+              <p class="font-bold text-green-800">
+                <span class="lang-ru">Руслан, 48 лет</span>
+                <span class="lang-uz">Ruslan, 48 yosh</span>
+                <span class="lang-en">Ruslan, 48</span>
+              </p>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-lg testimonial-card">
+              <p class="text-gray-600 mb-4">
+                <span class="lang-ru"
+                  >"После 50-ти холестерин пополз вверх. Врач посоветовал изменить диету и попробовать Венофит. Через месяц анализы стали заметно лучше! И в целом самочувствие прекрасное, появилась энергия."</span
+                >
+                <span class="lang-uz"
+                  >"50 yoshdan keyin xolesterinim ko'tarila boshladi. Shifokor parhezni o'zgartirishni va Venofitni sinab ko'rishni maslahat berdi. Bir oydan keyin tahlillarim sezilarli darajada yaxshilandi! Va umuman olganda, ahvolim a'lo, energiya paydo bo'ldi."</span
+                >
+                <span class="lang-en"
+                  >"After 50, my cholesterol started to creep up. The doctor advised changing my diet and trying Venofit. After a month, my tests were noticeably better! And my overall well-being is excellent, I have more energy."</span
+                >
+              </p>
+              <p class="font-bold text-green-800">
+                <span class="lang-ru">Мадина, 54 года</span>
+                <span class="lang-uz">Madina, 54 yosh</span>
+                <span class="lang-en">Madina, 54</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. ORDER SECTION -->
+      <section id="order-form" class="hero-gradient text-white py-16 sm:py-20">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-5xl font-black mb-2">
+            <span class="lang-ru">Очистите сосуды — продлите жизнь!</span>
+            <span class="lang-uz">Tomirlarni tozalang - hayotni uzaytiring!</span>
+            <span class="lang-en">Cleanse Your Vessels - Extend Your Life!</span>
+          </h2>
+          <p class="text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto">
+            <span class="lang-ru"
+              >Закажите «Венофит» прямо сейчас и воспользуйтесь эксклюзивной скидкой 50%!</span
+            >
+            <span class="lang-uz"
+              >"Venofit"ga hoziroq buyurtma bering va 50% eksklyuziv chegirmadan foydalaning!</span
+            >
+            <span class="lang-en"
+              >Order "Venofit" right now and take advantage of an exclusive 50% discount!</span
+            >
+          </p>
+
+          <div
+            class="max-w-md mx-auto bg-white/10 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/20"
+          >
+            <img
+              src="assets/Venofit.png"
+              alt="Продукт Венофит"
+              class="w-1/2 mx-auto mb-4"
+            />
+            <p class="mb-4 text-yellow-300 font-bold">
+              <span class="lang-ru"
+                >Осталось <span id="stock-count">12</span> шт. по акции!</span
+              >
+              <span class="lang-uz"
+                >Aksiya bo'yicha <span id="stock-count-uz">12</span> dona qoldi!</span
+              >
+              <span class="lang-en"
+                ><span id="stock-count-en">12</span> left in stock!</span
+              >
+            </p>
+
+            <div class="flex justify-center gap-4 my-4" id="countdown">
+              <div class="countdown-box p-3 rounded-lg text-center">
+                <span class="text-3xl font-bold" id="minutes">09</span
+                ><span class="block text-xs"
+                  ><span class="lang-ru">минут</span
+                  ><span class="lang-uz">daqiqa</span
+                  ><span class="lang-en">minutes</span></span
+                >
+              </div>
+              <div class="countdown-box p-3 rounded-lg text-center">
+                <span class="text-3xl font-bold" id="seconds">15</span
+                ><span class="block text-xs"
+                  ><span class="lang-ru">секунд</span
+                  ><span class="lang-uz">soniya</span
+                  ><span class="lang-en">seconds</span></span
+                >
+              </div>
+            </div>
+
+            <div class="my-4">
+              <span class="text-xl line-through opacity-70">780.000 СУМ</span>
+              <span class="text-4xl font-extrabold block text-yellow-300"
+                >390.000 СУМ</span
+              >
+            </div>
+
+            <form class="orderForm">
+              <div class="mb-4">
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-ru"
+                  placeholder="Ваше имя"
+                  required
+                />
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-uz"
+                  placeholder="Ismingiz"
+                  required
+                />
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-en"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-6">
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-ru"
+                  placeholder="Ваш номер телефона"
+                  required
+                />
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-uz"
+                  placeholder="Telefon raqamingiz"
+                  required
+                />
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-en"
+                  placeholder="Your Phone Number"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-yellow-400 text-green-900 font-bold py-4 px-6 rounded-lg text-xl cta-button"
+              >
+                <span class="lang-ru">Заказать со скидкой</span>
+                <span class="lang-uz">Chegirma bilan buyurtma berish</span>
+                <span class="lang-en">Order with discount</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto px-6 text-center text-sm">
+        <p class="mb-2">OOO "SHIFO NUR" | Производитель</p>
+        <p class="text-xs text-gray-400">
+          <span class="lang-ru"
+            >Биологически активная добавка. Не является лекарственным
+            средством.</span
+          >
+          <span class="lang-uz"
+            >Biologik faol qo'shimcha. Dori vositasi emas.</span
+          >
+          <span class="lang-en"
+            >Dietary supplement. Not a medicinal product.</span
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const langRuBtn = document.getElementById('lang-ru-btn');
+        const langUzBtn = document.getElementById('lang-uz-btn');
+        const langEnBtn = document.getElementById('lang-en-btn');
+        const html = document.documentElement;
+
+        // Language Switcher Logic
+        function setLanguage(lang) {
+          html.lang = lang;
+          langRuBtn.classList.toggle('active', lang === 'ru');
+          langUzBtn.classList.toggle('active', lang === 'uz');
+          langEnBtn.classList.toggle('active', lang === 'en');
+        }
+
+        // Set initial language from local storage or default to 'ru'
+        const savedLang = localStorage.getItem('language') || 'ru';
+        setLanguage(savedLang);
+
+        langRuBtn.addEventListener('click', () => {
+          setLanguage('ru');
+          localStorage.setItem('language', 'ru');
+        });
+        langUzBtn.addEventListener('click', () => {
+          setLanguage('uz');
+          localStorage.setItem('language', 'uz');
+        });
+        langEnBtn.addEventListener('click', () => {
+          setLanguage('en');
+          localStorage.setItem('language', 'en');
+        });
+
+        // Countdown Timer
+        function startCountdown() {
+          const countdownElement = document.getElementById('countdown');
+          if (!countdownElement) return;
+
+          let timeInSeconds = 9 * 60 + 15; // 9 minutes 15 seconds
+
+          const timerInterval = setInterval(() => {
+            if (timeInSeconds <= 0) {
+              timeInSeconds = 9 * 60 + 15; // Reset timer
+            }
+
+            let minutes = Math.floor(timeInSeconds / 60);
+            let seconds = timeInSeconds % 60;
+
+            document.getElementById('minutes').textContent = minutes
+              .toString()
+              .padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds
+              .toString()
+              .padStart(2, '0');
+
+            timeInSeconds--;
+          }, 1000);
+        }
+        startCountdown();
+
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+          event.preventDefault();
+          const form = event.target;
+          const button = form.querySelector('button[type="submit"]');
+
+          const originalButtonText = {
+            ru: 'Заказать со скидкой',
+            uz: 'Chegirma bilan buyurtma berish',
+            en: 'Order with discount',
+          };
+          const sendingText = {
+            ru: 'Отправка...',
+            uz: 'Yuborilmoqda...',
+            en: 'Sending...',
+          };
+          const successText = {
+            ru: 'Заявка принята!',
+            uz: 'Buyurtma qabul qilindi!',
+            en: 'Order accepted!',
+          };
+
+          const currentLang = html.lang;
+
+          button.disabled = true;
+          button.querySelector(`.lang-${currentLang}`).textContent =
+            sendingText[currentLang];
+
+          setTimeout(() => {
+            form.reset();
+            button.classList.add('bg-green-500');
+            button.classList.remove('bg-yellow-400');
+            button.querySelector(`.lang-${currentLang}`).textContent =
+              successText[currentLang];
+
+            setTimeout(() => {
+              button.querySelector(`.lang-${currentLang}`).textContent =
+                originalButtonText[currentLang];
+              button.disabled = false;
+              button.classList.remove('bg-green-500');
+              button.classList.add('bg-yellow-400');
+            }, 3000);
+          }, 1500);
+        }
+
+        document.querySelectorAll('.orderForm').forEach((form) => {
+          form.addEventListener('submit', handleFormSubmit);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -86,6 +86,24 @@
         transform: rotate(15deg);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
+      .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 300px; /* Max width for the video container */
+        height: 533px; /* Height for 9:16 aspect ratio based on max-width */
+        margin: auto;
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: #000;
+        border: 3px solid var(--primary-color);
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body class="bg-gray-50">
@@ -93,7 +111,12 @@
     <div class="bg-green-800 text-white py-2">
       <div class="container mx-auto px-6 flex justify-between items-center">
         <a href="#" aria-label="Super pamyat">
-            <img src="assets/SUPER PAMYAT (3).png" alt="super pamyat" width="80" height="30">
+          <img
+            src="assets/SUPER PAMYAT (3).png"
+            alt="super pamyat"
+            width="80"
+            height="30"
+          />
         </a>
         <div class="flex border border-gray-400 rounded-full">
           <button
@@ -123,7 +146,17 @@
       <div
         class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-8"
       >
-        <div class="lg:w-1/2 text-center lg:text-left">
+        <div class="lg:w-1/2 text-center lg:text-left order-2 lg:order-1">
+          <!-- <div class="mb-6 flex justify-center lg:justify-start">
+            <!-- <a href="#" aria-label="Super pamyat">
+              <img
+                src="assets/SUPER PAMYAT (3).png"
+                alt="super pamyat"
+                width="180"
+                height="50"
+              />
+            </a> -->
+          <!-- </div> -->
           <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">
             <span class="lang-ru">СУПЕР ПАМЯТЬ</span>
             <span class="lang-uz">SUPER PAMYAT</span>
@@ -145,6 +178,7 @@
               circulation.</span
             >
           </p>
+          <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center"></div>
           <a
             href="#order-form"
             class="cta-button inline-block bg-yellow-400 text-green-900 font-bold py-4 px-8 rounded-lg text-xl"
@@ -161,12 +195,16 @@
             <span class="lang-en">*Anonymous delivery guaranteed.</span>
           </p>
         </div>
-        <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
+        <div
+          class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center order-1 lg:order-2"
+        >
           <div class="relative w-max">
             <img
               src="assets/img/bad.png"
               alt="Изображение продукта Супер Память"
               class="rounded-lg shadow-2xl max-w-xs md:max-w-sm"
+              width="150"
+              height="150"
             />
             <div class="discount-bubble">-50%</div>
           </div>
@@ -1087,6 +1125,43 @@
                 ><span class="lang-en">Better Mood</span>
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Explanation Section -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4"
+          >
+            <span class="lang-ru">Как это работает? Смотрите видео!</span>
+            <span class="lang-uz">Bu qanday ishlaydi? Videoni ko'ring!</span>
+            <span class="lang-en">How Does It Work? Watch the Video!</span>
+          </h2>
+          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            <span class="lang-ru"
+              >Узнайте все о преимуществах "Супер Память" в этом коротком и
+              информативном видео.</span
+            >
+            <span class="lang-uz"
+              >Ushbu qisqa va ma'lumotli videoda "Super Pamyat"ning barcha
+              afzalliklari haqida bilib oling.</span
+            >
+            <span class="lang-en"
+              >Learn all about the benefits of "Super Memory" in this short and
+              informative video.</span
+            >
+          </p>
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed//-dnaOl9SINM"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
           </div>
         </div>
       </section>

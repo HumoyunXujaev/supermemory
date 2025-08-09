@@ -35,7 +35,11 @@
         background: radial-gradient(circle, #1f2937, #111827);
       }
       .section-gradient {
-        background: linear-gradient(180deg, var(--background-light) 0%, var(--background-dark) 100%);
+        background: linear-gradient(
+          180deg,
+          var(--background-light) 0%,
+          var(--background-dark) 100%
+        );
       }
       .cta-button {
         transition: all 0.3s ease;
@@ -93,6 +97,24 @@
         transform: rotate(15deg);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
+      .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 300px; /* Max width for the video container */
+        height: 533px; /* Height for 9:16 aspect ratio based on max-width */
+        margin: auto;
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: #000;
+        border: 3px solid var(--primary-color);
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
@@ -100,7 +122,12 @@
     <div class="bg-black py-2">
       <div class="container mx-auto px-6 flex justify-between items-center">
         <a href="#" aria-label="Stop Artroz">
-            <img src="assets/STOP ARTIROZ_RUSSIOAN_ WHITE.png" alt="Stop Artroz" width="150" height="30">
+          <img
+            src="assets/STOP ARTIROZ_RUSSIOAN_ WHITE.png"
+            alt="Stop Artroz"
+            width="150"
+            height="30"
+          />
         </a>
 
         <div class="flex border border-gray-600 rounded-full">
@@ -131,8 +158,10 @@
       <div
         class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-8"
       >
-        <div class="lg:w-1/2 text-center lg:text-left">
-          <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight text-white">
+        <div class="lg:w-1/2 text-center lg:text-left order-2 lg:order-1">
+          <h1
+            class="text-4xl md:text-6xl font-black mb-4 leading-tight text-white"
+          >
             <span class="lang-ru">СТОП АРТРОЗ</span>
             <span class="lang-uz">STOP ARTROZ</span>
             <span class="lang-en">STOP ARTROZ</span>
@@ -141,13 +170,16 @@
             class="text-lg md:text-2xl font-light mb-8 max-w-xl mx-auto lg:mx-0 text-gray-300"
           >
             <span class="lang-ru"
-              >Натуральные капсулы от боли в суставах, воспаления и для восстановления подвижности.</span
+              >Натуральные капсулы от боли в суставах, воспаления и для
+              восстановления подвижности.</span
             >
             <span class="lang-uz"
-              >Bo‘g‘im og‘rig‘i va yallig‘lanishga qarshi tabiiy kapsulalar.</span
+              >Bo‘g‘im og‘rig‘i va yallig‘lanishga qarshi tabiiy
+              kapsulalar.</span
             >
             <span class="lang-en"
-              >Natural Joint Pain Relief & Anti-Inflammatory Capsules for Mobility.</span
+              >Natural Joint Pain Relief & Anti-Inflammatory Capsules for
+              Mobility.</span
             >
           </p>
           <a
@@ -166,12 +198,16 @@
             <span class="lang-en">*Anonymous delivery guaranteed.</span>
           </p>
         </div>
-        <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
+        <div
+          class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center order-1 lg:order-2"
+        >
           <div class="relative w-max">
             <img
-              src="assets/StopArtroz.png"
+              src="assets/IMG_2321.png"
               alt="Изображение продукта Стоп Артроз"
               class="rounded-lg shadow-2xl max-w-xs md:max-w-sm"
+              width="150"
+              height="150"
             />
             <div class="discount-bubble">-50%</div>
           </div>
@@ -186,27 +222,58 @@
           <h2
             class="text-3xl md:text-4xl font-bold text-center text-white mb-4"
           >
-            <span class="lang-ru">Почему боль в суставах нельзя игнорировать?</span>
-            <span class="lang-uz">Nima uchun bo'g'im og'rig'ini e'tiborsiz qoldirib bo'lmaydi?</span>
+            <span class="lang-ru"
+              >Почему боль в суставах нельзя игнорировать?</span
+            >
+            <span class="lang-uz"
+              >Nima uchun bo'g'im og'rig'ini e'tiborsiz qoldirib
+              bo'lmaydi?</span
+            >
             <span class="lang-en">Why You Can't Ignore Joint Pain</span>
           </h2>
           <p class="text-center text-gray-400 mb-12 max-w-3xl mx-auto">
             <span class="lang-ru"
-              >Более 80% людей старше 40 лет страдают от болей в суставах. Это не просто дискомфорт. Бездействие может привести к хроническому воспалению, разрушению хряща, потере подвижности и значительному ухудшению качества жизни.</span
+              >Более 80% людей старше 40 лет страдают от болей в суставах. Это
+              не просто дискомфорт. Бездействие может привести к хроническому
+              воспалению, разрушению хряща, потере подвижности и значительному
+              ухудшению качества жизни.</span
             >
             <span class="lang-uz"
-              >40 yoshdan oshgan odamlarning 80% dan ortig'i bo'g'imlardagi og'riqlardan aziyat chekadi. Bu shunchaki noqulaylik emas. Harakatsizlik surunkali yallig'lanish, xaftaga tushadigan to'qimalarning yo'q qilinishi, harakatchanlikni yo'qotish va hayot sifatining sezilarli darajada yomonlashishiga olib kelishi mumkin.</span
+              >40 yoshdan oshgan odamlarning 80% dan ortig'i bo'g'imlardagi
+              og'riqlardan aziyat chekadi. Bu shunchaki noqulaylik emas.
+              Harakatsizlik surunkali yallig'lanish, xaftaga tushadigan
+              to'qimalarning yo'q qilinishi, harakatchanlikni yo'qotish va hayot
+              sifatining sezilarli darajada yomonlashishiga olib kelishi
+              mumkin.</span
             >
             <span class="lang-en"
-              >Over 80% of people over 40 suffer from joint pain. This is not just discomfort. Inaction can lead to chronic inflammation, cartilage destruction, loss of mobility, and a significant decline in quality of life.</span
+              >Over 80% of people over 40 suffer from joint pain. This is not
+              just discomfort. Inaction can lead to chronic inflammation,
+              cartilage destruction, loss of mobility, and a significant decline
+              in quality of life.</span
             >
           </p>
-          <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
-          >
-            <div class="flex flex-col items-center p-4 bg-background-light rounded-lg">
-              <div class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20">
-                 <svg class="w-10 h-10 text-accent-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div
+              class="flex flex-col items-center p-4 bg-background-light rounded-lg"
+            >
+              <div
+                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20"
+              >
+                <svg
+                  class="w-10 h-10 text-accent-color"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                  />
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Боль и скованность</span
@@ -214,9 +281,26 @@
                 ><span class="lang-en">Pain & Stiffness</span>
               </p>
             </div>
-            <div class="flex flex-col items-center p-4 bg-background-light rounded-lg">
-              <div class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20">
-                 <svg class="w-10 h-10 text-accent-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" /></svg>
+            <div
+              class="flex flex-col items-center p-4 bg-background-light rounded-lg"
+            >
+              <div
+                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20"
+              >
+                <svg
+                  class="w-10 h-10 text-accent-color"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
+                  />
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Воспаление и отек</span
@@ -224,19 +308,54 @@
                 ><span class="lang-en">Inflammation & Swelling</span>
               </p>
             </div>
-            <div class="flex flex-col items-center p-4 bg-background-light rounded-lg">
-              <div class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20">
-                <svg class="w-10 h-10 text-accent-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.03 1.125 0 1.131.094 1.976 1.057 1.976 2.192V7.5M8.25 7.5h7.5M8.25 7.5a2.25 2.25 0 01-2.25 2.25H6.75a2.25 2.25 0 01-2.25-2.25v-2.25a2.25 2.25 0 012.25-2.25h1.5a2.25 2.25 0 012.25 2.25v2.25m7.5 0a2.25 2.25 0 00-2.25-2.25H15a2.25 2.25 0 00-2.25 2.25v2.25a2.25 2.25 0 002.25 2.25h1.5a2.25 2.25 0 002.25-2.25v-2.25m-7.5 0h7.5" /></svg>
+            <div
+              class="flex flex-col items-center p-4 bg-background-light rounded-lg"
+            >
+              <div
+                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20"
+              >
+                <svg
+                  class="w-10 h-10 text-accent-color"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.03 1.125 0 1.131.094 1.976 1.057 1.976 2.192V7.5M8.25 7.5h7.5M8.25 7.5a2.25 2.25 0 01-2.25 2.25H6.75a2.25 2.25 0 01-2.25-2.25v-2.25a2.25 2.25 0 012.25-2.25h1.5a2.25 2.25 0 012.25 2.25v2.25m7.5 0a2.25 2.25 0 00-2.25-2.25H15a2.25 2.25 0 00-2.25 2.25v2.25a2.25 2.25 0 002.25 2.25h1.5a2.25 2.25 0 002.25-2.25v-2.25m-7.5 0h7.5"
+                  />
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Разрушение хряща</span
-                ><span class="lang-uz">Xaftaga tushadigan to'qimalarning yo'q qilinishi</span
+                ><span class="lang-uz"
+                  >Xaftaga tushadigan to'qimalarning yo'q qilinishi</span
                 ><span class="lang-en">Cartilage Destruction</span>
               </p>
             </div>
-            <div class="flex flex-col items-center p-4 bg-background-light rounded-lg">
-              <div class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20">
-                <svg class="w-10 h-10 text-accent-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>
+            <div
+              class="flex flex-col items-center p-4 bg-background-light rounded-lg"
+            >
+              <div
+                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20"
+              >
+                <svg
+                  class="w-10 h-10 text-accent-color"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
+                  />
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Потеря подвижности</span
@@ -254,9 +373,15 @@
           <h2
             class="text-3xl md:text-4xl font-bold text-center text-white mb-12"
           >
-            <span class="lang-ru">Как «Стоп Артроз» возвращает свободу движений?</span>
-            <span class="lang-uz">"Stop Artroz" harakat erkinligini qanday qaytaradi?</span>
-            <span class="lang-en">How Does "Stop Artroz" Restore Freedom of Movement?</span>
+            <span class="lang-ru"
+              >Как «Стоп Артроз» возвращает свободу движений?</span
+            >
+            <span class="lang-uz"
+              >"Stop Artroz" harakat erkinligini qanday qaytaradi?</span
+            >
+            <span class="lang-en"
+              >How Does "Stop Artroz" Restore Freedom of Movement?</span
+            >
           </h2>
           <div
             class="flex flex-col md:flex-row items-center justify-center gap-12"
@@ -278,13 +403,28 @@
                 <div>
                   <h3 class="text-xl font-bold text-white">
                     <span class="lang-ru">Снимает боль и воспаление</span>
-                    <span class="lang-uz">Og'riq va yallig'lanishni yengillashtiradi</span>
+                    <span class="lang-uz"
+                      >Og'riq va yallig'lanishni yengillashtiradi</span
+                    >
                     <span class="lang-en">Relieves Pain and Inflammation</span>
                   </h3>
                   <p class="text-gray-400 mt-1">
-                    <span class="lang-ru">Действует как естественный анальгетик, быстро устраняя болевой синдром и отечность, что позволяет вам вернуться к привычной жизни без дискомфорта.</span>
-                    <span class="lang-uz">Tabiiy og'riq qoldiruvchi vosita sifatida ishlaydi, og'riq sindromi va shishishni tezda bartaraf etadi, bu sizga noqulayliksiz odatiy hayotga qaytish imkonini beradi.</span>
-                    <span class="lang-en">Acts as a natural analgesic, quickly eliminating pain and swelling, allowing you to return to your normal life without discomfort.</span>
+                    <span class="lang-ru"
+                      >Действует как естественный анальгетик, быстро устраняя
+                      болевой синдром и отечность, что позволяет вам вернуться к
+                      привычной жизни без дискомфорта.</span
+                    >
+                    <span class="lang-uz"
+                      >Tabiiy og'riq qoldiruvchi vosita sifatida ishlaydi,
+                      og'riq sindromi va shishishni tezda bartaraf etadi, bu
+                      sizga noqulayliksiz odatiy hayotga qaytish imkonini
+                      beradi.</span
+                    >
+                    <span class="lang-en"
+                      >Acts as a natural analgesic, quickly eliminating pain and
+                      swelling, allowing you to return to your normal life
+                      without discomfort.</span
+                    >
                   </p>
                 </div>
               </div>
@@ -297,13 +437,28 @@
                 <div>
                   <h3 class="text-xl font-bold text-white">
                     <span class="lang-ru">Восстанавливает хрящевую ткань</span>
-                    <span class="lang-uz">Xaftaga tushadigan to'qimalarni tiklaydi</span>
+                    <span class="lang-uz"
+                      >Xaftaga tushadigan to'qimalarni tiklaydi</span
+                    >
                     <span class="lang-en">Restores Cartilage Tissue</span>
                   </h3>
                   <p class="text-gray-400 mt-1">
-                    <span class="lang-ru">Активные компоненты стимулируют регенерацию хрящей, препятствуя их разрушению. Это помогает укрепить суставы и замедлить развитие артроза.</span>
-                    <span class="lang-uz">Faol moddalar xaftaga tushadigan to'qimalarning yangilanishini rag'batlantiradi, ularning yo'q qilinishini oldini oladi. Bu bo'g'imlarni mustahkamlashga va artroz rivojlanishini sekinlashtirishga yordam beradi.</span>
-                    <span class="lang-en">Active components stimulate cartilage regeneration, preventing its destruction. This helps strengthen joints and slow the progression of arthrosis.</span>
+                    <span class="lang-ru"
+                      >Активные компоненты стимулируют регенерацию хрящей,
+                      препятствуя их разрушению. Это помогает укрепить суставы и
+                      замедлить развитие артроза.</span
+                    >
+                    <span class="lang-uz"
+                      >Faol moddalar xaftaga tushadigan to'qimalarning
+                      yangilanishini rag'batlantiradi, ularning yo'q qilinishini
+                      oldini oladi. Bu bo'g'imlarni mustahkamlashga va artroz
+                      rivojlanishini sekinlashtirishga yordam beradi.</span
+                    >
+                    <span class="lang-en"
+                      >Active components stimulate cartilage regeneration,
+                      preventing its destruction. This helps strengthen joints
+                      and slow the progression of arthrosis.</span
+                    >
                   </p>
                 </div>
               </div>
@@ -316,13 +471,30 @@
                 <div>
                   <h3 class="text-xl font-bold text-white">
                     <span class="lang-ru">Улучшает подвижность и гибкость</span>
-                    <span class="lang-uz">Harakatchanlik va moslashuvchanlikni yaxshilaydi</span>
-                    <span class="lang-en">Improves Mobility and Flexibility</span>
+                    <span class="lang-uz"
+                      >Harakatchanlik va moslashuvchanlikni yaxshilaydi</span
+                    >
+                    <span class="lang-en"
+                      >Improves Mobility and Flexibility</span
+                    >
                   </h3>
                   <p class="text-gray-400 mt-1">
-                    <span class="lang-ru">Восполняет дефицит синовиальной жидкости, которая действует как смазка для суставов. Это возвращает легкость движений и устраняет скованность.</span>
-                    <span class="lang-uz">Bo'g'imlar uchun moylash vositasi bo'lib xizmat qiladigan sinovial suyuqlik tanqisligini to'ldiradi. Bu harakatlarning yengilligini qaytaradi va qattiqlikni yo'q qiladi.</span>
-                    <span class="lang-en">Replenishes the synovial fluid, which acts as a lubricant for the joints. This restores ease of movement and eliminates stiffness.</span>
+                    <span class="lang-ru"
+                      >Восполняет дефицит синовиальной жидкости, которая
+                      действует как смазка для суставов. Это возвращает легкость
+                      движений и устраняет скованность.</span
+                    >
+                    <span class="lang-uz"
+                      >Bo'g'imlar uchun moylash vositasi bo'lib xizmat qiladigan
+                      sinovial suyuqlik tanqisligini to'ldiradi. Bu
+                      harakatlarning yengilligini qaytaradi va qattiqlikni yo'q
+                      qiladi.</span
+                    >
+                    <span class="lang-en"
+                      >Replenishes the synovial fluid, which acts as a lubricant
+                      for the joints. This restores ease of movement and
+                      eliminates stiffness.</span
+                    >
                   </p>
                 </div>
               </div>
@@ -342,11 +514,25 @@
             <span class="lang-en">Advantages of "Stop Artroz"</span>
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="bg-background-light p-6 rounded-lg shadow-md text-center">
+            <div
+              class="bg-background-light p-6 rounded-lg shadow-md text-center"
+            >
               <div
                 class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary-color rounded-full"
               >
-                <svg class="w-8 h-8 text-accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h1a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.881 4.002l.023.023a1.5 1.5 0 002.121 2.121l.023.023-2.12 2.122a1.5 1.5 0 00-2.122-2.122l2.121-2.121zM12 11v9m0 0l-2-2m2 2l2-2"></path></svg>
+                <svg
+                  class="w-8 h-8 text-accent-color"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h1a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.881 4.002l.023.023a1.5 1.5 0 002.121 2.121l.023.023-2.12 2.122a1.5 1.5 0 00-2.122-2.122l2.121-2.121zM12 11v9m0 0l-2-2m2 2l2-2"
+                  ></path>
+                </svg>
               </div>
               <h3 class="text-xl font-bold mb-2 text-white">
                 <span class="lang-ru">100% Натуральный</span>
@@ -354,11 +540,25 @@
                 <span class="lang-en">100% Natural</span>
               </h3>
             </div>
-            <div class="bg-background-light p-6 rounded-lg shadow-md text-center">
+            <div
+              class="bg-background-light p-6 rounded-lg shadow-md text-center"
+            >
               <div
                 class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary-color rounded-full"
               >
-                <svg class="w-8 h-8 text-accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <svg
+                  class="w-8 h-8 text-accent-color"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
               </div>
               <h3 class="text-xl font-bold mb-2 text-white">
                 <span class="lang-ru">Быстрое действие</span>
@@ -366,11 +566,25 @@
                 <span class="lang-en">Fast-Acting</span>
               </h3>
             </div>
-            <div class="bg-background-light p-6 rounded-lg shadow-md text-center">
+            <div
+              class="bg-background-light p-6 rounded-lg shadow-md text-center"
+            >
               <div
                 class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary-color rounded-full"
               >
-                <svg class="w-8 h-8 text-accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z"></path></svg>
+                <svg
+                  class="w-8 h-8 text-accent-color"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z"
+                  ></path>
+                </svg>
               </div>
               <h3 class="text-xl font-bold mb-2 text-white">
                 <span class="lang-ru">Клинически доказано</span>
@@ -378,11 +592,25 @@
                 <span class="lang-en">Clinically Proven</span>
               </h3>
             </div>
-            <div class="bg-background-light p-6 rounded-lg shadow-md text-center">
+            <div
+              class="bg-background-light p-6 rounded-lg shadow-md text-center"
+            >
               <div
                 class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary-color rounded-full"
               >
-                <svg class="w-8 h-8 text-accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path></svg>
+                <svg
+                  class="w-8 h-8 text-accent-color"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                  ></path>
+                </svg>
               </div>
               <h3 class="text-xl font-bold mb-2 text-white">
                 <span class="lang-ru">Безопасен</span>
@@ -415,13 +643,33 @@
               </h2>
               <p class="text-gray-400 mb-4">
                 <span class="lang-ru"
-                  >«Я рекомендую «Стоп Артроз» своим пациентам как эффективное средство для борьбы с болью и воспалением в суставах. Его ключевое преимущество — комплексное воздействие. Препарат не просто маскирует симптомы, а способствует восстановлению хрящевой ткани, что является основой для долгосрочного улучшения. Натуральный состав минимизирует риски побочных эффектов, делая его отличным выбором для длительной терапии.»</span
+                  >«Я рекомендую «Стоп Артроз» своим пациентам как эффективное
+                  средство для борьбы с болью и воспалением в суставах. Его
+                  ключевое преимущество — комплексное воздействие. Препарат не
+                  просто маскирует симптомы, а способствует восстановлению
+                  хрящевой ткани, что является основой для долгосрочного
+                  улучшения. Натуральный состав минимизирует риски побочных
+                  эффектов, делая его отличным выбором для длительной
+                  терапии.»</span
                 >
                 <span class="lang-uz"
-                  >"Men "Stop Artroz"ni bemorlarimga bo'g'imlardagi og'riq va yallig'lanishga qarshi kurashish uchun samarali vosita sifatida tavsiya qilaman. Uning asosiy afzalligi kompleks ta'siridir. Preparat nafaqat simptomlarni niqoblaydi, balki uzoq muddatli yaxshilanish uchun asos bo'lgan xaftaga tushadigan to'qimalarni tiklashga yordam beradi. Tabiiy tarkibi nojo'ya ta'sirlar xavfini kamaytiradi, bu uni uzoq muddatli davolash uchun ajoyib tanlov qiladi."</span
+                  >"Men "Stop Artroz"ni bemorlarimga bo'g'imlardagi og'riq va
+                  yallig'lanishga qarshi kurashish uchun samarali vosita
+                  sifatida tavsiya qilaman. Uning asosiy afzalligi kompleks
+                  ta'siridir. Preparat nafaqat simptomlarni niqoblaydi, balki
+                  uzoq muddatli yaxshilanish uchun asos bo'lgan xaftaga
+                  tushadigan to'qimalarni tiklashga yordam beradi. Tabiiy
+                  tarkibi nojo'ya ta'sirlar xavfini kamaytiradi, bu uni uzoq
+                  muddatli davolash uchun ajoyib tanlov qiladi."</span
                 >
                 <span class="lang-en"
-                  >"I recommend 'Stop Artroz' to my patients as an effective means to combat joint pain and inflammation. Its key advantage is its comprehensive action. The supplement doesn't just mask symptoms but promotes the restoration of cartilage tissue, which is the basis for long-term improvement. The natural composition minimizes the risk of side effects, making it an excellent choice for long-term therapy."</span
+                  >"I recommend 'Stop Artroz' to my patients as an effective
+                  means to combat joint pain and inflammation. Its key advantage
+                  is its comprehensive action. The supplement doesn't just mask
+                  symptoms but promotes the restoration of cartilage tissue,
+                  which is the basis for long-term improvement. The natural
+                  composition minimizes the risk of side effects, making it an
+                  excellent choice for long-term therapy."</span
                 >
               </p>
               <p class="font-bold text-secondary-color">Азимов Фаррух</p>
@@ -430,7 +678,9 @@
                 <span class="lang-uz"
                   >Revmatolog shifokor, 20 yillik tajriba</span
                 >
-                <span class="lang-en">Rheumatologist, 20 years of experience</span>
+                <span class="lang-en"
+                  >Rheumatologist, 20 years of experience</span
+                >
               </p>
             </div>
           </div>
@@ -441,12 +691,11 @@
       <section class="bg-primary-color text-white py-12">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-2xl md:text-3xl font-bold mb-6">
-            <span class="lang-ru"
-              >Верните себе радость движения без боли!</span>
-            <span class="lang-uz"
-              >Og'riqsiz harakat quvonchini qaytaring!</span
+            <span class="lang-ru">Верните себе радость движения без боли!</span>
+            <span class="lang-uz">Og'riqsiz harakat quvonchini qaytaring!</span>
+            <span class="lang-en"
+              >Rediscover the joy of movement without pain!</span
             >
-            <span class="lang-en">Rediscover the joy of movement without pain!</span>
           </h2>
           <a
             href="#order-form"
@@ -472,9 +721,25 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto"
           >
-            <div class="flex items-center gap-4 p-4 bg-background-light rounded-lg">
-              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full">
-                <svg class="w-6 h-6 text-secondary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <div
+              class="flex items-center gap-4 p-4 bg-background-light rounded-lg"
+            >
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-secondary-color"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Свобода движений</span>
@@ -482,9 +747,25 @@
                 <span class="lang-en">Freedom of Movement</span>
               </p>
             </div>
-            <div class="flex items-center gap-4 p-4 bg-background-light rounded-lg">
-              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full">
-                 <svg class="w-6 h-6 text-secondary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <div
+              class="flex items-center gap-4 p-4 bg-background-light rounded-lg"
+            >
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-secondary-color"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Жизнь без боли</span>
@@ -492,9 +773,25 @@
                 <span class="lang-en">Life Without Pain</span>
               </p>
             </div>
-            <div class="flex items-center gap-4 p-4 bg-background-light rounded-lg">
-              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full">
-                 <svg class="w-6 h-6 text-secondary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <div
+              class="flex items-center gap-4 p-4 bg-background-light rounded-lg"
+            >
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-secondary-color"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Защита суставов</span>
@@ -502,9 +799,25 @@
                 <span class="lang-en">Joint Protection</span>
               </p>
             </div>
-            <div class="flex items-center gap-4 p-4 bg-background-light rounded-lg">
-              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full">
-                 <svg class="w-6 h-6 text-secondary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <div
+              class="flex items-center gap-4 p-4 bg-background-light rounded-lg"
+            >
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-secondary-color"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Уменьшение отеков</span>
@@ -512,6 +825,48 @@
                 <span class="lang-en">Reduced Swelling</span>
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Explanation Section -->
+      <section class="py-16 bg-background-dark">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-white mb-4"
+          >
+            <span class="lang-ru">Узнайте больше за 60 секунд</span>
+            <span class="lang-uz"
+              >"Sila Max Lux" haqida 60 soniyada ko'proq bilib oling</span
+            >
+            <span class="lang-en"
+              >Learn More About "Sila Max Lux" in 60 Seconds</span
+            >
+          </h2>
+          <p class="text-center text-gray-400 mb-12 max-w-3xl mx-auto">
+            <span class="lang-ru"
+              >Наш эксперт подробно рассказывает о составе, принципе действия и
+              преимуществах продукта в этом коротком видео.</span
+            >
+            <span class="lang-uz"
+              >Bizning mutaxassisimiz ushbu qisqa videoda mahsulotning tarkibi,
+              ishlash printsipi va afzalliklari haqida batafsil ma'lumot
+              beradi.</span
+            >
+            <span class="lang-en"
+              >Our expert explains the composition, principle of action, and
+              benefits of the product in this short video.</span
+            >
+          </p>
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/UP6Qth-UmtM"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
           </div>
         </div>
       </section>
@@ -530,13 +885,22 @@
             <div class="testimonial-card p-6 rounded-lg">
               <p class="text-gray-400 mb-4">
                 <span class="lang-ru"
-                  >"Годами мучился с болью в колене. Думал, уже ничего не поможет. 'Стоп Артроз' стал моим спасением! Уже через неделю я смог нормально ходить по лестнице без боли. Это невероятно."</span
+                  >"Годами мучился с болью в колене. Думал, уже ничего не
+                  поможет. 'Стоп Артроз' стал моим спасением! Уже через неделю я
+                  смог нормально ходить по лестнице без боли. Это
+                  невероятно."</span
                 >
                 <span class="lang-uz"
-                  >"Yillar davomida tizzamdagi og'riqdan azob chekdim. Hech narsa yordam bermaydi deb o'yladim. "Stop Artroz" mening najotim bo'ldi! Bir haftadan so'ng men zinapoyadan og'riqsiz normal yura oldim. Bu aql bovar qilmaydi."</span
+                  >"Yillar davomida tizzamdagi og'riqdan azob chekdim. Hech
+                  narsa yordam bermaydi deb o'yladim. "Stop Artroz" mening
+                  najotim bo'ldi! Bir haftadan so'ng men zinapoyadan og'riqsiz
+                  normal yura oldim. Bu aql bovar qilmaydi."</span
                 >
                 <span class="lang-en"
-                  >"I suffered from knee pain for years. I thought nothing would help. 'Stop Artroz' became my salvation! After just a week, I could walk up the stairs normally without pain. It's incredible."</span
+                  >"I suffered from knee pain for years. I thought nothing would
+                  help. 'Stop Artroz' became my salvation! After just a week, I
+                  could walk up the stairs normally without pain. It's
+                  incredible."</span
                 >
               </p>
               <p class="font-bold text-secondary-color">
@@ -548,13 +912,21 @@
             <div class="testimonial-card p-6 rounded-lg">
               <p class="text-gray-400 mb-4">
                 <span class="lang-ru"
-                  >"Работаю в офисе, и к вечеру спина и шея просто отваливались. Начала принимать 'Стоп Артроз' для профилактики. Скованность ушла, чувствую себя гораздо подвижнее и энергичнее."</span
+                  >"Работаю в офисе, и к вечеру спина и шея просто отваливались.
+                  Начала принимать 'Стоп Артроз' для профилактики. Скованность
+                  ушла, чувствую себя гораздо подвижнее и энергичнее."</span
                 >
                 <span class="lang-uz"
-                  >"Men ofisda ishlayman va kechqurun orqa va bo'ynim shunchaki og'riydi. Profilaktika uchun "Stop Artroz" ni qabul qila boshladim. Qattiqlik yo'qoldi, o'zimni ancha harakatchan va baquvvat his qilyapman."</span
+                  >"Men ofisda ishlayman va kechqurun orqa va bo'ynim shunchaki
+                  og'riydi. Profilaktika uchun "Stop Artroz" ni qabul qila
+                  boshladim. Qattiqlik yo'qoldi, o'zimni ancha harakatchan va
+                  baquvvat his qilyapman."</span
                 >
                 <span class="lang-en"
-                  >"I work in an office, and by the evening my back and neck were killing me. I started taking 'Stop Artroz' for prevention. The stiffness is gone, and I feel much more mobile and energetic."</span
+                  >"I work in an office, and by the evening my back and neck
+                  were killing me. I started taking 'Stop Artroz' for
+                  prevention. The stiffness is gone, and I feel much more mobile
+                  and energetic."</span
                 >
               </p>
               <p class="font-bold text-secondary-color">
@@ -566,13 +938,22 @@
             <div class="testimonial-card p-6 rounded-lg">
               <p class="text-gray-400 mb-4">
                 <span class="lang-ru"
-                  >"После травмы плеча долго не мог вернуться к тренировкам. 'Стоп Артроз' помог ускорить восстановление. Воспаление прошло, и я снова могу заниматься любимым делом без опасений."</span
+                  >"После травмы плеча долго не мог вернуться к тренировкам.
+                  'Стоп Артроз' помог ускорить восстановление. Воспаление
+                  прошло, и я снова могу заниматься любимым делом без
+                  опасений."</span
                 >
                 <span class="lang-uz"
-                  >"Yelka jarohatidan so'ng uzoq vaqt mashg'ulotlarga qayta olmadim. "Stop Artroz" tiklanishni tezlashtirishga yordam berdi. Yallig'lanish o'tdi va men yana qo'rquvsiz sevimli ishim bilan shug'ullanishim mumkin."</span
+                  >"Yelka jarohatidan so'ng uzoq vaqt mashg'ulotlarga qayta
+                  olmadim. "Stop Artroz" tiklanishni tezlashtirishga yordam
+                  berdi. Yallig'lanish o'tdi va men yana qo'rquvsiz sevimli
+                  ishim bilan shug'ullanishim mumkin."</span
                 >
                 <span class="lang-en"
-                  >"After a shoulder injury, I couldn't get back to training for a long time. 'Stop Artroz' helped speed up my recovery. The inflammation is gone, and I can do what I love again without fear."</span
+                  >"After a shoulder injury, I couldn't get back to training for
+                  a long time. 'Stop Artroz' helped speed up my recovery. The
+                  inflammation is gone, and I can do what I love again without
+                  fear."</span
                 >
               </p>
               <p class="font-bold text-secondary-color">
@@ -593,15 +974,20 @@
             <span class="lang-uz">Bo'g'im og'rig'ini abadiy unuting!</span>
             <span class="lang-en">Forget Joint Pain Forever!</span>
           </h2>
-          <p class="text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto text-gray-300">
+          <p
+            class="text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto text-gray-300"
+          >
             <span class="lang-ru"
-              >Закажите «Стоп Артроз» прямо сейчас и получите скидку 50% на первый курс!</span
+              >Закажите «Стоп Артроз» прямо сейчас и получите скидку 50% на
+              первый курс!</span
             >
             <span class="lang-uz"
-              >"Stop Artroz"ga hoziroq buyurtma bering va birinchi kurs uchun 50% chegirma oling!</span
+              >"Stop Artroz"ga hoziroq buyurtma bering va birinchi kurs uchun
+              50% chegirma oling!</span
             >
             <span class="lang-en"
-              >Order "Stop Artroz" right now and get a 50% discount on your first course!</span
+              >Order "Stop Artroz" right now and get a 50% discount on your
+              first course!</span
             >
           </p>
 
@@ -609,7 +995,7 @@
             class="max-w-md mx-auto bg-background-light/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/10"
           >
             <img
-              src="assets/StopArtroz.png"
+              src="assets/IMG_2321.png"
               alt="Продукт Стоп Артроз"
               class="w-1/2 mx-auto mb-4"
             />
@@ -618,7 +1004,8 @@
                 >Осталось <span id="stock-count">12</span> шт. по акции!</span
               >
               <span class="lang-uz"
-                >Aksiya bo'yicha <span id="stock-count-uz">12</span> dona qoldi!</span
+                >Aksiya bo'yicha <span id="stock-count-uz">12</span> dona
+                qoldi!</span
               >
               <span class="lang-en"
                 ><span id="stock-count-en">12</span> left in stock!</span

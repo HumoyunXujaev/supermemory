@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Сила Макс Люкс – Натуральная формула для потенции, энергии и здоровья простаты
+      Сила Макс Люкс – Натуральная формула для потенции, энергии и здоровья
+      простаты
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,7 +36,11 @@
         background: radial-gradient(circle, #1f2937, #111827);
       }
       .section-gradient {
-        background: linear-gradient(180deg, var(--background-light) 0%, var(--background-dark) 100%);
+        background: linear-gradient(
+          180deg,
+          var(--background-light) 0%,
+          var(--background-dark) 100%
+        );
       }
       .cta-button {
         transition: all 0.3s ease;
@@ -94,14 +99,38 @@
         transform: rotate(15deg);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
+      .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 300px; /* Max width for the video container */
+        height: 533px; /* Height for 9:16 aspect ratio based on max-width */
+        margin: auto;
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: #000;
+        border: 3px solid var(--primary-color);
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
     <!-- Top Bar with Logo and Language Switcher -->
     <div class="bg-black py-2">
       <div class="container mx-auto px-6 flex justify-between items-center">
-        <a href="#" aria-label="Sila Max Lux Home">
-            <img src="assets/SILA MAX.png" alt="Sila Max Lux" width="150" height="30">
+        <!-- Logo -->
+        <a href="#" aria-label="Silamax">
+          <img
+            src="assets/SILA MAX.png"
+            alt="silamax"
+            width="100"
+            height="50"
+          />
         </a>
         <!-- Language buttons -->
         <div class="flex border border-gray-600 rounded-full">
@@ -132,8 +161,17 @@
       <div
         class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-8"
       >
-        <div class="lg:w-1/2 text-center lg:text-left">
-          <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight text-white">
+        <div class="lg:w-1/2 text-center lg:text-left order-2 lg:order-1">
+          <!-- Hero Logo -->
+          <!-- <div class="mb-6 flex justify-center lg:justify-start">
+              <a href="#" aria-label="Super pamyat">
+            <img src="assets/SILA MAX.png" alt="silamax" width="180" height="50">
+        </a>
+            
+          </div> -->
+          <h1
+            class="text-4xl md:text-6xl font-black mb-4 leading-tight text-white"
+          >
             <span class="lang-ru">СИЛА МАКС ЛЮКС</span>
             <span class="lang-uz">SILA MAX LUX</span>
             <span class="lang-en">SILA MAX LUX</span>
@@ -142,13 +180,16 @@
             class="text-lg md:text-2xl font-light mb-8 max-w-xl mx-auto lg:mx-0 text-gray-300"
           >
             <span class="lang-ru"
-              >Натуральная формула для мужской силы, потенции, энергии и здоровья простаты.</span
+              >Натуральная формула для мужской силы, потенции, энергии и
+              здоровья простаты.</span
             >
             <span class="lang-uz"
-              >Erkak kuchi, potentsiya va prostata salomatligi uchun tabiiy kapsula.</span
+              >Erkak kuchi, potentsiya va prostata salomatligi uchun tabiiy
+              kapsula.</span
             >
             <span class="lang-en"
-              >Natural Male Enhancement for Energy, Potency & Prostate Health.</span
+              >Natural Male Enhancement for Energy, Potency & Prostate
+              Health.</span
             >
           </p>
           <a
@@ -160,19 +201,25 @@
             <span class="lang-en">ORDER NOW →</span>
           </a>
           <p class="text-xs mt-4 opacity-70">
-            <span class="lang-ru">*Анонимная доставка для вашего комфорта.</span>
+            <span class="lang-ru"
+              >*Анонимная доставка для вашего комфорта.</span
+            >
             <span class="lang-uz"
               >*Sizning qulayligingiz uchun anonim yetkazib berish.</span
             >
             <span class="lang-en">*Anonymous delivery for your comfort.</span>
           </p>
         </div>
-        <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
+        <div
+          class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center order-1 lg:order-2"
+        >
           <div class="relative w-max">
             <img
-              src="https://placehold.co/400x450/111827/d4af37?text=Сила+Макс"
+              src="assets/20. Сила Макс Капсула - bottle.png"
               alt="Изображение продукта Сила Макс Люкс"
               class="rounded-lg shadow-2xl max-w-xs md:max-w-sm"
+              width="150"
+              height="150"
             />
             <div class="discount-bubble">-50%</div>
           </div>
@@ -188,26 +235,55 @@
             class="text-3xl md:text-4xl font-bold text-center text-white mb-4"
           >
             <span class="lang-ru">Узнаете эти тревожные сигналы?</span>
-            <span class="lang-uz">Ushbu tashvishli signallarni taniysizmi?</span>
-            <span class="lang-en">Do You Recognize These Alarming Signals?</span>
+            <span class="lang-uz"
+              >Ushbu tashvishli signallarni taniysizmi?</span
+            >
+            <span class="lang-en"
+              >Do You Recognize These Alarming Signals?</span
+            >
           </h2>
           <p class="text-center text-gray-400 mb-12 max-w-3xl mx-auto">
             <span class="lang-ru"
-              >Снижение либидо, усталость, проблемы в постели и неуверенность в себе — это не норма. Это признаки того, что мужское здоровье нуждается в поддержке. Игнорирование этих проблем может привести к простатиту, импотенции и психологическим комплексам.</span
+              >Снижение либидо, усталость, проблемы в постели и неуверенность в
+              себе — это не норма. Это признаки того, что мужское здоровье
+              нуждается в поддержке. Игнорирование этих проблем может привести к
+              простатиту, импотенции и психологическим комплексам.</span
             >
             <span class="lang-uz"
-              >Libidoning pasayishi, charchoq, yotoqdagi muammolar va o'ziga ishonchsizlik - bu norma emas. Bu erkaklar salomatligi qo'llab-quvvatlashga muhtojligining belgilari. Ushbu muammolarni e'tiborsiz qoldirish prostatit, impotensiya va psixologik komplekslarga olib kelishi mumkin.</span
+              >Libidoning pasayishi, charchoq, yotoqdagi muammolar va o'ziga
+              ishonchsizlik - bu norma emas. Bu erkaklar salomatligi
+              qo'llab-quvvatlashga muhtojligining belgilari. Ushbu muammolarni
+              e'tiborsiz qoldirish prostatit, impotensiya va psixologik
+              komplekslarga olib kelishi mumkin.</span
             >
             <span class="lang-en"
-              >Decreased libido, fatigue, problems in bed, and lack of self-confidence are not normal. These are signs that men's health needs support. Ignoring these problems can lead to prostatitis, impotence, and psychological issues.</span
+              >Decreased libido, fatigue, problems in bed, and lack of
+              self-confidence are not normal. These are signs that men's health
+              needs support. Ignoring these problems can lead to prostatitis,
+              impotence, and psychological issues.</span
             >
           </p>
-          <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
-          >
-            <div class="flex flex-col items-center p-4 bg-background-light rounded-lg">
-              <div class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20">
-                 <svg class="w-10 h-10 text-secondary-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.166 1.318m5.754-7.728a4.47 4.47 0 00-5.754 0m5.754 0a3.375 3.375 0 01-4.242 0m4.242 0a3.375 3.375 0 00-4.242 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div
+              class="flex flex-col items-center p-4 bg-background-light rounded-lg"
+            >
+              <div
+                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20"
+              >
+                <svg
+                  class="w-10 h-10 text-secondary-color"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.166 1.318m5.754-7.728a4.47 4.47 0 00-5.754 0m5.754 0a3.375 3.375 0 01-4.242 0m4.242 0a3.375 3.375 0 00-4.242 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Слабая эрекция</span
@@ -215,9 +291,26 @@
                 ><span class="lang-en">Weak Erection</span>
               </p>
             </div>
-            <div class="flex flex-col items-center p-4 bg-background-light rounded-lg">
-              <div class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20">
-                 <svg class="w-10 h-10 text-secondary-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <div
+              class="flex flex-col items-center p-4 bg-background-light rounded-lg"
+            >
+              <div
+                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20"
+              >
+                <svg
+                  class="w-10 h-10 text-secondary-color"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Быстрая усталость</span
@@ -225,9 +318,26 @@
                 ><span class="lang-en">Quick Fatigue</span>
               </p>
             </div>
-            <div class="flex flex-col items-center p-4 bg-background-light rounded-lg">
-              <div class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20">
-                <svg class="w-10 h-10 text-secondary-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.572L16.5 21.75l-.398-1.178a3.375 3.375 0 00-2.456-2.456L12.75 18l1.178-.398a3.375 3.375 0 002.456-2.456L16.5 14.25l.398 1.178a3.375 3.375 0 002.456 2.456L20.25 18l-1.178.398a3.375 3.375 0 00-2.456 2.456z" /></svg>
+            <div
+              class="flex flex-col items-center p-4 bg-background-light rounded-lg"
+            >
+              <div
+                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20"
+              >
+                <svg
+                  class="w-10 h-10 text-secondary-color"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.572L16.5 21.75l-.398-1.178a3.375 3.375 0 00-2.456-2.456L12.75 18l1.178-.398a3.375 3.375 0 002.456-2.456L16.5 14.25l.398 1.178a3.375 3.375 0 002.456 2.456L20.25 18l-1.178.398a3.375 3.375 0 00-2.456 2.456z"
+                  />
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Низкое либидо</span
@@ -235,9 +345,26 @@
                 ><span class="lang-en">Low Libido</span>
               </p>
             </div>
-            <div class="flex flex-col items-center p-4 bg-background-light rounded-lg">
-              <div class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20">
-                <svg class="w-10 h-10 text-secondary-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" /></svg>
+            <div
+              class="flex flex-col items-center p-4 bg-background-light rounded-lg"
+            >
+              <div
+                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20"
+              >
+                <svg
+                  class="w-10 h-10 text-secondary-color"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 5.25v13.5m-7.5-13.5v13.5"
+                  />
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Проблемы с простатой</span
@@ -255,9 +382,15 @@
           <h2
             class="text-3xl md:text-4xl font-bold text-center text-white mb-12"
           >
-            <span class="lang-ru">Как «Сила Макс Люкс» возвращает мужскую силу?</span>
-            <span class="lang-uz">"Sila Max Lux" erkak kuchini qanday qaytaradi?</span>
-            <span class="lang-en">How Does "Sila Max Lux" Restore Male Power?</span>
+            <span class="lang-ru"
+              >Как «Сила Макс Люкс» возвращает мужскую силу?</span
+            >
+            <span class="lang-uz"
+              >"Sila Max Lux" erkak kuchini qanday qaytaradi?</span
+            >
+            <span class="lang-en"
+              >How Does "Sila Max Lux" Restore Male Power?</span
+            >
           </h2>
           <div
             class="flex flex-col md:flex-row items-center justify-center gap-12"
@@ -283,9 +416,21 @@
                     <span class="lang-en">Testosterone Stimulation</span>
                   </h3>
                   <p class="text-gray-400 mt-1">
-                    <span class="lang-ru">Натуральные компоненты активизируют выработку главного мужского гормона, что напрямую влияет на либидо, энергию и уверенность в себе.</span>
-                    <span class="lang-uz">Tabiiy komponentlar asosiy erkak gormoni ishlab chiqarilishini faollashtiradi, bu esa libidoga, energiyaga va o'ziga ishonchga bevosita ta'sir qiladi.</span>
-                    <span class="lang-en">Natural components activate the production of the main male hormone, which directly affects libido, energy, and self-confidence.</span>
+                    <span class="lang-ru"
+                      >Натуральные компоненты активизируют выработку главного
+                      мужского гормона, что напрямую влияет на либидо, энергию и
+                      уверенность в себе.</span
+                    >
+                    <span class="lang-uz"
+                      >Tabiiy komponentlar asosiy erkak gormoni ishlab
+                      chiqarilishini faollashtiradi, bu esa libidoga, energiyaga
+                      va o'ziga ishonchga bevosita ta'sir qiladi.</span
+                    >
+                    <span class="lang-en"
+                      >Natural components activate the production of the main
+                      male hormone, which directly affects libido, energy, and
+                      self-confidence.</span
+                    >
                   </p>
                 </div>
               </div>
@@ -302,9 +447,21 @@
                     <span class="lang-en">Improved Blood Circulation</span>
                   </h3>
                   <p class="text-gray-400 mt-1">
-                    <span class="lang-ru">Препарат усиливает приток крови к органам малого таза, обеспечивая мощную и стабильную эрекцию и предотвращая застойные явления в простате.</span>
-                    <span class="lang-uz">Preparat kichik tos a'zolariga qon oqimini kuchaytiradi, kuchli va barqaror erektsiyani ta'minlaydi va prostatada turg'unlikni oldini oladi.</span>
-                    <span class="lang-en">The supplement enhances blood flow to the pelvic organs, ensuring a powerful and stable erection and preventing stagnation in the prostate.</span>
+                    <span class="lang-ru"
+                      >Препарат усиливает приток крови к органам малого таза,
+                      обеспечивая мощную и стабильную эрекцию и предотвращая
+                      застойные явления в простате.</span
+                    >
+                    <span class="lang-uz"
+                      >Preparat kichik tos a'zolariga qon oqimini kuchaytiradi,
+                      kuchli va barqaror erektsiyani ta'minlaydi va prostatada
+                      turg'unlikni oldini oladi.</span
+                    >
+                    <span class="lang-en"
+                      >The supplement enhances blood flow to the pelvic organs,
+                      ensuring a powerful and stable erection and preventing
+                      stagnation in the prostate.</span
+                    >
                   </p>
                 </div>
               </div>
@@ -317,13 +474,27 @@
                 <div>
                   <h3 class="text-xl font-bold text-white">
                     <span class="lang-ru">Поддержка здоровья простаты</span>
-                    <span class="lang-uz">Prostata salomatligini qo'llab-quvvatlash</span>
+                    <span class="lang-uz"
+                      >Prostata salomatligini qo'llab-quvvatlash</span
+                    >
                     <span class="lang-en">Prostate Health Support</span>
                   </h3>
                   <p class="text-gray-400 mt-1">
-                    <span class="lang-ru">Активные вещества снимают воспаление, нормализуют мочеиспускание и служат эффективной профилактикой простатита и аденомы простаты.</span>
-                    <span class="lang-uz">Faol moddalar yallig'lanishni yengillashtiradi, siyishni normallashtiradi va prostatit va prostata adenomasining samarali profilaktikasi bo'lib xizmat qiladi.</span>
-                    <span class="lang-en">Active substances relieve inflammation, normalize urination, and serve as an effective prevention of prostatitis and prostate adenoma.</span>
+                    <span class="lang-ru"
+                      >Активные вещества снимают воспаление, нормализуют
+                      мочеиспускание и служат эффективной профилактикой
+                      простатита и аденомы простаты.</span
+                    >
+                    <span class="lang-uz"
+                      >Faol moddalar yallig'lanishni yengillashtiradi, siyishni
+                      normallashtiradi va prostatit va prostata adenomasining
+                      samarali profilaktikasi bo'lib xizmat qiladi.</span
+                    >
+                    <span class="lang-en"
+                      >Active substances relieve inflammation, normalize
+                      urination, and serve as an effective prevention of
+                      prostatitis and prostate adenoma.</span
+                    >
                   </p>
                 </div>
               </div>
@@ -353,13 +524,32 @@
               </h2>
               <p class="text-gray-400 mb-4">
                 <span class="lang-ru"
-                  >«Современный ритм жизни, стресс и возраст неизбежно сказываются на мужском здоровье. Я рекомендую «Сила Макс Люкс» как комплексное решение. Он не просто дает временный эффект, а работает с причиной проблемы: нормализует гормональный фон, улучшает кровоснабжение и защищает простату. Это безопасный и надежный способ вернуть мужчине уверенность, энергию и полноценную интимную жизнь.»</span
+                  >«Современный ритм жизни, стресс и возраст неизбежно
+                  сказываются на мужском здоровье. Я рекомендую «Сила Макс Люкс»
+                  как комплексное решение. Он не просто дает временный эффект, а
+                  работает с причиной проблемы: нормализует гормональный фон,
+                  улучшает кровоснабжение и защищает простату. Это безопасный и
+                  надежный способ вернуть мужчине уверенность, энергию и
+                  полноценную интимную жизнь.»</span
                 >
                 <span class="lang-uz"
-                  >"Zamonaviy hayot tarzi, stress va yosh muqarrar ravshda erkaklar salomatligiga ta'sir qiladi. Men "Sila Max Lux" ni kompleks yechim sifatida tavsiya qilaman. U nafaqat vaqtinchalik samara beradi, balki muammoning sababi bilan ishlaydi: gormonal fonni normallashtiradi, qon ta'minotini yaxshilaydi va prostatani himoya qiladi. Bu erkakka ishonch, energiya va to'laqonli intim hayotni qaytarishning xavfsiz va ishonchli usuli."</span
+                  >"Zamonaviy hayot tarzi, stress va yosh muqarrar ravshda
+                  erkaklar salomatligiga ta'sir qiladi. Men "Sila Max Lux" ni
+                  kompleks yechim sifatida tavsiya qilaman. U nafaqat
+                  vaqtinchalik samara beradi, balki muammoning sababi bilan
+                  ishlaydi: gormonal fonni normallashtiradi, qon ta'minotini
+                  yaxshilaydi va prostatani himoya qiladi. Bu erkakka ishonch,
+                  energiya va to'laqonli intim hayotni qaytarishning xavfsiz va
+                  ishonchli usuli."</span
                 >
                 <span class="lang-en"
-                  >"The modern rhythm of life, stress, and age inevitably affect men's health. I recommend 'Sila Max Lux' as a comprehensive solution. It doesn't just provide a temporary effect but addresses the root of the problem: it normalizes hormonal balance, improves blood supply, and protects the prostate. It is a safe and reliable way to restore a man's confidence, energy, and a full intimate life."</span
+                  >"The modern rhythm of life, stress, and age inevitably affect
+                  men's health. I recommend 'Sila Max Lux' as a comprehensive
+                  solution. It doesn't just provide a temporary effect but
+                  addresses the root of the problem: it normalizes hormonal
+                  balance, improves blood supply, and protects the prostate. It
+                  is a safe and reliable way to restore a man's confidence,
+                  energy, and a full intimate life."</span
                 >
               </p>
               <p class="font-bold text-secondary-color">Искандаров Тимур</p>
@@ -368,7 +558,9 @@
                 <span class="lang-uz"
                   >Urolog-androlog shifokori, 17 yillik tajriba</span
                 >
-                <span class="lang-en">Urologist-Andrologist, 17 years of experience</span>
+                <span class="lang-en"
+                  >Urologist-Andrologist, 17 years of experience</span
+                >
               </p>
             </div>
           </div>
@@ -379,8 +571,7 @@
       <section class="bg-primary-color text-white py-12">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-2xl md:text-3xl font-bold mb-6">
-            <span class="lang-ru"
-              >Готовы пробудить свою мужскую силу?</span>
+            <span class="lang-ru">Готовы пробудить свою мужскую силу?</span>
             <span class="lang-uz"
               >Erkaklik kuchingizni uyg'otishga tayyormisiz?</span
             >
@@ -410,9 +601,25 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto"
           >
-            <div class="flex items-center gap-4 p-4 bg-background-dark rounded-lg">
-              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full">
-                <svg class="w-6 h-6 text-secondary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            <div
+              class="flex items-center gap-4 p-4 bg-background-dark rounded-lg"
+            >
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-secondary-color"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Мощная потенция</span>
@@ -420,9 +627,25 @@
                 <span class="lang-en">Powerful Potency</span>
               </p>
             </div>
-            <div class="flex items-center gap-4 p-4 bg-background-dark rounded-lg">
-              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full">
-                 <svg class="w-6 h-6 text-secondary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M12 21a9 9 0 100-18 9 9 0 000 18z"></path></svg>
+            <div
+              class="flex items-center gap-4 p-4 bg-background-dark rounded-lg"
+            >
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-secondary-color"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12.75L11.25 15 15 9.75M12 21a9 9 0 100-18 9 9 0 000 18z"
+                  ></path>
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Уверенность в себе</span>
@@ -430,9 +653,25 @@
                 <span class="lang-en">Self-Confidence</span>
               </p>
             </div>
-            <div class="flex items-center gap-4 p-4 bg-background-dark rounded-lg">
-              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full">
-                 <svg class="w-6 h-6 text-secondary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"></path></svg>
+            <div
+              class="flex items-center gap-4 p-4 bg-background-dark rounded-lg"
+            >
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-secondary-color"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4.5 12.75l6 6 9-13.5"
+                  ></path>
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Здоровая простата</span>
@@ -440,9 +679,25 @@
                 <span class="lang-en">Healthy Prostate</span>
               </p>
             </div>
-            <div class="flex items-center gap-4 p-4 bg-background-dark rounded-lg">
-              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full">
-                 <svg class="w-6 h-6 text-secondary-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
+            <div
+              class="flex items-center gap-4 p-4 bg-background-dark rounded-lg"
+            >
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-color/20 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-secondary-color"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                  ></path>
+                </svg>
               </div>
               <p class="font-semibold text-white">
                 <span class="lang-ru">Яркая интимная жизнь</span>
@@ -454,8 +709,50 @@
         </div>
       </section>
 
-      <!-- 9. Testimonials -->
+      <!-- Video Explanation Section -->
       <section class="py-16 bg-background-dark">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-white mb-4"
+          >
+            <span class="lang-ru">Узнайте больше за 60 секунд</span>
+            <span class="lang-uz"
+              >"Sila Max Lux" haqida 60 soniyada ko'proq bilib oling</span
+            >
+            <span class="lang-en"
+              >Learn More About "Sila Max Lux" in 60 Seconds</span
+            >
+          </h2>
+          <p class="text-center text-gray-400 mb-12 max-w-3xl mx-auto">
+            <span class="lang-ru"
+              >Наш эксперт подробно рассказывает о составе, принципе действия и
+              преимуществах продукта в этом коротком видео.</span
+            >
+            <span class="lang-uz"
+              >Bizning mutaxassisimiz ushbu qisqa videoda mahsulotning tarkibi,
+              ishlash printsipi va afzalliklari haqida batafsil ma'lumot
+              beradi.</span
+            >
+            <span class="lang-en"
+              >Our expert explains the composition, principle of action, and
+              benefits of the product in this short video.</span
+            >
+          </p>
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/UP6Qth-UmtM"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Testimonials -->
+      <section class="py-16 section-gradient">
         <div class="container mx-auto px-6">
           <h2
             class="text-3xl md:text-4xl font-bold text-center text-white mb-12"
@@ -464,17 +761,26 @@
             <span class="lang-uz">Erkaklar nima deydi</span>
             <span class="lang-en">What Men Are Saying</span>
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div class="testimonial-card p-6 rounded-lg">
               <p class="text-gray-400 mb-4">
                 <span class="lang-ru"
-                  >"После 45 лет почувствовал, что былая сила уходит. Жена нашла 'Сила Макс Люкс'. Сначала был скептичен, но результат превзошел все ожидания. Снова чувствую себя на 20 лет моложе! Спасибо!"</span
+                  >"После 45 лет почувствовал, что былая сила уходит. Жена нашла
+                  'Сила Макс Люкс'. Сначала был скептичен, но результат
+                  превзошел все ожидания. Снова чувствую себя на 20 лет моложе!
+                  Спасибо!"</span
                 >
                 <span class="lang-uz"
-                  >"45 yoshdan keyin avvalgi kuchim ketayotganini his qildim. Xotinim "Sila Maks Lyuks" ni topdi. Avvaliga shubha bilan qaradim, ammo natija barcha kutganlarimdan oshib ketdi. Yana o'zimni 20 yosh yoshroq his qilyapman! Rahmat!"</span
+                  >"45 yoshdan keyin avvalgi kuchim ketayotganini his qildim.
+                  Xotinim "Sila Maks Lyuks" ni topdi. Avvaliga shubha bilan
+                  qaradim, ammo natija barcha kutganlarimdan oshib ketdi. Yana
+                  o'zimni 20 yosh yoshroq his qilyapman! Rahmat!"</span
                 >
                 <span class="lang-en"
-                  >"After 45, I felt my former strength leaving me. My wife found 'Sila Max Lux'. I was skeptical at first, but the result exceeded all expectations. I feel 20 years younger again! Thank you!"</span
+                  >"After 45, I felt my former strength leaving me. My wife
+                  found 'Sila Max Lux'. I was skeptical at first, but the result
+                  exceeded all expectations. I feel 20 years younger again!
+                  Thank you!"</span
                 >
               </p>
               <p class="font-bold text-secondary-color">
@@ -486,37 +792,28 @@
             <div class="testimonial-card p-6 rounded-lg">
               <p class="text-gray-400 mb-4">
                 <span class="lang-ru"
-                  >"Стресс на работе сказался на интимной жизни. Было стыдно перед партнершей. Этот препарат вернул мне уверенность. Никаких побочек, только стабильный и надежный результат. Рекомендую."</span
+                  >"Стресс на работе сказался на интимной жизни. Было стыдно
+                  перед партнершей. Этот препарат вернул мне уверенность.
+                  Никаких побочек, только стабильный и надежный результат.
+                  Рекомендую."</span
                 >
                 <span class="lang-uz"
-                  >"Ishdagi stress intim hayotimga ta'sir qildi. Sherigim oldida uyalardim. Ushbu preparat menga ishonchni qaytardi. Hech qanday nojo'ya ta'sirlar yo'q, faqat barqaror va ishonchli natija. Tavsiya qilaman."</span
+                  >"Ishdagi stress intim hayotimga ta'sir qildi. Sherigim oldida
+                  uyalardim. Ushbu preparat menga ishonchni qaytardi. Hech
+                  qanday nojo'ya ta'sirlar yo'q, faqat barqaror va ishonchli
+                  natija. Tavsiya qilaman."</span
                 >
                 <span class="lang-en"
-                  >"Stress at work affected my intimate life. I was ashamed in front of my partner. This supplement gave me back my confidence. No side effects, just a stable and reliable result. I recommend it."</span
+                  >"Stress at work affected my intimate life. I was ashamed in
+                  front of my partner. This supplement gave me back my
+                  confidence. No side effects, just a stable and reliable
+                  result. I recommend it."</span
                 >
               </p>
               <p class="font-bold text-secondary-color">
                 <span class="lang-ru">Санжар, 38 лет</span>
                 <span class="lang-uz">Sanjar, 38 yosh</span>
                 <span class="lang-en">Sanjar, 38</span>
-              </p>
-            </div>
-            <div class="testimonial-card p-6 rounded-lg">
-              <p class="text-gray-400 mb-4">
-                <span class="lang-ru"
-                  >"Начал принимать для профилактики простатита по совету врача. Заметил, что не только ушли неприятные симптомы, но и в целом появилось больше энергии и сил. Отличный комплекс для мужского здоровья."</span
-                >
-                <span class="lang-uz"
-                  >"Shifokor maslahati bilan prostatit profilaktikasi uchun qabul qila boshladim. Nafaqat yoqimsiz simptomlar yo'qolganini, balki umuman olganda ko'proq energiya va kuch paydo bo'lganini payqadim. Erkaklar salomatligi uchun ajoyib kompleks."</span
-                >
-                <span class="lang-en"
-                  >"I started taking it for prostatitis prevention on my doctor's advice. I noticed that not only did the unpleasant symptoms disappear, but I also had more energy and strength overall. An excellent complex for men's health."</span
-                >
-              </p>
-              <p class="font-bold text-secondary-color">
-                <span class="lang-ru">Виктор, 60 лет</span>
-                <span class="lang-uz">Viktor, 60 yosh</span>
-                <span class="lang-en">Victor, 60</span>
               </p>
             </div>
           </div>
@@ -531,15 +828,20 @@
             <span class="lang-uz">Haqiqiy erkak kuchini qaytaring!</span>
             <span class="lang-en">Reclaim the Power of a Real Man!</span>
           </h2>
-          <p class="text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto text-gray-300">
+          <p
+            class="text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto text-gray-300"
+          >
             <span class="lang-ru"
-              >Закажите «Сила Макс Люкс» сегодня и получите скидку 50% на первый курс!</span
+              >Закажите «Сила Макс Люкс» сегодня и получите скидку 50% на первый
+              курс!</span
             >
             <span class="lang-uz"
-              >"Sila Max Lux"ga bugun buyurtma bering va birinchi kurs uchun 50% chegirma oling!</span
+              >"Sila Max Lux"ga bugun buyurtma bering va birinchi kurs uchun 50%
+              chegirma oling!</span
             >
             <span class="lang-en"
-              >Order "Sila Max Lux" today and get a 50% discount on your first course!</span
+              >Order "Sila Max Lux" today and get a 50% discount on your first
+              course!</span
             >
           </p>
 
@@ -547,7 +849,7 @@
             class="max-w-md mx-auto bg-background-light/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/10"
           >
             <img
-              src="https://placehold.co/400x450/111827/d4af37?text=Сила+Макс"
+              src="assets/20. Сила Макс Капсула - bottle.png"
               alt="Продукт Сила Макс Люкс"
               class="w-1/2 mx-auto mb-4"
             />
@@ -556,7 +858,8 @@
                 >Осталось <span id="stock-count">12</span> шт. по акции!</span
               >
               <span class="lang-uz"
-                >Aksiya bo'yicha <span id="stock-count-uz">12</span> dona qoldi!</span
+                >Aksiya bo'yicha <span id="stock-count-uz">12</span> dona
+                qoldi!</span
               >
               <span class="lang-en"
                 ><span id="stock-count-en">12</span> left in stock!</span

@@ -79,12 +79,38 @@
         transform: rotate(15deg);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
+      .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 300px; /* Max width for the video container */
+        height: 533px; /* Height for 9:16 aspect ratio based on max-width */
+        margin: auto;
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: #000;
+        border: 3px solid var(--primary-color);
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
     <!-- Language Switcher -->
     <div class="bg-green-800 text-white py-2">
-      <div class="container mx-auto px-6 flex justify-center items-center">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <a href="#" aria-label="Diafit ass">
+          <img
+            src="assets/DiafitAss.png"
+            alt="diafit ass"
+            width="80"
+            height="30"
+          />
+        </a>
         <div class="flex border border-gray-400 rounded-full">
           <button
             id="lang-ru-btn"
@@ -113,7 +139,7 @@
       <div
         class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-8"
       >
-        <div class="lg:w-1/2 text-center lg:text-left">
+        <div class="lg:w-1/2 text-center lg:text-left order-2 lg:order-1">
           <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">
             <span class="lang-ru">ДИАФИТ AСС</span>
             <span class="lang-uz">DIAFIT ASS</span>
@@ -123,13 +149,16 @@
             class="text-lg md:text-2xl font-light mb-8 max-w-xl mx-auto lg:mx-0"
           >
             <span class="lang-ru"
-              >Натуральная поддержка при диабете и для контроля уровня сахара в крови.</span
+              >Натуральная поддержка при диабете и для контроля уровня сахара в
+              крови.</span
             >
             <span class="lang-uz"
-              >Qandli diabet, glyukoza va metabolizmni nazorat qilish uchun kapsula.</span
+              >Qandli diabet, glyukoza va metabolizmni nazorat qilish uchun
+              kapsula.</span
             >
             <span class="lang-en"
-              >Natural Blood Sugar Support for Diabetes and Metabolic Balance.</span
+              >Natural Blood Sugar Support for Diabetes and Metabolic
+              Balance.</span
             >
           </p>
           <a
@@ -148,12 +177,16 @@
             <span class="lang-en">*Anonymous delivery guaranteed.</span>
           </p>
         </div>
-        <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
+        <div
+          class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center order-1 lg:order-2"
+        >
           <div class="relative w-max">
             <img
-              src="assets/DiafitAss.png"
+              src="assets/Diafit Ass (3).png"
               alt="Изображение продукта Диафит АСС"
               class="rounded-lg shadow-2xl max-w-xs md:max-w-sm"
+              width="150"
+              height="150"
             />
             <div class="discount-bubble">-50%</div>
           </div>
@@ -168,24 +201,38 @@
           <h2
             class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4"
           >
-            <span class="lang-ru">Диабет не выбирает возраст. Узнаете симптомы?</span>
-            <span class="lang-uz">Qandli diabet yosh tanlamaydi. Belgilarni bilasizmi?</span>
-            <span class="lang-en">Diabetes Doesn't Choose an Age. Do You Recognize the Symptoms?</span>
+            <span class="lang-ru"
+              >Диабет не выбирает возраст. Узнаете симптомы?</span
+            >
+            <span class="lang-uz"
+              >Qandli diabet yosh tanlamaydi. Belgilarni bilasizmi?</span
+            >
+            <span class="lang-en"
+              >Diabetes Doesn't Choose an Age. Do You Recognize the
+              Symptoms?</span
+            >
           </h2>
           <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
             <span class="lang-ru"
-              >Повышенный уровень сахара в крови — это не просто цифры в анализах. Это постоянная усталость, лишний вес, проблемы с сосудами и риск серьезных осложнений. Не позволяйте диабету управлять вашей жизнью.</span
+              >Повышенный уровень сахара в крови — это не просто цифры в
+              анализах. Это постоянная усталость, лишний вес, проблемы с
+              сосудами и риск серьезных осложнений. Не позволяйте диабету
+              управлять вашей жизнью.</span
             >
             <span class="lang-uz"
-              >Qondagi qand miqdorining yuqoriligi shunchaki tahlillardagi raqamlar emas. Bu doimiy charchoq, ortiqcha vazn, qon tomirlari bilan bog'liq muammolar va jiddiy asoratlar xavfi. Qandli diabet hayotingizni boshqarishiga yo'l qo'ymang.</span
+              >Qondagi qand miqdorining yuqoriligi shunchaki tahlillardagi
+              raqamlar emas. Bu doimiy charchoq, ortiqcha vazn, qon tomirlari
+              bilan bog'liq muammolar va jiddiy asoratlar xavfi. Qandli diabet
+              hayotingizni boshqarishiga yo'l qo'ymang.</span
             >
             <span class="lang-en"
-              >High blood sugar is not just a number in your test results. It's constant fatigue, excess weight, vascular problems, and the risk of serious complications. Don't let diabetes control your life.</span
+              >High blood sugar is not just a number in your test results. It's
+              constant fatigue, excess weight, vascular problems, and the risk
+              of serious complications. Don't let diabetes control your
+              life.</span
             >
           </p>
-          <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
-          >
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div class="flex flex-col items-center">
               <img
                 class="w-24 h-24 rounded-full mb-4 object-cover"
@@ -245,7 +292,9 @@
             class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
           >
             <span class="lang-ru">Почему «Диафит АСС» — ваш выбор?</span>
-            <span class="lang-uz">Nima uchun "Diafit ASS" - sizning tanlovingiz?</span>
+            <span class="lang-uz"
+              >Nima uchun "Diafit ASS" - sizning tanlovingiz?</span
+            >
             <span class="lang-en">Why is "Diafit ASS" Your Choice?</span>
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -253,7 +302,19 @@
               <div
                 class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full"
               >
-                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0v-8m0 8l-8-8-4 4-6-6"></path></svg>
+                <svg
+                  class="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 17h8m0 0v-8m0 8l-8-8-4 4-6-6"
+                  ></path>
+                </svg>
               </div>
               <h3 class="text-xl font-bold mb-2">
                 <span class="lang-ru">Снижает сахар</span>
@@ -265,7 +326,19 @@
               <div
                 class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full"
               >
-                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                <svg
+                  class="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                  ></path>
+                </svg>
               </div>
               <h3 class="text-xl font-bold mb-2">
                 <span class="lang-ru">Улучшает метаболизм</span>
@@ -277,7 +350,19 @@
               <div
                 class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full"
               >
-                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <svg
+                  class="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
               </div>
               <h3 class="text-xl font-bold mb-2">
                 <span class="lang-ru">Повышает энергию</span>
@@ -289,7 +374,19 @@
               <div
                 class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full"
               >
-                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z"></path></svg>
+                <svg
+                  class="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z"
+                  ></path>
+                </svg>
               </div>
               <h3 class="text-xl font-bold mb-2">
                 <span class="lang-ru">Защищает организм</span>
@@ -308,8 +405,12 @@
             class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
           >
             <span class="lang-ru">Комплексный подход к контролю диабета</span>
-            <span class="lang-uz">Qandli diabetni nazorat qilishga kompleks yondashuv</span>
-            <span class="lang-en">A Comprehensive Approach to Diabetes Control</span>
+            <span class="lang-uz"
+              >Qandli diabetni nazorat qilishga kompleks yondashuv</span
+            >
+            <span class="lang-en"
+              >A Comprehensive Approach to Diabetes Control</span
+            >
           </h2>
           <div
             class="flex flex-col md:flex-row items-center justify-center gap-12"
@@ -331,13 +432,28 @@
                 <div>
                   <h3 class="text-xl font-bold text-gray-800">
                     <span class="lang-ru">Нормализация уровня глюкозы</span>
-                    <span class="lang-uz">Glyukoza darajasini normallashtirish</span>
+                    <span class="lang-uz"
+                      >Glyukoza darajasini normallashtirish</span
+                    >
                     <span class="lang-en">Glucose Level Normalization</span>
                   </h3>
                   <p class="text-gray-600 mt-1">
-                    <span class="lang-ru">Активные гипогликемические компоненты помогают снизить уровень сахара в крови и повышают чувствительность клеток к инсулину, облегчая усвоение глюкозы.</span>
-                    <span class="lang-uz">Faol gipoglikemik komponentlar qondagi qand miqdorini pasaytirishga yordam beradi va hujayralarning insulinga sezgirligini oshiradi, glyukozaning so'rilishini osonlashtiradi.</span>
-                    <span class="lang-en">Active hypoglycemic components help lower blood sugar levels and increase cell sensitivity to insulin, facilitating glucose uptake.</span>
+                    <span class="lang-ru"
+                      >Активные гипогликемические компоненты помогают снизить
+                      уровень сахара в крови и повышают чувствительность клеток
+                      к инсулину, облегчая усвоение глюкозы.</span
+                    >
+                    <span class="lang-uz"
+                      >Faol gipoglikemik komponentlar qondagi qand miqdorini
+                      pasaytirishga yordam beradi va hujayralarning insulinga
+                      sezgirligini oshiradi, glyukozaning so'rilishini
+                      osonlashtiradi.</span
+                    >
+                    <span class="lang-en"
+                      >Active hypoglycemic components help lower blood sugar
+                      levels and increase cell sensitivity to insulin,
+                      facilitating glucose uptake.</span
+                    >
                   </p>
                 </div>
               </div>
@@ -354,9 +470,22 @@
                     <span class="lang-en">Metabolism Restoration</span>
                   </h3>
                   <p class="text-gray-600 mt-1">
-                    <span class="lang-ru">Препарат ускоряет расщепление жиров, борется с ожирением, снижает уровень холестерина и помогает нормализовать вес, что критически важно при диабете 2 типа.</span>
-                    <span class="lang-uz">Preparat yog'larning parchalanishini tezlashtiradi, semizlikka qarshi kurashadi, xolesterin darajasini pasaytiradi va vaznni normallashtirishga yordam beradi, bu 2-toifa diabetda juda muhimdir.</span>
-                    <span class="lang-en">The supplement accelerates fat breakdown, combats obesity, lowers cholesterol, and helps normalize weight, which is critical for type 2 diabetes.</span>
+                    <span class="lang-ru"
+                      >Препарат ускоряет расщепление жиров, борется с ожирением,
+                      снижает уровень холестерина и помогает нормализовать вес,
+                      что критически важно при диабете 2 типа.</span
+                    >
+                    <span class="lang-uz"
+                      >Preparat yog'larning parchalanishini tezlashtiradi,
+                      semizlikka qarshi kurashadi, xolesterin darajasini
+                      pasaytiradi va vaznni normallashtirishga yordam beradi, bu
+                      2-toifa diabetda juda muhimdir.</span
+                    >
+                    <span class="lang-en"
+                      >The supplement accelerates fat breakdown, combats
+                      obesity, lowers cholesterol, and helps normalize weight,
+                      which is critical for type 2 diabetes.</span
+                    >
                   </p>
                 </div>
               </div>
@@ -369,13 +498,31 @@
                 <div>
                   <h3 class="text-xl font-bold text-gray-800">
                     <span class="lang-ru">Общее укрепление и омоложение</span>
-                    <span class="lang-uz">Umumiy mustahkamlash va yoshartirish</span>
-                    <span class="lang-en">Overall Strengthening and Rejuvenation</span>
+                    <span class="lang-uz"
+                      >Umumiy mustahkamlash va yoshartirish</span
+                    >
+                    <span class="lang-en"
+                      >Overall Strengthening and Rejuvenation</span
+                    >
                   </h3>
                   <p class="text-gray-600 mt-1">
-                    <span class="lang-ru">Антиоксиданты и витамины в составе защищают сосуды, сердце и печень, замедляют процессы старения, укрепляют кости и активизируют иммунную систему.</span>
-                    <span class="lang-uz">Tarkibdagi antioksidantlar va vitaminlar qon tomirlarini, yurakni va jigarni himoya qiladi, qarish jarayonlarini sekinlashtiradi, suyaklarni mustahkamlaydi va immun tizimini faollashtiradi.</span>
-                    <span class="lang-en">Antioxidants and vitamins in the composition protect blood vessels, heart, and liver, slow down the aging process, strengthen bones, and activate the immune system.</span>
+                    <span class="lang-ru"
+                      >Антиоксиданты и витамины в составе защищают сосуды,
+                      сердце и печень, замедляют процессы старения, укрепляют
+                      кости и активизируют иммунную систему.</span
+                    >
+                    <span class="lang-uz"
+                      >Tarkibdagi antioksidantlar va vitaminlar qon tomirlarini,
+                      yurakni va jigarni himoya qiladi, qarish jarayonlarini
+                      sekinlashtiradi, suyaklarni mustahkamlaydi va immun
+                      tizimini faollashtiradi.</span
+                    >
+                    <span class="lang-en"
+                      >Antioxidants and vitamins in the composition protect
+                      blood vessels, heart, and liver, slow down the aging
+                      process, strengthen bones, and activate the immune
+                      system.</span
+                    >
                   </p>
                 </div>
               </div>
@@ -405,13 +552,30 @@
               </h2>
               <p class="text-gray-600 mb-4">
                 <span class="lang-ru"
-                  >«Диафит АСС — это не просто средство для снижения сахара. Это комплексный препарат, который помогает организму бороться с диабетом на нескольких уровнях. Он восстанавливает метаболизм, защищает органы-мишени и улучшает общее самочувствие. Я рекомендую его как безопасную и эффективную натуральную альтернативу для поддержки пациентов с диабетом 2 типа и метаболическим синдромом.»</span
+                  >«Диафит АСС — это не просто средство для снижения сахара. Это
+                  комплексный препарат, который помогает организму бороться с
+                  диабетом на нескольких уровнях. Он восстанавливает метаболизм,
+                  защищает органы-мишени и улучшает общее самочувствие. Я
+                  рекомендую его как безопасную и эффективную натуральную
+                  альтернативу для поддержки пациентов с диабетом 2 типа и
+                  метаболическим синдромом.»</span
                 >
                 <span class="lang-uz"
-                  >"Diafit ASS shunchaki qandni pasaytiruvchi vosita emas. Bu organizmga bir necha darajada qandli diabet bilan kurashishga yordam beradigan kompleks preparat. U metabolizmni tiklaydi, nishon organlarni himoya qiladi va umumiy ahvolni yaxshilaydi. Men uni 2-toifa diabet va metabolik sindromli bemorlarni qo'llab-quvvatlash uchun xavfsiz va samarali tabiiy alternativa sifatida tavsiya qilaman."</span
+                  >"Diafit ASS shunchaki qandni pasaytiruvchi vosita emas. Bu
+                  organizmga bir necha darajada qandli diabet bilan kurashishga
+                  yordam beradigan kompleks preparat. U metabolizmni tiklaydi,
+                  nishon organlarni himoya qiladi va umumiy ahvolni yaxshilaydi.
+                  Men uni 2-toifa diabet va metabolik sindromli bemorlarni
+                  qo'llab-quvvatlash uchun xavfsiz va samarali tabiiy
+                  alternativa sifatida tavsiya qilaman."</span
                 >
                 <span class="lang-en"
-                  >"Diafit ASS is not just a sugar-lowering agent. It is a comprehensive supplement that helps the body fight diabetes on multiple levels. It restores metabolism, protects target organs, and improves overall well-being. I recommend it as a safe and effective natural alternative to support patients with type 2 diabetes and metabolic syndrome."</span
+                  >"Diafit ASS is not just a sugar-lowering agent. It is a
+                  comprehensive supplement that helps the body fight diabetes on
+                  multiple levels. It restores metabolism, protects target
+                  organs, and improves overall well-being. I recommend it as a
+                  safe and effective natural alternative to support patients
+                  with type 2 diabetes and metabolic syndrome."</span
                 >
               </p>
               <p class="font-bold text-green-800">Саидова Нигора</p>
@@ -420,7 +584,9 @@
                 <span class="lang-uz"
                   >Endokrinolog shifokor, 22 yillik tajriba</span
                 >
-                <span class="lang-en">Endocrinologist, 22 years of experience</span>
+                <span class="lang-en"
+                  >Endocrinologist, 22 years of experience</span
+                >
               </p>
             </div>
           </div>
@@ -432,11 +598,14 @@
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-2xl md:text-3xl font-bold mb-6">
             <span class="lang-ru"
-              >Сделайте шаг к жизни без ограничений уже сегодня!</span>
+              >Сделайте шаг к жизни без ограничений уже сегодня!</span
+            >
             <span class="lang-uz"
               >Bugunoq cheklovlarsiz hayot sari qadam tashlang!</span
             >
-            <span class="lang-en">Take a step towards a life without limits today!</span>
+            <span class="lang-en"
+              >Take a step towards a life without limits today!</span
+            >
           </h2>
           <a
             href="#order-form"
@@ -463,8 +632,22 @@
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto"
           >
             <div class="flex items-center gap-4 p-4 bg-gray-100 rounded-lg">
-              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-green-100 rounded-full">
-                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-green-100 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
               </div>
               <p class="font-semibold">
                 <span class="lang-ru">Нормальный сахар</span>
@@ -473,8 +656,22 @@
               </p>
             </div>
             <div class="flex items-center gap-4 p-4 bg-gray-100 rounded-lg">
-              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-green-100 rounded-full">
-                 <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-green-100 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
               </div>
               <p class="font-semibold">
                 <span class="lang-ru">Контроль веса</span>
@@ -483,8 +680,22 @@
               </p>
             </div>
             <div class="flex items-center gap-4 p-4 bg-gray-100 rounded-lg">
-              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-green-100 rounded-full">
-                 <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-green-100 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
               </div>
               <p class="font-semibold">
                 <span class="lang-ru">Больше энергии</span>
@@ -493,8 +704,22 @@
               </p>
             </div>
             <div class="flex items-center gap-4 p-4 bg-gray-100 rounded-lg">
-              <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-green-100 rounded-full">
-                 <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <div
+                class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-green-100 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
               </div>
               <p class="font-semibold">
                 <span class="lang-ru">Защита от осложнений</span>
@@ -502,6 +727,43 @@
                 <span class="lang-en">Protection from Complications</span>
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Explanation Section -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4"
+          >
+            <span class="lang-ru">Как это работает? Смотрите видео!</span>
+            <span class="lang-uz">Bu qanday ishlaydi? Videoni ko'ring!</span>
+            <span class="lang-en">How Does It Work? Watch the Video!</span>
+          </h2>
+          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            <span class="lang-ru"
+              >Узнайте все о преимуществах "Диафит Асс" в этом коротком и
+              информативном видео.</span
+            >
+            <span class="lang-uz"
+              >Ushbu qisqa va ma'lumotli videoda "Diafit Ass"ning barcha
+              afzalliklari haqida bilib oling.</span
+            >
+            <span class="lang-en"
+              >Learn all about the benefits of "Diafit Ass" in this short and
+              informative video.</span
+            >
+          </p>
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed//-dnaOl9SINM"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
           </div>
         </div>
       </section>
@@ -520,13 +782,22 @@
             <div class="bg-white p-6 rounded-lg testimonial-card">
               <p class="text-gray-600 mb-4">
                 <span class="lang-ru"
-                  >"У меня диабет 2 типа уже 5 лет. Постоянно скакал сахар. С 'Диафит АСС' показатели стали стабильнее, и я чувствую себя гораздо лучше. Ушла постоянная сонливость, появилось больше сил."</span
+                  >"У меня диабет 2 типа уже 5 лет. Постоянно скакал сахар. С
+                  'Диафит АСС' показатели стали стабильнее, и я чувствую себя
+                  гораздо лучше. Ушла постоянная сонливость, появилось больше
+                  сил."</span
                 >
                 <span class="lang-uz"
-                  >"Menda 2-toifa diabetga 5 yil bo'ldi. Qandim doim o'ynab turardi. "Diafit ASS" bilan ko'rsatkichlar barqarorlashdi va o'zimni ancha yaxshi his qilyapman. Doimiy uyquchanlik yo'qoldi, ko'proq kuch paydo bo'ldi."</span
+                  >"Menda 2-toifa diabetga 5 yil bo'ldi. Qandim doim o'ynab
+                  turardi. "Diafit ASS" bilan ko'rsatkichlar barqarorlashdi va
+                  o'zimni ancha yaxshi his qilyapman. Doimiy uyquchanlik
+                  yo'qoldi, ko'proq kuch paydo bo'ldi."</span
                 >
                 <span class="lang-en"
-                  >"I've had type 2 diabetes for 5 years. My sugar levels were always fluctuating. With 'Diafit ASS', my readings have become more stable, and I feel much better. The constant drowsiness is gone, and I have more energy."</span
+                  >"I've had type 2 diabetes for 5 years. My sugar levels were
+                  always fluctuating. With 'Diafit ASS', my readings have become
+                  more stable, and I feel much better. The constant drowsiness
+                  is gone, and I have more energy."</span
                 >
               </p>
               <p class="font-bold text-green-800">
@@ -538,13 +809,21 @@
             <div class="bg-white p-6 rounded-lg testimonial-card">
               <p class="text-gray-600 mb-4">
                 <span class="lang-ru"
-                  >"Купила маме, у нее преддиабет и лишний вес. 'Диафит АСС' помог не только нормализовать сахар, но и сбросить несколько килограммов. Мама стала активнее и веселее. Спасибо!"</span
+                  >"Купила маме, у нее преддиабет и лишний вес. 'Диафит АСС'
+                  помог не только нормализовать сахар, но и сбросить несколько
+                  килограммов. Мама стала активнее и веселее. Спасибо!"</span
                 >
                 <span class="lang-uz"
-                  >"Onamga sotib oldim, unda prediabet va ortiqcha vazn bor. "Diafit ASS" nafaqat qandni normallashtirishga, balki bir necha kilogramm vazn tashlashga ham yordam berdi. Onam faollashdi va xursand bo'ldi. Rahmat!"</span
+                  >"Onamga sotib oldim, unda prediabet va ortiqcha vazn bor.
+                  "Diafit ASS" nafaqat qandni normallashtirishga, balki bir
+                  necha kilogramm vazn tashlashga ham yordam berdi. Onam
+                  faollashdi va xursand bo'ldi. Rahmat!"</span
                 >
                 <span class="lang-en"
-                  >"I bought it for my mom, who has prediabetes and is overweight. 'Diafit ASS' helped not only to normalize her sugar but also to lose a few kilograms. Mom has become more active and cheerful. Thank you!"</span
+                  >"I bought it for my mom, who has prediabetes and is
+                  overweight. 'Diafit ASS' helped not only to normalize her
+                  sugar but also to lose a few kilograms. Mom has become more
+                  active and cheerful. Thank you!"</span
                 >
               </p>
               <p class="font-bold text-green-800">
@@ -556,13 +835,22 @@
             <div class="bg-white p-6 rounded-lg testimonial-card">
               <p class="text-gray-600 mb-4">
                 <span class="lang-ru"
-                  >"Во время менопаузы начались проблемы с давлением и сахаром. Этот комплекс стал для меня находкой. Помогает держать все под контролем без химии. Чувствую себя спокойнее и увереннее."</span
+                  >"Во время менопаузы начались проблемы с давлением и сахаром.
+                  Этот комплекс стал для меня находкой. Помогает держать все под
+                  контролем без химии. Чувствую себя спокойнее и
+                  увереннее."</span
                 >
                 <span class="lang-uz"
-                  >"Menopauza paytida bosim va qand bilan bog'liq muammolar boshlandi. Ushbu kompleks men uchun topilma bo'ldi. Hamma narsani kimyosiz nazorat ostida ushlab turishga yordam beradi. O'zimni xotirjam va ishonchli his qilyapman."</span
+                  >"Menopauza paytida bosim va qand bilan bog'liq muammolar
+                  boshlandi. Ushbu kompleks men uchun topilma bo'ldi. Hamma
+                  narsani kimyosiz nazorat ostida ushlab turishga yordam beradi.
+                  O'zimni xotirjam va ishonchli his qilyapman."</span
                 >
                 <span class="lang-en"
-                  >"During menopause, I started having problems with blood pressure and sugar. This supplement was a discovery for me. It helps keep everything under control without chemicals. I feel calmer and more confident."</span
+                  >"During menopause, I started having problems with blood
+                  pressure and sugar. This supplement was a discovery for me. It
+                  helps keep everything under control without chemicals. I feel
+                  calmer and more confident."</span
                 >
               </p>
               <p class="font-bold text-green-800">
@@ -585,13 +873,16 @@
           </h2>
           <p class="text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto">
             <span class="lang-ru"
-              >Закажите «Диафит АСС» прямо сейчас и воспользуйтесь эксклюзивной скидкой 50%!</span
+              >Закажите «Диафит АСС» прямо сейчас и воспользуйтесь эксклюзивной
+              скидкой 50%!</span
             >
             <span class="lang-uz"
-              >"Diafit ASS"ga hoziroq buyurtma bering va 50% eksklyuziv chegirmadan foydalaning!</span
+              >"Diafit ASS"ga hoziroq buyurtma bering va 50% eksklyuziv
+              chegirmadan foydalaning!</span
             >
             <span class="lang-en"
-              >Order "Diafit ASS" right now and take advantage of an exclusive 50% discount!</span
+              >Order "Diafit ASS" right now and take advantage of an exclusive
+              50% discount!</span
             >
           </p>
 
@@ -599,7 +890,7 @@
             class="max-w-md mx-auto bg-white/10 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/20"
           >
             <img
-              src="assets/DiafitAss.png"
+              src="assets/Diafit Ass (3).png"
               alt="Продукт Диафит АСС"
               class="w-1/2 mx-auto mb-4"
             />
@@ -608,7 +899,8 @@
                 >Осталось <span id="stock-count">12</span> шт. по акции!</span
               >
               <span class="lang-uz"
-                >Aksiya bo'yicha <span id="stock-count-uz">12</span> dona qoldi!</span
+                >Aksiya bo'yicha <span id="stock-count-uz">12</span> dona
+                qoldi!</span
               >
               <span class="lang-en"
                 ><span id="stock-count-en">12</span> left in stock!</span

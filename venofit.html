@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Венофит – Натуральное очищение сосудов, нормализация давления и кровообращения
+      Венофит – Натуральное очищение сосудов, нормализация давления и
+      кровообращения
     </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -79,12 +80,33 @@
         transform: rotate(15deg);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
+      .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 300px; /* Max width for the video container */
+        height: 533px; /* Height for 9:16 aspect ratio based on max-width */
+        margin: auto;
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: #000;
+        border: 3px solid var(--primary-color);
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
     <!-- Language Switcher -->
     <div class="bg-green-800 text-white py-2">
-      <div class="container mx-auto px-6 flex justify-center items-center">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <a href="#" aria-label="venofit">
+          <img src="assets/Venofit.png" alt="venofit" width="80" height="30" />
+        </a>
         <div class="flex border border-gray-400 rounded-full">
           <button
             id="lang-ru-btn"
@@ -113,7 +135,7 @@
       <div
         class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-8"
       >
-        <div class="lg:w-1/2 text-center lg:text-left">
+        <div class="lg:w-1/2 text-center lg:text-left order-2 lg:order-1">
           <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">
             <span class="lang-ru">ВЕНОФИТ</span>
             <span class="lang-uz">VENOFIT</span>
@@ -123,13 +145,16 @@
             class="text-lg md:text-2xl font-light mb-8 max-w-xl mx-auto lg:mx-0"
           >
             <span class="lang-ru"
-              >Натуральное очищение сосудов, нормализация давления и кровообращения.</span
+              >Натуральное очищение сосудов, нормализация давления и
+              кровообращения.</span
             >
             <span class="lang-uz"
-              >Qon aylanishi, qon bosimi va toksinlarni tozalash uchun tabiiy kapsula.</span
+              >Qon aylanishi, qon bosimi va toksinlarni tozalash uchun tabiiy
+              kapsula.</span
             >
             <span class="lang-en"
-              >Natural Blood Circulation & Vascular Cleanse for Heart and Pressure Support.</span
+              >Natural Blood Circulation & Vascular Cleanse for Heart and
+              Pressure Support.</span
             >
           </p>
           <a
@@ -148,12 +173,16 @@
             <span class="lang-en">*Anonymous delivery guaranteed.</span>
           </p>
         </div>
-        <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
+        <div
+          class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center order-1 lg:order-2"
+        >
           <div class="relative w-max">
             <img
-              src="assets/Venofit.png"
+              src="assets/33. Венофит Капсула - bottle.png"
               alt="Изображение продукта Венофит"
               class="rounded-lg shadow-2xl max-w-xs md:max-w-sm"
+              width="150"
+              height="150"
             />
             <div class="discount-bubble">-50%</div>
           </div>
@@ -168,24 +197,37 @@
           <h2
             class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4"
           >
-            <span class="lang-ru">Ваши сосуды — дороги жизни. Они в безопасности?</span>
-            <span class="lang-uz">Sizning tomirlaringiz - hayot yo'llari. Ular xavfsizmi?</span>
-            <span class="lang-en">Your Vessels are Life's Highways. Are They Safe?</span>
+            <span class="lang-ru"
+              >Ваши сосуды — дороги жизни. Они в безопасности?</span
+            >
+            <span class="lang-uz"
+              >Sizning tomirlaringiz - hayot yo'llari. Ular xavfsizmi?</span
+            >
+            <span class="lang-en"
+              >Your Vessels are Life's Highways. Are They Safe?</span
+            >
           </h2>
           <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
             <span class="lang-ru"
-              >Высокое давление, головные боли, хроническая усталость, тяжесть в груди — это сигналы SOS от вашего организма. Загрязненные сосуды и густая кровь могут привести к инфаркту или инсульту. Не ждите катастрофы, действуйте сейчас.</span
+              >Высокое давление, головные боли, хроническая усталость, тяжесть в
+              груди — это сигналы SOS от вашего организма. Загрязненные сосуды и
+              густая кровь могут привести к инфаркту или инсульту. Не ждите
+              катастрофы, действуйте сейчас.</span
             >
             <span class="lang-uz"
-              >Yuqori qon bosimi, bosh og'rig'i, surunkali charchoq, ko'krakdagi og'irlik - bular sizning tanangizdan kelayotgan SOS signallari. Ifloslangan qon tomirlari va quyuq qon infarkt yoki insultga olib kelishi mumkin. Falokatni kutmang, hozir harakat qiling.</span
+              >Yuqori qon bosimi, bosh og'rig'i, surunkali charchoq, ko'krakdagi
+              og'irlik - bular sizning tanangizdan kelayotgan SOS signallari.
+              Ifloslangan qon tomirlari va quyuq qon infarkt yoki insultga olib
+              kelishi mumkin. Falokatni kutmang, hozir harakat qiling.</span
             >
             <span class="lang-en"
-              >High blood pressure, headaches, chronic fatigue, chest heaviness—these are SOS signals from your body. Clogged vessels and thick blood can lead to a heart attack or stroke. Don't wait for a disaster, act now.</span
+              >High blood pressure, headaches, chronic fatigue, chest
+              heaviness—these are SOS signals from your body. Clogged vessels
+              and thick blood can lead to a heart attack or stroke. Don't wait
+              for a disaster, act now.</span
             >
           </p>
-          <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
-          >
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div class="flex flex-col items-center">
               <img
                 class="w-24 h-24 rounded-full mb-4 object-cover"
@@ -245,33 +287,111 @@
             class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12"
           >
             <span class="lang-ru">4-х этапная система очищения с Венофит</span>
-            <span class="lang-uz">Venofit bilan 4 bosqichli tozalash tizimi</span>
+            <span class="lang-uz"
+              >Venofit bilan 4 bosqichli tozalash tizimi</span
+            >
             <span class="lang-en">4-Stage Cleansing System with Venofit</span>
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Stage 1 -->
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full text-green-600 text-3xl font-bold">1</div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2"><span class="lang-ru">Детоксикация</span><span class="lang-uz">Detoksikatsiya</span><span class="lang-en">Detoxification</span></h3>
-              <p class="text-gray-600"><span class="lang-ru">Мягкое выведение токсинов и шлаков из крови и стенок сосудов.</span><span class="lang-uz">Qon va tomir devorlaridan toksinlar va shlaklarni yumshoq chiqarish.</span><span class="lang-en">Gentle removal of toxins and waste from the blood and vessel walls.</span></p>
+              <div
+                class="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full text-green-600 text-3xl font-bold"
+              >
+                1
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                <span class="lang-ru">Детоксикация</span
+                ><span class="lang-uz">Detoksikatsiya</span
+                ><span class="lang-en">Detoxification</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Мягкое выведение токсинов и шлаков из крови и стенок
+                  сосудов.</span
+                ><span class="lang-uz"
+                  >Qon va tomir devorlaridan toksinlar va shlaklarni yumshoq
+                  chiqarish.</span
+                ><span class="lang-en"
+                  >Gentle removal of toxins and waste from the blood and vessel
+                  walls.</span
+                >
+              </p>
             </div>
             <!-- Stage 2 -->
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full text-green-600 text-3xl font-bold">2</div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2"><span class="lang-ru">Устранение бляшек</span><span class="lang-uz">Plaklarni yo'q qilish</span><span class="lang-en">Plaque Removal</span></h3>
-              <p class="text-gray-600"><span class="lang-ru">Растворение холестериновых отложений, восстановление эластичности и просвета сосудов.</span><span class="lang-uz">Xolesterin birikmalarini eritish, tomirlarning elastikligi va bo'shlig'ini tiklash.</span><span class="lang-en">Dissolving cholesterol deposits, restoring vessel elasticity and clearance.</span></p>
+              <div
+                class="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full text-green-600 text-3xl font-bold"
+              >
+                2
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                <span class="lang-ru">Устранение бляшек</span
+                ><span class="lang-uz">Plaklarni yo'q qilish</span
+                ><span class="lang-en">Plaque Removal</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Растворение холестериновых отложений, восстановление
+                  эластичности и просвета сосудов.</span
+                ><span class="lang-uz"
+                  >Xolesterin birikmalarini eritish, tomirlarning elastikligi va
+                  bo'shlig'ini tiklash.</span
+                ><span class="lang-en"
+                  >Dissolving cholesterol deposits, restoring vessel elasticity
+                  and clearance.</span
+                >
+              </p>
             </div>
             <!-- Stage 3 -->
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full text-green-600 text-3xl font-bold">3</div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2"><span class="lang-ru">Активация кровотока</span><span class="lang-uz">Qon oqimini faollashtirish</span><span class="lang-en">Blood Flow Activation</span></h3>
-              <p class="text-gray-600"><span class="lang-ru">Снижение вязкости крови, улучшение микроциркуляции и снабжения органов кислородом.</span><span class="lang-uz">Qonning yopishqoqligini kamaytirish, mikrosirkulyatsiyani yaxshilash va organlarni kislorod bilan ta'minlash.</span><span class="lang-en">Reducing blood viscosity, improving microcirculation and oxygen supply to organs.</span></p>
+              <div
+                class="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full text-green-600 text-3xl font-bold"
+              >
+                3
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                <span class="lang-ru">Активация кровотока</span
+                ><span class="lang-uz">Qon oqimini faollashtirish</span
+                ><span class="lang-en">Blood Flow Activation</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Снижение вязкости крови, улучшение микроциркуляции и
+                  снабжения органов кислородом.</span
+                ><span class="lang-uz"
+                  >Qonning yopishqoqligini kamaytirish, mikrosirkulyatsiyani
+                  yaxshilash va organlarni kislorod bilan ta'minlash.</span
+                ><span class="lang-en"
+                  >Reducing blood viscosity, improving microcirculation and
+                  oxygen supply to organs.</span
+                >
+              </p>
             </div>
             <!-- Stage 4 -->
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <div class="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full text-green-600 text-3xl font-bold">4</div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2"><span class="lang-ru">Укрепление</span><span class="lang-uz">Mustahkamlash</span><span class="lang-en">Strengthening</span></h3>
-              <p class="text-gray-600"><span class="lang-ru">Восстановление клеток сердца и мозга, повышение их выносливости и защита от будущих нагрузок.</span><span class="lang-uz">Yurak va miya hujayralarini tiklash, ularning chidamliligini oshirish va kelajakdagi yuklamalardan himoya qilish.</span><span class="lang-en">Restoring heart and brain cells, increasing their endurance and protecting against future stress.</span></p>
+              <div
+                class="w-20 h-20 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full text-green-600 text-3xl font-bold"
+              >
+                4
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">
+                <span class="lang-ru">Укрепление</span
+                ><span class="lang-uz">Mustahkamlash</span
+                ><span class="lang-en">Strengthening</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Восстановление клеток сердца и мозга, повышение их
+                  выносливости и защита от будущих нагрузок.</span
+                ><span class="lang-uz"
+                  >Yurak va miya hujayralarini tiklash, ularning chidamliligini
+                  oshirish va kelajakdagi yuklamalardan himoya qilish.</span
+                ><span class="lang-en"
+                  >Restoring heart and brain cells, increasing their endurance
+                  and protecting against future stress.</span
+                >
+              </p>
             </div>
           </div>
         </div>
@@ -298,13 +418,33 @@
               </h2>
               <p class="text-gray-600 mb-4">
                 <span class="lang-ru"
-                  >«Состояние сосудов напрямую влияет на продолжительность и качество жизни. Я рекомендую Венофит как натуральное и безопасное средство для комплексной поддержки сердечно-сосудистой системы. Его 4-этапная формула не просто борется с симптомами, такими как давление, а устраняет первопричину — очищает сосуды от токсинов и холестерина. Это эффективная профилактика инфарктов и инсультов, доступная каждому.»</span
+                  >«Состояние сосудов напрямую влияет на продолжительность и
+                  качество жизни. Я рекомендую Венофит как натуральное и
+                  безопасное средство для комплексной поддержки
+                  сердечно-сосудистой системы. Его 4-этапная формула не просто
+                  борется с симптомами, такими как давление, а устраняет
+                  первопричину — очищает сосуды от токсинов и холестерина. Это
+                  эффективная профилактика инфарктов и инсультов, доступная
+                  каждому.»</span
                 >
                 <span class="lang-uz"
-                  >"Tomirlarning holati hayot davomiyligi va sifatiga bevosita ta'sir qiladi. Men Venofitni yurak-qon tomir tizimini kompleks qo'llab-quvvatlash uchun tabiiy va xavfsiz vosita sifatida tavsiya qilaman. Uning 4 bosqichli formulasi nafaqat bosim kabi simptomlar bilan kurashadi, balki asosiy sababni bartaraf etadi - tomirlarni toksinlar va xolesterindan tozalaydi. Bu har kim uchun mavjud bo'lgan infarkt va insultlarning samarali profilaktikasi."</span
+                  >"Tomirlarning holati hayot davomiyligi va sifatiga bevosita
+                  ta'sir qiladi. Men Venofitni yurak-qon tomir tizimini kompleks
+                  qo'llab-quvvatlash uchun tabiiy va xavfsiz vosita sifatida
+                  tavsiya qilaman. Uning 4 bosqichli formulasi nafaqat bosim
+                  kabi simptomlar bilan kurashadi, balki asosiy sababni bartaraf
+                  etadi - tomirlarni toksinlar va xolesterindan tozalaydi. Bu
+                  har kim uchun mavjud bo'lgan infarkt va insultlarning samarali
+                  profilaktikasi."</span
                 >
                 <span class="lang-en"
-                  >"The condition of blood vessels directly affects the length and quality of life. I recommend Venofit as a natural and safe remedy for comprehensive support of the cardiovascular system. Its 4-stage formula doesn't just fight symptoms like pressure, but eliminates the root cause—cleansing the vessels of toxins and cholesterol. This is an effective prevention of heart attacks and strokes, available to everyone."</span
+                  >"The condition of blood vessels directly affects the length
+                  and quality of life. I recommend Venofit as a natural and safe
+                  remedy for comprehensive support of the cardiovascular system.
+                  Its 4-stage formula doesn't just fight symptoms like pressure,
+                  but eliminates the root cause—cleansing the vessels of toxins
+                  and cholesterol. This is an effective prevention of heart
+                  attacks and strokes, available to everyone."</span
                 >
               </p>
               <p class="font-bold text-green-800">Алиева Дильноза</p>
@@ -313,7 +453,9 @@
                 <span class="lang-uz"
                   >Kardiolog shifokor, 25 yillik tajriba</span
                 >
-                <span class="lang-en">Cardiologist, 25 years of experience</span>
+                <span class="lang-en"
+                  >Cardiologist, 25 years of experience</span
+                >
               </p>
             </div>
           </div>
@@ -325,11 +467,14 @@
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-2xl md:text-3xl font-bold mb-6">
             <span class="lang-ru"
-              >Готовы дать своим сосудам вторую молодость?</span>
+              >Готовы дать своим сосудам вторую молодость?</span
+            >
             <span class="lang-uz"
               >Tomirlaringizga ikkinchi yoshlikni berishga tayyormisiz?</span
             >
-            <span class="lang-en">Ready to give your vessels a second youth?</span>
+            <span class="lang-en"
+              >Ready to give your vessels a second youth?</span
+            >
           </h2>
           <a
             href="#order-form"
@@ -354,25 +499,137 @@
           </h2>
           <div class="max-w-4xl mx-auto">
             <div class="relative pl-8 py-4 border-l-2 border-green-500">
-                <div class="absolute -left-4 top-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
-                <h3 class="text-xl font-bold text-gray-800"><span class="lang-ru">1-я неделя</span><span class="lang-uz">1-hafta</span><span class="lang-en">Week 1</span></h3>
-                <p class="text-gray-600"><span class="lang-ru">Начинается очищение крови. Вы можете заметить изменение запаха стула и цвета мочи — это выходит первая партия токсинов.</span><span class="lang-uz">Qonni tozalash boshlanadi. Axlat hidi va siydik rangining o'zgarishini sezishingiz mumkin - bu toksinlarning birinchi partiyasi chiqadi.</span><span class="lang-en">Blood cleansing begins. You may notice a change in the smell of your stool and the color of your urine—this is the first batch of toxins being eliminated.</span></p>
+              <div
+                class="absolute -left-4 top-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"
+              ></div>
+              <h3 class="text-xl font-bold text-gray-800">
+                <span class="lang-ru">1-я неделя</span
+                ><span class="lang-uz">1-hafta</span
+                ><span class="lang-en">Week 1</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Начинается очищение крови. Вы можете заметить изменение
+                  запаха стула и цвета мочи — это выходит первая партия
+                  токсинов.</span
+                ><span class="lang-uz"
+                  >Qonni tozalash boshlanadi. Axlat hidi va siydik rangining
+                  o'zgarishini sezishingiz mumkin - bu toksinlarning birinchi
+                  partiyasi chiqadi.</span
+                ><span class="lang-en"
+                  >Blood cleansing begins. You may notice a change in the smell
+                  of your stool and the color of your urine—this is the first
+                  batch of toxins being eliminated.</span
+                >
+              </p>
             </div>
             <div class="relative pl-8 py-4 border-l-2 border-green-500">
-                <div class="absolute -left-4 top-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
-                <h3 class="text-xl font-bold text-gray-800"><span class="lang-ru">2-я неделя</span><span class="lang-uz">2-hafta</span><span class="lang-en">Week 2</span></h3>
-                <p class="text-gray-600"><span class="lang-ru">Снижаются головные боли и головокружение, улучшается сон. Давление начинает стабилизироваться.</span><span class="lang-uz">Bosh og'rig'i va bosh aylanishi kamayadi, uyqu yaxshilanadi. Qon bosimi barqarorlasha boshlaydi.</span><span class="lang-en">Headaches and dizziness decrease, sleep improves. Blood pressure begins to stabilize.</span></p>
+              <div
+                class="absolute -left-4 top-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"
+              ></div>
+              <h3 class="text-xl font-bold text-gray-800">
+                <span class="lang-ru">2-я неделя</span
+                ><span class="lang-uz">2-hafta</span
+                ><span class="lang-en">Week 2</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Снижаются головные боли и головокружение, улучшается сон.
+                  Давление начинает стабилизироваться.</span
+                ><span class="lang-uz"
+                  >Bosh og'rig'i va bosh aylanishi kamayadi, uyqu yaxshilanadi.
+                  Qon bosimi barqarorlasha boshlaydi.</span
+                ><span class="lang-en"
+                  >Headaches and dizziness decrease, sleep improves. Blood
+                  pressure begins to stabilize.</span
+                >
+              </p>
             </div>
             <div class="relative pl-8 py-4 border-l-2 border-green-500">
-                <div class="absolute -left-4 top-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
-                <h3 class="text-xl font-bold text-gray-800"><span class="lang-ru">3-я неделя</span><span class="lang-uz">3-hafta</span><span class="lang-en">Week 3</span></h3>
-                <p class="text-gray-600"><span class="lang-ru">Улучшается дыхание, исчезают боли в груди. Кровь полностью очищается, работа сердца и мозга приходит в норму.</span><span class="lang-uz">Nafas olish yaxshilanadi, ko'krakdagi og'riqlar yo'qoladi. Qon to'liq tozalanadi, yurak va miya faoliyati normallashadi.</span><span class="lang-en">Breathing improves, chest pains disappear. The blood is completely cleansed, and heart and brain function return to normal.</span></p>
+              <div
+                class="absolute -left-4 top-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"
+              ></div>
+              <h3 class="text-xl font-bold text-gray-800">
+                <span class="lang-ru">3-я неделя</span
+                ><span class="lang-uz">3-hafta</span
+                ><span class="lang-en">Week 3</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Улучшается дыхание, исчезают боли в груди. Кровь полностью
+                  очищается, работа сердца и мозга приходит в норму.</span
+                ><span class="lang-uz"
+                  >Nafas olish yaxshilanadi, ko'krakdagi og'riqlar yo'qoladi.
+                  Qon to'liq tozalanadi, yurak va miya faoliyati
+                  normallashadi.</span
+                ><span class="lang-en"
+                  >Breathing improves, chest pains disappear. The blood is
+                  completely cleansed, and heart and brain function return to
+                  normal.</span
+                >
+              </p>
             </div>
-             <div class="relative pl-8 py-4 border-l-2 border-green-500">
-                <div class="absolute -left-4 top-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
-                <h3 class="text-xl font-bold text-gray-800"><span class="lang-ru">4-я неделя и далее</span><span class="lang-uz">4-hafta va undan keyin</span><span class="lang-en">Week 4 and beyond</span></h3>
-                <p class="text-gray-600"><span class="lang-ru">Полная нормализация показателей крови: давление, холестерин и сахар в норме. Вы чувствуете прилив сил и энергии.</span><span class="lang-uz">Qon ko'rsatkichlarining to'liq normallashishi: qon bosimi, xolesterin va qand miqdori me'yorda. Siz kuch va energiya oqimini his qilasiz.</span><span class="lang-en">Complete normalization of blood parameters: pressure, cholesterol, and sugar are normal. You feel a surge of strength and energy.</span></p>
+            <div class="relative pl-8 py-4 border-l-2 border-green-500">
+              <div
+                class="absolute -left-4 top-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white"
+              ></div>
+              <h3 class="text-xl font-bold text-gray-800">
+                <span class="lang-ru">4-я неделя и далее</span
+                ><span class="lang-uz">4-hafta va undan keyin</span
+                ><span class="lang-en">Week 4 and beyond</span>
+              </h3>
+              <p class="text-gray-600">
+                <span class="lang-ru"
+                  >Полная нормализация показателей крови: давление, холестерин и
+                  сахар в норме. Вы чувствуете прилив сил и энергии.</span
+                ><span class="lang-uz"
+                  >Qon ko'rsatkichlarining to'liq normallashishi: qon bosimi,
+                  xolesterin va qand miqdori me'yorda. Siz kuch va energiya
+                  oqimini his qilasiz.</span
+                ><span class="lang-en"
+                  >Complete normalization of blood parameters: pressure,
+                  cholesterol, and sugar are normal. You feel a surge of
+                  strength and energy.</span
+                >
+              </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Explanation Section -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4"
+          >
+            <span class="lang-ru">Как это работает? Смотрите видео!</span>
+            <span class="lang-uz">Bu qanday ishlaydi? Videoni ko'ring!</span>
+            <span class="lang-en">How Does It Work? Watch the Video!</span>
+          </h2>
+          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            <span class="lang-ru"
+              >Узнайте все о преимуществах "Венофит" в этом коротком и
+              информативном видео.</span
+            >
+            <span class="lang-uz"
+              >Ushbu qisqa va ma'lumotli videoda "Venofit"ning barcha
+              afzalliklari haqida bilib oling.</span
+            >
+            <span class="lang-en"
+              >Learn all about the benefits of "Venofit" in this short and
+              informative video.</span
+            >
+          </p>
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed//-dnaOl9SINM"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
           </div>
         </div>
       </section>
@@ -391,13 +648,23 @@
             <div class="bg-gray-50 p-6 rounded-lg testimonial-card">
               <p class="text-gray-600 mb-4">
                 <span class="lang-ru"
-                  >"Гипертоник со стажем. Давление скакало постоянно. После курса Венофита цифры на тонометре радуют, как никогда. Прошли головные боли, и я снова могу работать на даче без одышки."</span
+                  >"Гипертоник со стажем. Давление скакало постоянно. После
+                  курса Венофита цифры на тонометре радуют, как никогда. Прошли
+                  головные боли, и я снова могу работать на даче без
+                  одышки."</span
                 >
                 <span class="lang-uz"
-                  >"Tajribali gipertonikman. Qon bosimim doim o'ynab turardi. Venofit kursidan so'ng tonometrdagi raqamlar hech qachongidek xursand qilmoqda. Bosh og'rig'im o'tib ketdi va men yana bog'da hansiramasdan ishlay olaman."</span
+                  >"Tajribali gipertonikman. Qon bosimim doim o'ynab turardi.
+                  Venofit kursidan so'ng tonometrdagi raqamlar hech qachongidek
+                  xursand qilmoqda. Bosh og'rig'im o'tib ketdi va men yana
+                  bog'da hansiramasdan ishlay olaman."</span
                 >
                 <span class="lang-en"
-                  >"I'm a long-time hypertensive patient. My pressure was always fluctuating. After a course of Venofit, the numbers on the tonometer are pleasing like never before. The headaches are gone, and I can work in the garden again without shortness of breath."</span
+                  >"I'm a long-time hypertensive patient. My pressure was always
+                  fluctuating. After a course of Venofit, the numbers on the
+                  tonometer are pleasing like never before. The headaches are
+                  gone, and I can work in the garden again without shortness of
+                  breath."</span
                 >
               </p>
               <p class="font-bold text-green-800">
@@ -409,13 +676,22 @@
             <div class="bg-gray-50 p-6 rounded-lg testimonial-card">
               <p class="text-gray-600 mb-4">
                 <span class="lang-ru"
-                  >"Работаю водителем, постоянный стресс и мало движения. Начал чувствовать тяжесть в груди. Венофит помог! Чувствую себя легче, ушла усталость, стал лучше спать. Отличное средство для профилактики."</span
+                  >"Работаю водителем, постоянный стресс и мало движения. Начал
+                  чувствовать тяжесть в груди. Венофит помог! Чувствую себя
+                  легче, ушла усталость, стал лучше спать. Отличное средство для
+                  профилактики."</span
                 >
                 <span class="lang-uz"
-                  >"Haydovchi bo'lib ishlayman, doimiy stress va kam harakat. Ko'kragimda og'irlik his qila boshladim. Venofit yordam berdi! O'zimni yengilroq his qilyapman, charchoq yo'qoldi, yaxshiroq uxlay boshladim. Profilaktika uchun ajoyib vosita."</span
+                  >"Haydovchi bo'lib ishlayman, doimiy stress va kam harakat.
+                  Ko'kragimda og'irlik his qila boshladim. Venofit yordam berdi!
+                  O'zimni yengilroq his qilyapman, charchoq yo'qoldi, yaxshiroq
+                  uxlay boshladim. Profilaktika uchun ajoyib vosita."</span
                 >
                 <span class="lang-en"
-                  >"I work as a driver, constant stress and little movement. I started to feel heaviness in my chest. Venofit helped! I feel lighter, the fatigue is gone, and I sleep better. An excellent preventive remedy."</span
+                  >"I work as a driver, constant stress and little movement. I
+                  started to feel heaviness in my chest. Venofit helped! I feel
+                  lighter, the fatigue is gone, and I sleep better. An excellent
+                  preventive remedy."</span
                 >
               </p>
               <p class="font-bold text-green-800">
@@ -427,13 +703,23 @@
             <div class="bg-gray-50 p-6 rounded-lg testimonial-card">
               <p class="text-gray-600 mb-4">
                 <span class="lang-ru"
-                  >"После 50-ти холестерин пополз вверх. Врач посоветовал изменить диету и попробовать Венофит. Через месяц анализы стали заметно лучше! И в целом самочувствие прекрасное, появилась энергия."</span
+                  >"После 50-ти холестерин пополз вверх. Врач посоветовал
+                  изменить диету и попробовать Венофит. Через месяц анализы
+                  стали заметно лучше! И в целом самочувствие прекрасное,
+                  появилась энергия."</span
                 >
                 <span class="lang-uz"
-                  >"50 yoshdan keyin xolesterinim ko'tarila boshladi. Shifokor parhezni o'zgartirishni va Venofitni sinab ko'rishni maslahat berdi. Bir oydan keyin tahlillarim sezilarli darajada yaxshilandi! Va umuman olganda, ahvolim a'lo, energiya paydo bo'ldi."</span
+                  >"50 yoshdan keyin xolesterinim ko'tarila boshladi. Shifokor
+                  parhezni o'zgartirishni va Venofitni sinab ko'rishni maslahat
+                  berdi. Bir oydan keyin tahlillarim sezilarli darajada
+                  yaxshilandi! Va umuman olganda, ahvolim a'lo, energiya paydo
+                  bo'ldi."</span
                 >
                 <span class="lang-en"
-                  >"After 50, my cholesterol started to creep up. The doctor advised changing my diet and trying Venofit. After a month, my tests were noticeably better! And my overall well-being is excellent, I have more energy."</span
+                  >"After 50, my cholesterol started to creep up. The doctor
+                  advised changing my diet and trying Venofit. After a month, my
+                  tests were noticeably better! And my overall well-being is
+                  excellent, I have more energy."</span
                 >
               </p>
               <p class="font-bold text-green-800">
@@ -451,18 +737,25 @@
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-3xl md:text-5xl font-black mb-2">
             <span class="lang-ru">Очистите сосуды — продлите жизнь!</span>
-            <span class="lang-uz">Tomirlarni tozalang - hayotni uzaytiring!</span>
-            <span class="lang-en">Cleanse Your Vessels - Extend Your Life!</span>
+            <span class="lang-uz"
+              >Tomirlarni tozalang - hayotni uzaytiring!</span
+            >
+            <span class="lang-en"
+              >Cleanse Your Vessels - Extend Your Life!</span
+            >
           </h2>
           <p class="text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto">
             <span class="lang-ru"
-              >Закажите «Венофит» прямо сейчас и воспользуйтесь эксклюзивной скидкой 50%!</span
+              >Закажите «Венофит» прямо сейчас и воспользуйтесь эксклюзивной
+              скидкой 50%!</span
             >
             <span class="lang-uz"
-              >"Venofit"ga hoziroq buyurtma bering va 50% eksklyuziv chegirmadan foydalaning!</span
+              >"Venofit"ga hoziroq buyurtma bering va 50% eksklyuziv chegirmadan
+              foydalaning!</span
             >
             <span class="lang-en"
-              >Order "Venofit" right now and take advantage of an exclusive 50% discount!</span
+              >Order "Venofit" right now and take advantage of an exclusive 50%
+              discount!</span
             >
           </p>
 
@@ -470,7 +763,7 @@
             class="max-w-md mx-auto bg-white/10 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/20"
           >
             <img
-              src="assets/Venofit.png"
+              src="assets/33. Венофит Капсула - bottle.png"
               alt="Продукт Венофит"
               class="w-1/2 mx-auto mb-4"
             />
@@ -479,7 +772,8 @@
                 >Осталось <span id="stock-count">12</span> шт. по акции!</span
               >
               <span class="lang-uz"
-                >Aksiya bo'yicha <span id="stock-count-uz">12</span> dona qoldi!</span
+                >Aksiya bo'yicha <span id="stock-count-uz">12</span> dona
+                qoldi!</span
               >
               <span class="lang-en"
                 ><span id="stock-count-en">12</span> left in stock!</span

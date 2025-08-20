@@ -399,7 +399,7 @@
               class="flex flex-col items-center p-4 bg-background-light rounded-lg"
             >
               <div
-                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20"
+                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20 border-2 border-white"
               >
                 <svg
                   class="w-10 h-10 text-secondary-color"
@@ -426,7 +426,7 @@
               class="flex flex-col items-center p-4 bg-background-light rounded-lg"
             >
               <div
-                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20"
+                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20 border-2 border-white"
               >
                 <svg
                   class="w-10 h-10 text-secondary-color"
@@ -453,7 +453,7 @@
               class="flex flex-col items-center p-4 bg-background-light rounded-lg"
             >
               <div
-                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20"
+                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20 border-2 border-white"
               >
                 <svg
                   class="w-10 h-10 text-secondary-color"
@@ -480,7 +480,7 @@
               class="flex flex-col items-center p-4 bg-background-light rounded-lg"
             >
               <div
-                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20"
+                class="w-20 h-20 mb-4 flex items-center justify-center rounded-full bg-primary-color/20 border-2 border-white"
               >
                 <svg
                   class="w-10 h-10 text-secondary-color"
@@ -1201,6 +1201,53 @@
         document.querySelectorAll('.orderForm').forEach((form) => {
           form.addEventListener('submit', handleFormSubmit);
         });
+      });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const langRuBtn = document.getElementById('lang-ru-btn');
+        const langUzBtn = document.getElementById('lang-uz-btn');
+        const langEnBtn = document.getElementById('lang-en-btn');
+        const langSwitcher = langRuBtn?.parentElement?.parentElement; // блок тогглера
+        const html = document.documentElement;
+
+        function setLanguage(lang) {
+          html.lang = lang;
+          if (langRuBtn) langRuBtn.classList.toggle('active', lang === 'ru');
+          if (langUzBtn) langUzBtn.classList.toggle('active', lang === 'uz');
+          if (langEnBtn) langEnBtn.classList.toggle('active', lang === 'en');
+        }
+
+        // 1. Проверяем URL
+        const params = new URLSearchParams(window.location.search);
+        const urlLang = params.get('lang');
+
+        if (urlLang && ['ru', 'uz', 'en'].includes(urlLang)) {
+          setLanguage(urlLang);
+
+          // если язык в ссылке → скрываем тогглер
+          if (langSwitcher) langSwitcher.style.display = 'none';
+        } else {
+          // 2. Если языка нет в ссылке → используем localStorage или ru
+          const savedLang = localStorage.getItem('language') || 'ru';
+          setLanguage(savedLang);
+
+          // 3. Навешиваем события на кнопки
+          if (langRuBtn)
+            langRuBtn.addEventListener('click', () => {
+              setLanguage('ru');
+              localStorage.setItem('language', 'ru');
+            });
+          if (langUzBtn)
+            langUzBtn.addEventListener('click', () => {
+              setLanguage('uz');
+              localStorage.setItem('language', 'uz');
+            });
+          if (langEnBtn)
+            langEnBtn.addEventListener('click', () => {
+              setLanguage('en');
+              localStorage.setItem('language', 'en');
+            });
+        }
       });
     </script>
   </body>

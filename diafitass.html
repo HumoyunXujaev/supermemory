@@ -364,7 +364,7 @@
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div class="flex flex-col items-center">
               <img
-                class="w-24 h-24 rounded-full mb-4 object-cover"
+                class="w-24 h-24 rounded-full mb-4 object-cover border-4 border-green-800 border-4 border-green-800"
                 src="assets/water.jpg"
                 alt="Постоянная жажда"
               />
@@ -376,7 +376,7 @@
             </div>
             <div class="flex flex-col items-center">
               <img
-                class="w-24 h-24 rounded-full mb-4 object-cover"
+                class="w-24 h-24 rounded-full mb-4 object-cover border-4 border-green-800"
                 src="assets/img/tired.jpg"
                 alt="Хроническая усталость"
               />
@@ -388,7 +388,7 @@
             </div>
             <div class="flex flex-col items-center">
               <img
-                class="w-24 h-24 rounded-full mb-4 object-cover"
+                class="w-24 h-24 rounded-full mb-4 object-cover border-4 border-green-800"
                 src="assets/тяжесть.jpg"
                 alt="Набор веса"
               />
@@ -400,7 +400,7 @@
             </div>
             <div class="flex flex-col items-center">
               <img
-                class="w-24 h-24 rounded-full mb-4 object-cover"
+                class="w-24 h-24 rounded-full mb-4 object-cover border-4 border-green-800"
                 src="assets/зрение.jpg"
                 alt="Ухудшение зрения"
               />
@@ -1242,6 +1242,53 @@
         document.querySelectorAll('.orderForm').forEach((form) => {
           form.addEventListener('submit', handleFormSubmit);
         });
+      });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const langRuBtn = document.getElementById('lang-ru-btn');
+        const langUzBtn = document.getElementById('lang-uz-btn');
+        const langEnBtn = document.getElementById('lang-en-btn');
+        const langSwitcher = langRuBtn?.parentElement?.parentElement; // блок тогглера
+        const html = document.documentElement;
+
+        function setLanguage(lang) {
+          html.lang = lang;
+          if (langRuBtn) langRuBtn.classList.toggle('active', lang === 'ru');
+          if (langUzBtn) langUzBtn.classList.toggle('active', lang === 'uz');
+          if (langEnBtn) langEnBtn.classList.toggle('active', lang === 'en');
+        }
+
+        // 1. Проверяем URL
+        const params = new URLSearchParams(window.location.search);
+        const urlLang = params.get('lang');
+
+        if (urlLang && ['ru', 'uz', 'en'].includes(urlLang)) {
+          setLanguage(urlLang);
+
+          // если язык в ссылке → скрываем тогглер
+          if (langSwitcher) langSwitcher.style.display = 'none';
+        } else {
+          // 2. Если языка нет в ссылке → используем localStorage или ru
+          const savedLang = localStorage.getItem('language') || 'ru';
+          setLanguage(savedLang);
+
+          // 3. Навешиваем события на кнопки
+          if (langRuBtn)
+            langRuBtn.addEventListener('click', () => {
+              setLanguage('ru');
+              localStorage.setItem('language', 'ru');
+            });
+          if (langUzBtn)
+            langUzBtn.addEventListener('click', () => {
+              setLanguage('uz');
+              localStorage.setItem('language', 'uz');
+            });
+          if (langEnBtn)
+            langEnBtn.addEventListener('click', () => {
+              setLanguage('en');
+              localStorage.setItem('language', 'en');
+            });
+        }
       });
     </script>
   </body>

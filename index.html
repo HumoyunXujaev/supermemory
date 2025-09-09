@@ -26,8 +26,30 @@
         font-family: 'Inter', sans-serif;
       }
       .hero-gradient {
-        background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+        /* ИЗМЕНЕНИЕ: Сначала идет полупрозрачный градиент, затем фоновое изображение */
+        background: linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.15) 0%,
+            rgba(21, 128, 61, 0.15) 0%
+          ),
+      url('assets/_03\ Супер\ ПамятЬ\ mobile.jpg'); /* Фото для десктопов */
+
+        background-size: cover;
+        background-position: center;
       }
+      @media (min-width: 1024px) {
+  .hero-gradient {
+    /* Для десктопов */
+    background: linear-gradient(
+        135deg,
+        rgba(34, 197, 94, 0.15) 0%,
+        rgba(21, 128, 61, 0.15) 0%
+      ),
+          url('assets/_03\ Супер\ ПамятЬ\ deskop.jpg'); /* <-- ЗАМЕНИТЕ ССЫЛКУ НА ВАШ ФОН ЗДЕСЬ */
+    background-size: cover;
+    background-position: center;
+  }
+}
       .section-gradient {
         background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
       }
@@ -107,17 +129,8 @@
     </style>
   </head>
   <body class="bg-gray-50">
-    <!-- Language Switcher -->
     <div class="bg-green-800 text-white py-2">
       <div class="container mx-auto px-6 flex justify-center items-center">
-        <!-- <a href="#" aria-label="Super pamyat">
-          <img
-            src="assets/SUPER PAMYAT (3).png"
-            alt="super pamyat"
-            width="80"
-            height="30"
-          />
-        </a> -->
         <div class="flex border border-gray-400 rounded-full">
           <button
             id="lang-ru-btn"
@@ -141,9 +154,7 @@
       </div>
     </div>
     <header class="hero-gradient text-white py-12 sm:py-20">
-      <!-- Мобильная версия -->
       <div class="container mx-auto px-6 text-center lg:hidden">
-        <!-- Логотип - первый элемент на мобилке -->
         <div class="mb-6">
           <img
             src="assets/SUPER PAMYAT (3).png"
@@ -154,7 +165,6 @@
           />
         </div>
 
-        <!-- Описание -->
         <p class="text-lg font-light mb-8 max-w-xl mx-auto">
           <span class="lang-ru"
             >Натуральный комплекс для улучшения памяти, работы мозга и
@@ -169,7 +179,6 @@
           >
         </p>
 
-        <!-- Изображение продукта -->
         <div class="mb-8 flex justify-center">
           <div class="relative w-max">
             <img
@@ -183,7 +192,6 @@
           </div>
         </div>
 
-        <!-- Кнопка заказа -->
         <div>
           <a
             href="#order-form"
@@ -204,12 +212,10 @@
         </div>
       </div>
 
-      <!-- Десктопная версия -->
       <div
         class="container mx-auto px-6 hidden lg:flex lg:flex-row items-center gap-8"
       >
         <div class="lg:w-1/2 text-left">
-          <!-- Логотип -->
           <div class="mb-6">
             <img
               src="assets/SUPER PAMYAT (3).png"
@@ -220,7 +226,6 @@
             />
           </div>
 
-          <!-- Описание -->
           <p class="text-2xl font-light mb-8 max-w-xl">
             <span class="lang-ru"
               >Натуральный комплекс для улучшения памяти, работы мозга и
@@ -236,7 +241,6 @@
             >
           </p>
 
-          <!-- Кнопка заказа -->
           <div>
             <a
               href="#order-form"
@@ -256,7 +260,6 @@
           </div>
         </div>
 
-        <!-- Изображение продукта справа на десктопе -->
         <div class="lg:w-1/2 flex justify-center">
           <div class="relative w-max">
             <img
@@ -271,141 +274,7 @@
         </div>
       </div>
     </header>
-    <!-- 1. Hero Section -->
-    <!-- <header class="hero-gradient text-white py-12 sm:py-20">
-      <div
-        class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-8"
-      >
-        <div class="lg:w-1/2 text-center lg:text-left order-2 lg:order-1">
-          <div class="mb-6 flex justify-center lg:justify-start order-1">
-            <img
-              src="assets/SUPER PAMYAT (3).png"
-              alt="Логотип Супер Память"
-              height="150"
-              width="200"
-              class="max-w-full h-auto"
-            />
-          </div>
-
-          <p
-            class="text-lg md:text-2xl font-light mb-8 max-w-xl mx-auto lg:mx-0 order-3"
-          >
-            <span class="lang-ru"
-              >Натуральный комплекс для улучшения памяти, работы мозга и
-              кровообращения.</span
-            >
-            <span class="lang-uz"
-              >Miya faoliyati, xotira va qon aylanishi uchun tabiiy
-              majmua.</span
-            >
-            <span class="lang-en"
-              >A natural supplement for memory, brain function, and healthy
-              circulation.</span
-            >
-          </p>
-
-          <div class="order-4">
-            <a
-              href="#order-form"
-              class="cta-button inline-block bg-yellow-400 text-green-900 font-bold py-4 px-8 rounded-lg text-xl"
-            >
-              <span class="lang-ru">ЗАКАЗАТЬ СЕЙЧАС →</span>
-              <span class="lang-uz">HOZIROQ BUYURTMA BERING →</span>
-              <span class="lang-en">ORDER NOW →</span>
-            </a>
-            <p class="text-xs mt-4 opacity-80">
-              <span class="lang-ru">*Гарантируем анонимную доставку.</span>
-              <span class="lang-uz"
-                >*Anonim yetkazib berishni kafolatlaymiz.</span
-              >
-              <span class="lang-en">*Anonymous delivery guaranteed.</span>
-            </p>
-          </div>
-        </div>
-        <div
-          class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center order-1 lg:order-2"
-        >
-          <div class="relative w-max">
-            <img
-              src="assets/img/bad.png"
-              alt="Изображение продукта Супер Память"
-              class="rounded-lg shadow-2xl max-w-xs md:max-w-sm"
-              width="150"
-              height="150"
-            />
-            <div class="discount-bubble">-50%</div>
-          </div>
-        </div>
-      </div>
-    </header> -->
-    <!-- <div class="mb-6 flex justify-center lg:justify-start">
-            <!-- <a href="#" aria-label="Super pamyat">
-              <img
-                src="assets/SUPER PAMYAT (3).png"
-                alt="super pamyat"
-                width="180"
-                height="50"
-              />
-            </a> -->
-    <!-- </div> -->
-
-    <!-- <h1 class="text-4xl md:text-6xl font-black mb-4 leading-tight">
-            <span class="lang-ru">СУПЕР ПАМЯТЬ</span>
-            <span class="lang-uz">SUPER PAMYAT</span>
-            <span class="lang-en">SUPER MEMORY</span>
-          </h1>
-          <p
-            class="text-lg md:text-2xl font-light mb-8 max-w-xl mx-auto lg:mx-0"
-          >
-            <span class="lang-ru"
-              >Натуральный комплекс для улучшения памяти, работы мозга и
-              кровообращения.</span
-            >
-            <span class="lang-uz"
-              >Miya faoliyati, xotira va qon aylanishi uchun tabiiy
-              majmua.</span
-            >
-            <span class="lang-en"
-              >A natural supplement for memory, brain function, and healthy
-              circulation.</span
-            >
-          </p>
-          <div class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center"></div>
-          <a
-            href="#order-form"
-            class="cta-button inline-block bg-yellow-400 text-green-900 font-bold py-4 px-8 rounded-lg text-xl"
-          >
-            <span class="lang-ru">ЗАКАЗАТЬ СЕЙЧАС →</span>
-            <span class="lang-uz">HOZIROQ BUYURTMA BERING →</span>
-            <span class="lang-en">ORDER NOW →</span>
-          </a>
-          <p class="text-xs mt-4 opacity-80">
-            <span class="lang-ru">*Гарантируем анонимную доставку.</span>
-            <span class="lang-uz"
-              >*Anonim yetkazib berishni kafolatlaymiz.</span
-            >
-            <span class="lang-en">*Anonymous delivery guaranteed.</span>
-          </p>
-        </div>
-        <div
-          class="lg:w-1/2 mt-8 lg:mt-0 flex justify-center order-1 lg:order-2"
-        >
-          <div class="relative w-max">
-            <img
-              src="assets/img/bad.png"
-              alt="Изображение продукта Супер Память"
-              class="rounded-lg shadow-2xl max-w-xs md:max-w-sm"
-              width="150"
-              height="150"
-            />
-            <div class="discount-bubble">-50%</div>
-          </div>
-        </div>
-      </div>
-    </header> -->
-
     <main>
-      <!-- 2. Why This Matters (Symptoms Section) -->
       <section class="py-16 section-gradient">
         <div class="container mx-auto px-6">
           <h2
@@ -483,23 +352,10 @@
                 ><span class="lang-en">Tinnitus</span>
               </p>
             </div>
-            <!-- <div class="flex flex-col items-center">
-              <img
-                class="w-24 h-24 rounded-full mb-4 object-cover"
-                src="assets/img/mess.jpg"
-                alt="Спутанность мыслей"
-              />
-              <!-- <p class="font-semibold text-gray-700">
-                <span class="lang-ru">Спутанность мыслей</span
-                ><span class="lang-uz">Fikrlarning chalkashishi</span
-                ><span class="lang-en">Brain Fog</span>
-              </p> -->
-            <!-- </div> -->
-          </div>
+            </div>
         </div>
       </section>
 
-      <!-- 5. How and Why It Works -->
       <section class="py-16 bg-white">
         <div class="container mx-auto px-6">
           <h2
@@ -631,7 +487,6 @@
         </div>
       </section>
 
-      <!-- 3. How "Super Memory" is useful for your health -->
       <section class="section-gradient py-16">
         <div class="container mx-auto px-6">
           <h2
@@ -729,7 +584,6 @@
         </div>
       </section>
 
-      <!-- 4. Ingredient Benefits -->
       <section class="py-16 bg-white">
         <div class="container mx-auto px-6">
           <h2
@@ -873,7 +727,6 @@
         </div>
       </section>
 
-      <!-- Who is it for? -->
       <section class="section-gradient py-16">
         <div class="container mx-auto px-6">
           <h2
@@ -1011,7 +864,6 @@
         </div>
       </section>
 
-      <!-- 3. Why This Product (USPs) -->
       <section class="section-gradient py-16">
         <div class="container mx-auto px-6">
           <h2
@@ -1126,7 +978,6 @@
         </div>
       </section>
 
-      <!-- Video Explanation Section -->
       <section class="py-16 bg-white">
         <div class="container mx-auto px-6">
           <h2
@@ -1163,66 +1014,6 @@
         </div>
       </section>
 
-      <!-- 6. Expert Opinion -->
-      <!-- <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-          <div
-            class="bg-green-50 rounded-lg shadow-xl p-8 md:p-12 md:flex items-center gap-12"
-          >
-            <div class="md:w-1/3 text-center mb-6 md:mb-0">
-              <img
-                src="assets/img/https://placehold.co/300x300/16a34a/ffffff?text=Врач"
-                alt="Фото врача"
-                class="rounded-full mx-auto w-48 h-48 object-cover shadow-lg border-4 border-white"
-              />
-            </div>
-            <div class="md:w-2/3">
-              <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                <span class="lang-ru">Мнение эксперта</span>
-                <span class="lang-uz">Mutaxassis fikri</span>
-                <span class="lang-en">Expert Opinion</span>
-              </h2>
-              <p class="text-gray-600 mb-4">
-                <span class="lang-ru"
-                  >«Я рекомендую «Супер Память» как эффективное и безопасное
-                  средство для профилактики возрастных изменений. Его
-                  натуральный состав комплексно воздействует на причину
-                  проблемы. Препарат улучшает микроциркуляцию в сосудах
-                  головного мозга, что жизненно важно для поддержания
-                  когнитивных функций в любом возрасте.»</span
-                >
-                <span class="lang-uz"
-                  >"Men "Super Pamyat"ni yoshga bog'liq o'zgarishlarning oldini
-                  olish uchun samarali va xavfsiz vosita sifatida tavsiya
-                  qilaman. Uning tabiiy tarkibi muammoning sababiga kompleks
-                  ta'sir ko'rsatadi. Preparat bosh miya tomirlarida
-                  mikrosirkulyatsiyani yaxshilaydi, bu har qanday yoshda
-                  kognitiv funktsiyalarni saqlab qolish uchun juda
-                  muhimdir."</span
-                >
-                <span class="lang-en"
-                  >"I recommend 'Super Memory' as an effective and safe means
-                  for preventing age-related changes. Its natural composition
-                  comprehensively addresses the root of the problem. The
-                  supplement improves microcirculation in the brain's blood
-                  vessels, which is vital for maintaining cognitive functions at
-                  any age."</span
-                >
-              </p>
-              <p class="font-bold text-green-800">Абдуллаев Рустам</p>
-              <p class="text-sm text-gray-500">
-                <span class="lang-ru">Врач-невролог, стаж 15 лет</span>
-                <span class="lang-uz"
-                  >Nevrolog shifokor, 15 yillik tajriba</span
-                >
-                <span class="lang-en">Neurologist, 15 years of experience</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-      <!-- 7. Secondary Call to Action -->
       <section class="bg-green-700 text-white py-12">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-2xl md:text-3xl font-bold mb-6">
@@ -1245,7 +1036,6 @@
         </div>
       </section>
 
-      <!-- 8. What It Does (Key Benefits Recap) -->
       <section class="section-gradient py-16">
         <div class="container mx-auto px-6">
           <h2
@@ -1358,7 +1148,6 @@
         </div>
       </section>
 
-      <!-- 9. Testimonials -->
       <section class="py-16 bg-white">
         <div class="container mx-auto px-6">
           <h2
@@ -1444,7 +1233,6 @@
         </div>
       </section>
 
-      <!-- 10. ORDER SECTION -->
       <section id="order-form" class="hero-gradient text-white py-16 sm:py-20">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-3xl md:text-5xl font-black mb-2">

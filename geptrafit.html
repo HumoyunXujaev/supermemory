@@ -98,6 +98,23 @@
         width: 100%;
         height: 100%;
       }
+      .product-image-container {
+    position: relative;
+    z-index: 10;
+    transform-origin: center;
+    border-radius: 12px;
+    padding: 15px;
+    display: inline-block;
+  }
+
+  .product-image {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+    border: none !important;
+    box-shadow: none !important;
+    /* Remove any background from the image itself */
+    background: transparent !important;
+  }
     </style>
   </head>
   <body>
@@ -165,13 +182,13 @@
 
         <!-- Изображение продукта -->
         <div class="mb-8 flex justify-center">
-          <div class="relative w-max">
+          <div class="product-image-container relative w-max">
             <img
-              src="assets/img/4.png"
+              src="assets/geptrafitp-removebg-preview.png"
               alt="Изображение продукта geptrafit"
-              class="rounded-lg max-w-md"
-              width="450"
-              height="450"
+              class="product-image max-w-xs"
+              width="300"
+              height="300"
             />
             <div class="discount-bubble">-50%</div>
           </div>
@@ -252,14 +269,14 @@
         </div>
 
         <!-- Изображение продукта справа на десктопе -->
-        <div class="lg:w-1/2 flex justify-center">
-          <div class="relative w-max">
+        <div class="lg:w-1/2 flex justify-center items-start">
+          <div class="product-image-container w-max">
             <img
-              src="assets/img/4.png"
+              src="assets/geptrafitp-removebg-preview.png"
               alt="Изображение продукта Geptrafit"
-              class="rounded-lg max-w-lg"
-              width="950"
-              height="950"
+              class="product-image max-w-xs border-none"
+              width="400"
+              height="400"
             />
             <div class="discount-bubble">-50%</div>
           </div>
@@ -1034,9 +1051,9 @@
             class="max-w-md mx-auto bg-white/10 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/20"
           >
             <img
-              src="assets/img/4.png"
+              src="assets/geptrafitp-removebg-preview.png"
               alt="Продукт Гептрафит"
-              class="w-3/2 mx-auto mb-4"
+              class="w-1/2 mx-auto mb-4"
             />
             <p class="mb-4 text-amber-300 font-bold">
               <span class="lang-ru"

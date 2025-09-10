@@ -33,7 +33,18 @@
         color: var(--text-light);
       }
       .hero-gradient {
-        background: radial-gradient(circle, #1f2937, #111827);
+        background: url('assets/silamaksmob.png');
+        background-size: cover;
+        background-position: center;
+      }
+      @media (min-width: 1024px) {
+  .hero-gradient {
+    /* Для десктопов */
+    background: url('assets/silamsxdesk.jpg');
+    
+    background-size: cover;
+    background-position: center;
+  }
       }
       .section-gradient {
         background: linear-gradient(
@@ -96,7 +107,7 @@
         justify-content: center;
         font-size: 1.5rem;
         font-weight: 900;
-        transform: translate(-140%, 40%) rotate(15deg);
+        transform: translate(-120%, 120%) rotate(15deg);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
       .video-container {
@@ -117,6 +128,16 @@
         width: 100%;
         height: 100%;
       }
+      .product-image-container {
+  position: relative;
+  z-index: 10; /* Ensures it stays above other elements */
+  transform-origin: center; /* Scales from center */
+}
+
+.product-image {
+  transform: scale(1.2); /* Adjust this value to make bigger/smaller */
+  transition: transform 0.3s ease; /* Optional smooth scaling */
+}
     </style>
   </head>
   <body>
@@ -187,13 +208,13 @@
 
         <!-- Изображение продукта -->
         <div class="mb-8 flex justify-center">
-          <div class="relative w-max">
+          <div class="relative w-max product-image-container">
             <img
-              src="assets/img/2.png"
+              src="assets/silamaks.png"
               alt="Изображение продукта Venofit"
-              class="rounded-lg max-w-md"
-              width="450"
-              height="450"
+              class="rounded-lg max-w-md product-image"
+              width="400"
+              height="400"
             />
             <div class="discount-bubble">-50%</div>
           </div>
@@ -273,13 +294,13 @@
 
         <!-- Изображение продукта справа на десктопе -->
         <div class="lg:w-1/2 flex justify-center">
-          <div class="relative w-max">
+          <div class="relative w-max product-image-container">
             <img
-              src="assets/img/2.png"
+              src="assets/silamaks.png"
               alt="Изображение продукта silamax"
-              class="rounded-lg max-w-lg"
-              width="950"
-              height="950"
+              class="rounded-lg max-w-lg product-image"
+              width="350"
+              height="150"
             />
             <div class="discount-bubble">-50%</div>
           </div>
@@ -977,12 +998,12 @@
           </p>
 
           <div
-            class="max-w-md mx-auto bg-background-light/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/10"
+            class="max-w-md mx-auto bg-background-light/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/10 product-image-container"
           >
             <img
-              src="assets/img/2.png"
+              src="assets/silamaks.png"
               alt="Продукт Сила Макс Люкс"
-              class="w-3/2 mx-auto mb-4"
+              class="w-3/2 mx-auto mb-2 product-image"
             />
             <p class="mb-4 text-secondary-color font-bold">
               <span class="lang-ru"

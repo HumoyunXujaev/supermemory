@@ -1,5 +1,20 @@
 export default async function handler(request, response) {
-  // We only want to handle POST requests
+  response.setHeader('Access-Control-Allow-Credentials', true);
+  response.setHeader('Access-Control-Allow-Origin', 'https://europapharm.uz');
+  response.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS');
+  response.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
+
+  // The browser sends an OPTIONS request first to check permissions.
+  // We need to handle this and send a successful response.
+  if (request.method === 'OPTIONS') {
+    response.status(200).end();
+    return;
+  }
+
+  // We only want to handle POST requests for the actual form submission
   if (request.method !== 'POST') {
     return response.status(405).json({ message: 'Method Not Allowed' });
   }

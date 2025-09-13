@@ -1088,28 +1088,31 @@
             </div>
 
             <div class="my-4">
-              <span class="text-xl line-through opacity-70">780.000 СУМ</span>
+              <span class="text-xl line-through opacity-70">869.000 СУМ</span>
               <span class="text-4xl font-extrabold block text-amber-300"
-                >390.000 СУМ</span
+                >739.000 СУМ</span
               >
             </div>
 
-            <form class="orderForm">
+            <form class="orderForm" novalidate>
               <div class="mb-4">
                 <input
                   type="text"
+                  name="name"
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 lang-ru"
                   placeholder="Ваше имя"
                   required
                 />
                 <input
                   type="text"
+                  name="name"
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 lang-uz"
                   placeholder="Ismingiz"
                   required
                 />
                 <input
                   type="text"
+                  name="name"
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 lang-en"
                   placeholder="Your Name"
                   required
@@ -1118,18 +1121,21 @@
               <div class="mb-6">
                 <input
                   type="tel"
+                  name="phone"
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 lang-ru"
                   placeholder="Ваш номер телефона"
                   required
                 />
                 <input
                   type="tel"
+                  name="phone"
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 lang-uz"
                   placeholder="Telefon raqamingiz"
                   required
                 />
                 <input
                   type="tel"
+                  name="phone"
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400 lang-en"
                   placeholder="Your Phone Number"
                   required
@@ -1149,9 +1155,13 @@
       </section>
     </main>
 
-    <footer class="bg-gray-800 text-white py-6">
+        <footer class="bg-gray-800 text-white py-6">
       <div class="container mx-auto px-6 text-center text-sm">
-        <p class="mb-2">OOO "SHIFO NUR" | Производитель</p>
+        <p class="mb-2">
+			<span class="lang-ru">OOO "Delta Online" | Розничный торговец</span>
+			<span class="lang-uz">Delta Online MChJ | Chakana sotuvchi</span>
+			<span class="lang-en">Delta Online LLC | Reseller</span>
+		</p>
         <p class="text-xs text-gray-400">
           <span class="lang-ru"
             >Биологически активная добавка. Не является лекарственным
@@ -1166,7 +1176,7 @@
         </p>
       </div>
     </footer>
-
+	  
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const langRuBtn = document.getElementById('lang-ru-btn');
@@ -1227,10 +1237,11 @@
         startCountdown();
 
         // Form Submission Handler
-        function handleFormSubmit(event) {
+        async function handleFormSubmit(event) {
           event.preventDefault();
           const form = event.target;
           const button = form.querySelector('button[type="submit"]');
+          const currentLang = document.documentElement.lang;
 
           const originalButtonText = {
             ru: 'Заказать со скидкой',
@@ -1247,28 +1258,62 @@
             uz: 'Buyurtma qabul qilindi!',
             en: 'Order accepted!',
           };
-
-          const currentLang = html.lang;
+          const errorText = {
+            ru: 'Ошибка! Попробуйте еще раз.',
+            uz: "Xatolik! Qayta urinib ko'ring.",
+            en: 'Error! Please try again.',
+          };
 
           button.disabled = true;
           button.querySelector(`.lang-${currentLang}`).textContent =
             sendingText[currentLang];
 
-          setTimeout(() => {
-            form.reset();
-            button.classList.add('bg-emerald-500');
-            button.classList.remove('bg-amber-500');
-            button.querySelector(`.lang-${currentLang}`).textContent =
-              successText[currentLang];
+          // Собираем данные формы
+          const formData = new FormData(form);
+          const data = {
+            name: formData.get('name'),
+            phone: formData.get('phone'),
+            productName: 'Гептрафит',
+          };
 
-            setTimeout(() => {
+          try {
+            // Отправляем данные на сервер
+            const response = await fetch(
+              'https://supermemory-theta.vercel.app/api/send-message',
+              {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+              }
+            );
+
+            if (response.ok) {
+              // Успешная отправка
+              form.reset();
+              button.classList.add('bg-green-500');
+              button.classList.remove('bg-yellow-400');
               button.querySelector(`.lang-${currentLang}`).textContent =
-                originalButtonText[currentLang];
-              button.disabled = false;
-              button.classList.remove('bg-emerald-500');
-              button.classList.add('bg-amber-500');
-            }, 3000);
-          }, 1500);
+                successText[currentLang];
+            } else {
+              throw new Error('Ошибка сервера');
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            button.classList.add('bg-red-500');
+            button.classList.remove('bg-yellow-400');
+            button.querySelector(`.lang-${currentLang}`).textContent =
+              errorText[currentLang];
+          }
+
+          setTimeout(() => {
+            button.querySelector(`.lang-${currentLang}`).textContent =
+              originalButtonText[currentLang];
+            button.disabled = false;
+            button.classList.remove('bg-green-500', 'bg-red-500');
+            button.classList.add('bg-yellow-400');
+          }, 3000);
         }
 
         document.querySelectorAll('.orderForm').forEach((form) => {

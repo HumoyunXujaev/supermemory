@@ -32,24 +32,24 @@
             rgba(34, 197, 94, 0.15) 0%,
             rgba(21, 128, 61, 0.15) 0%
           ),
-      url('assets/spmmobile.jpg'); /* Фото для десктопов */
+          url('assets/spmmobile.jpg'); /* Фото для десктопов */
 
         background-size: cover;
         background-position: center;
       }
       @media (min-width: 1024px) {
-  .hero-gradient {
-    /* Для десктопов */
-    background: linear-gradient(
-        135deg,
-        rgba(34, 197, 94, 0.15) 0%,
-        rgba(21, 128, 61, 0.15) 0%
-      ),
-          url('assets/spmdesktop.jpg'); /* <-- ЗАМЕНИТЕ ССЫЛКУ НА ВАШ ФОН ЗДЕСЬ */
-    background-size: cover;
-    background-position: center;
-  }
-}
+        .hero-gradient {
+          /* Для десктопов */
+          background: linear-gradient(
+              135deg,
+              rgba(34, 197, 94, 0.15) 0%,
+              rgba(21, 128, 61, 0.15) 0%
+            ),
+            url('assets/spmdesktop.jpg'); /* <-- ЗАМЕНИТЕ ССЫЛКУ НА ВАШ ФОН ЗДЕСЬ */
+          background-size: cover;
+          background-position: center;
+        }
+      }
       .section-gradient {
         background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
       }
@@ -352,7 +352,7 @@
                 ><span class="lang-en">Tinnitus</span>
               </p>
             </div>
-            </div>
+          </div>
         </div>
       </section>
 
@@ -1302,22 +1302,25 @@
               >
             </div>
 
-            <form class="orderForm">
+            <form class="orderForm" novalidate>
               <div class="mb-4">
                 <input
                   type="text"
+                  name="name"
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-ru"
                   placeholder="Ваше имя"
                   required
                 />
                 <input
                   type="text"
+                  name="name"
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-uz"
                   placeholder="Ismingiz"
                   required
                 />
                 <input
                   type="text"
+                  name="name"
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-en"
                   placeholder="Your Name"
                   required
@@ -1326,18 +1329,21 @@
               <div class="mb-6">
                 <input
                   type="tel"
+                  name="phone"
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-ru"
                   placeholder="Ваш номер телефона"
                   required
                 />
                 <input
                   type="tel"
+                  name="phone"
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-uz"
                   placeholder="Telefon raqamingiz"
                   required
                 />
                 <input
                   type="tel"
+                  name="phone"
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-en"
                   placeholder="Your Phone Number"
                   required
@@ -1435,10 +1441,12 @@
         startCountdown();
 
         // Form Submission Handler
-        function handleFormSubmit(event) {
+
+        async function handleFormSubmit(event) {
           event.preventDefault();
           const form = event.target;
           const button = form.querySelector('button[type="submit"]');
+          const currentLang = document.documentElement.lang;
 
           const originalButtonText = {
             ru: 'Заказать со скидкой',
@@ -1455,28 +1463,62 @@
             uz: 'Buyurtma qabul qilindi!',
             en: 'Order accepted!',
           };
-
-          const currentLang = html.lang;
+          const errorText = {
+            ru: 'Ошибка! Попробуйте еще раз.',
+            uz: "Xatolik! Qayta urinib ko'ring.",
+            en: 'Error! Please try again.',
+          };
 
           button.disabled = true;
           button.querySelector(`.lang-${currentLang}`).textContent =
             sendingText[currentLang];
 
-          setTimeout(() => {
-            form.reset();
-            button.classList.add('bg-green-500');
+          // Собираем данные формы
+          const formData = new FormData(form);
+          const data = {
+            name: formData.get('name'),
+            phone: formData.get('phone'),
+            productName: 'Супер Память',
+          };
+
+          try {
+            // Отправляем данные на сервер
+            const response = await fetch(
+              'https://supermemory-theta.vercel.app/api/send-message',
+              {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+              }
+            );
+
+            if (response.ok) {
+              // Успешная отправка
+              form.reset();
+              button.classList.add('bg-green-500');
+              button.classList.remove('bg-yellow-400');
+              button.querySelector(`.lang-${currentLang}`).textContent =
+                successText[currentLang];
+            } else {
+              throw new Error('Ошибка сервера');
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            button.classList.add('bg-red-500');
             button.classList.remove('bg-yellow-400');
             button.querySelector(`.lang-${currentLang}`).textContent =
-              successText[currentLang];
+              errorText[currentLang];
+          }
 
-            setTimeout(() => {
-              button.querySelector(`.lang-${currentLang}`).textContent =
-                originalButtonText[currentLang];
-              button.disabled = false;
-              button.classList.remove('bg-green-500');
-              button.classList.add('bg-yellow-400');
-            }, 3000);
-          }, 1500);
+          setTimeout(() => {
+            button.querySelector(`.lang-${currentLang}`).textContent =
+              originalButtonText[currentLang];
+            button.disabled = false;
+            button.classList.remove('bg-green-500', 'bg-red-500');
+            button.classList.add('bg-yellow-400');
+          }, 3000);
         }
 
         document.querySelectorAll('.orderForm').forEach((form) => {

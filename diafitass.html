@@ -1076,17 +1076,7 @@
             uz: "Xatolik! Qayta urinib ko'ring.",
             en: 'Error! Please try again.',
           };
-
-          // Получаем данные из видимых полей
-          const name = form.querySelector('input[name="name"]:not([style*="display: none"])').value;
-          const phone = form.querySelector('input[name="phone"]:not([style*="display: none"])').value;
-          const productName = "Diafit ASS"; // Название продукта
-
-          if (!name || !phone) {
-              alert('Пожалуйста, заполните все поля.');
-              return;
-          }
-
+          
           button.disabled = true;
           button.querySelector(`.lang-${currentLang}`).textContent = sendingText[currentLang];
 

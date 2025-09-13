@@ -7,7 +7,7 @@
       Венофит – Натуральное очищение сосудов, нормализация давления и
       кровообращения
     </title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -107,6 +107,26 @@
       .product-image {
         transform: scale(1.2); /* Adjust this value to make bigger/smaller */
         transition: transform 0.3s ease; /* Optional smooth scaling */
+      }
+      /* Form validation styles */
+      input.error {
+        border: 2px solid #ef4444 !important;
+      }
+
+      .error-message {
+        color: #ef4444;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        display: none;
+      }
+
+      .form-success {
+        background-color: #10b981;
+        color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+        display: none;
       }
     </style>
   </head>
@@ -953,6 +973,9 @@
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-ru"
                   placeholder="Ваше имя"
                   required
+                  minlength="2"
+                  maxlength="50"
+                  pattern="[A-Za-zА-Яа-яЁёЎўҒғҚқҲҳ\s]+"
                 />
                 <input
                   type="text"
@@ -960,6 +983,9 @@
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-uz"
                   placeholder="Ismingiz"
                   required
+                  minlength="2"
+                  maxlength="50"
+                  pattern="[A-Za-zА-Яа-яЁёЎўҒғҚқҲҳ\s]+"
                 />
                 <input
                   type="text"
@@ -967,7 +993,19 @@
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-en"
                   placeholder="Your Name"
                   required
+                  minlength="2"
+                  maxlength="50"
+                  pattern="[A-Za-zА-Яа-яЁёЎўҒғҚқҲҳ\s]+"
                 />
+                <div class="error-message lang-ru">
+                  Пожалуйста, введите корректное имя (только буквы)
+                </div>
+                <div class="error-message lang-uz">
+                  Iltimos, to'g'ri ism kiriting (faqat harflar)
+                </div>
+                <div class="error-message lang-en">
+                  Please enter a valid name (letters only)
+                </div>
               </div>
               <div class="mb-6">
                 <input
@@ -976,6 +1014,7 @@
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-ru"
                   placeholder="Ваш номер телефона"
                   required
+                  pattern="[\+]{0,1}[0-9\s\-\(\)]{7,20}"
                 />
                 <input
                   type="tel"
@@ -983,6 +1022,7 @@
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-uz"
                   placeholder="Telefon raqamingiz"
                   required
+                  pattern="[\+]{0,1}[0-9\s\-\(\)]{7,20}"
                 />
                 <input
                   type="tel"
@@ -990,7 +1030,24 @@
                   class="w-full px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 lang-en"
                   placeholder="Your Phone Number"
                   required
+                  pattern="[\+]{0,1}[0-9\s\-\(\)]{7,20}"
                 />
+                <div class="error-message lang-ru">
+                  Пожалуйста, введите корректный номер телефона
+                </div>
+                <div class="error-message lang-uz">
+                  Iltimos, to'g'ri telefon raqamini kiriting
+                </div>
+                <div class="error-message lang-en">
+                  Please enter a valid phone number
+                </div>
+              </div>
+              <div class="form-success">
+                <span class="lang-ru">Спасибо! Ваша заявка принята.</span>
+                <span class="lang-uz">Rahmat! So'rovingiz qabul qilindi.</span>
+                <span class="lang-en"
+                  >Thank you! Your request has been received.</span
+                >
               </div>
               <button
                 type="submit"
@@ -1027,7 +1084,6 @@
         </p>
       </div>
     </footer>
-
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const langRuBtn = document.getElementById('lang-ru-btn');
@@ -1038,27 +1094,33 @@
         // Language Switcher Logic
         function setLanguage(lang) {
           html.lang = lang;
-          langRuBtn.classList.toggle('active', lang === 'ru');
-          langUzBtn.classList.toggle('active', lang === 'uz');
-          langEnBtn.classList.toggle('active', lang === 'en');
+          if (langRuBtn) langRuBtn.classList.toggle('active', lang === 'ru');
+          if (langUzBtn) langUzBtn.classList.toggle('active', lang === 'uz');
+          if (langEnBtn) langEnBtn.classList.toggle('active', lang === 'en');
         }
 
-        // Set initial language from local storage or default to 'ru'
+        // Set initial language from browser or default to 'ru'
         const savedLang = localStorage.getItem('language') || 'ru';
         setLanguage(savedLang);
 
-        langRuBtn.addEventListener('click', () => {
-          setLanguage('ru');
-          localStorage.setItem('language', 'ru');
-        });
-        langUzBtn.addEventListener('click', () => {
-          setLanguage('uz');
-          localStorage.setItem('language', 'uz');
-        });
-        langEnBtn.addEventListener('click', () => {
-          setLanguage('en');
-          localStorage.setItem('language', 'en');
-        });
+        if (langRuBtn) {
+          langRuBtn.addEventListener('click', () => {
+            setLanguage('ru');
+            localStorage.setItem('language', 'ru');
+          });
+        }
+        if (langUzBtn) {
+          langUzBtn.addEventListener('click', () => {
+            setLanguage('uz');
+            localStorage.setItem('language', 'uz');
+          });
+        }
+        if (langEnBtn) {
+          langEnBtn.addEventListener('click', () => {
+            setLanguage('en');
+            localStorage.setItem('language', 'en');
+          });
+        }
 
         // Countdown Timer
         function startCountdown() {
@@ -1075,24 +1137,89 @@
             let minutes = Math.floor(timeInSeconds / 60);
             let seconds = timeInSeconds % 60;
 
-            document.getElementById('minutes').textContent = minutes
-              .toString()
-              .padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds
-              .toString()
-              .padStart(2, '0');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+
+            if (minutesElement)
+              minutesElement.textContent = minutes.toString().padStart(2, '0');
+            if (secondsElement)
+              secondsElement.textContent = seconds.toString().padStart(2, '0');
 
             timeInSeconds--;
           }, 1000);
         }
         startCountdown();
 
-        // Form Submission Handler
+        // Form Validation and Submission Handler
+        function validateForm(form) {
+          let isValid = true;
+          const currentLang = document.documentElement.lang;
+
+          // Validate name field
+          const nameInput = form.querySelector('input[name="name"]');
+          const namePattern = /^[A-Za-zА-Яа-яЁёЎўҒғҚқҲҳ\s]{2,50}$/;
+
+          if (!namePattern.test(nameInput.value.trim())) {
+            nameInput.classList.add('error');
+            form.querySelectorAll('.error-message').forEach((msg) => {
+              if (msg.classList.contains(`lang-${currentLang}`)) {
+                msg.style.display = 'block';
+              }
+            });
+            isValid = false;
+          } else {
+            nameInput.classList.remove('error');
+            form.querySelectorAll('.error-message').forEach((msg) => {
+              msg.style.display = 'none';
+            });
+          }
+
+          // Validate phone field
+          const phoneInput = form.querySelector('input[name="phone"]');
+          const phonePattern = /^[\+]?[0-9\s\-\(\)]{7,20}$/;
+
+          if (!phonePattern.test(phoneInput.value.trim())) {
+            phoneInput.classList.add('error');
+            form.querySelectorAll('.error-message').forEach((msg) => {
+              if (msg.classList.contains(`lang-${currentLang}`)) {
+                msg.style.display = 'block';
+              }
+            });
+            isValid = false;
+          } else {
+            phoneInput.classList.remove('error');
+          }
+
+          return isValid;
+        }
+
+        // Spam protection - simple honeypot technique
+        function addHoneypotField(form) {
+          const honeypot = document.createElement('input');
+          honeypot.type = 'text';
+          honeypot.name = 'website';
+          honeypot.style.display = 'none';
+          honeypot.tabIndex = -1;
+          honeypot.autocomplete = 'off';
+          form.appendChild(honeypot);
+        }
+
         async function handleFormSubmit(event) {
           event.preventDefault();
           const form = event.target;
           const button = form.querySelector('button[type="submit"]');
           const currentLang = document.documentElement.lang;
+
+          // Check honeypot field for bots
+          const honeypot = form.querySelector('input[name="website"]');
+          if (honeypot && honeypot.value !== '') {
+            return; // Likely a bot, don't submit
+          }
+
+          // Validate form
+          if (!validateForm(form)) {
+            return;
+          }
 
           const originalButtonText = {
             ru: 'Заказать со скидкой',
@@ -1105,9 +1232,9 @@
             en: 'Sending...',
           };
           const successText = {
-            ru: 'Заявка принята!',
-            uz: 'Buyurtma qabul qilindi!',
-            en: 'Order accepted!',
+            ru: 'Успешно отправлено!',
+            uz: 'Muvaffaqiyatli yuborildi!',
+            en: 'Successfully sent!',
           };
           const errorText = {
             ru: 'Ошибка! Попробуйте еще раз.',
@@ -1119,16 +1246,16 @@
           button.querySelector(`.lang-${currentLang}`).textContent =
             sendingText[currentLang];
 
-          // Собираем данные формы
+          // Collect form data
           const formData = new FormData(form);
           const data = {
-            name: formData.get('name'),
-            phone: formData.get('phone'),
+            name: formData.get('name').trim(),
+            phone: formData.get('phone').trim(),
             productName: 'Венофит',
           };
 
           try {
-            // Отправляем данные на сервер
+            // Send data to server
             const response = await fetch(
               'https://supermemory-theta.vercel.app/api/send-message',
               {
@@ -1141,14 +1268,21 @@
             );
 
             if (response.ok) {
-              // Успешная отправка
+              // Successful submission
               form.reset();
+              const successElement = form.querySelector('.form-success');
+              if (successElement) successElement.style.display = 'block';
               button.classList.add('bg-green-500');
               button.classList.remove('bg-yellow-400');
               button.querySelector(`.lang-${currentLang}`).textContent =
                 successText[currentLang];
+
+              // Hide success message after 5 seconds
+              setTimeout(() => {
+                if (successElement) successElement.style.display = 'none';
+              }, 5000);
             } else {
-              throw new Error('Ошибка сервера');
+              throw new Error('Server error');
             }
           } catch (error) {
             console.error('Error:', error);
@@ -1167,26 +1301,28 @@
           }, 3000);
         }
 
+        // Initialize form validation on all forms
         document.querySelectorAll('.orderForm').forEach((form) => {
+          addHoneypotField(form);
           form.addEventListener('submit', handleFormSubmit);
+
+          // Add real-time validation
+          const inputs = form.querySelectorAll('input');
+          inputs.forEach((input) => {
+            input.addEventListener('blur', () => validateForm(form));
+            input.addEventListener('input', () => {
+              input.classList.remove('error');
+              form.querySelectorAll('.error-message').forEach((msg) => {
+                msg.style.display = 'none';
+              });
+            });
+          });
         });
-      });
 
-      document.addEventListener('DOMContentLoaded', () => {
-        const langRuBtn = document.getElementById('lang-ru-btn');
-        const langUzBtn = document.getElementById('lang-uz-btn');
-        const langEnBtn = document.getElementById('lang-en-btn');
+        // URL language parameter handling
         const langSwitcher = langRuBtn?.parentElement?.parentElement; // блок тогглера
-        const html = document.documentElement;
 
-        function setLanguage(lang) {
-          html.lang = lang;
-          if (langRuBtn) langRuBtn.classList.toggle('active', lang === 'ru');
-          if (langUzBtn) langUzBtn.classList.toggle('active', lang === 'uz');
-          if (langEnBtn) langEnBtn.classList.toggle('active', lang === 'en');
-        }
-
-        // 1. Проверяем URL
+        // Check URL for language parameter
         const params = new URLSearchParams(window.location.search);
         const urlLang = params.get('lang');
 
@@ -1196,26 +1332,9 @@
           // если язык в ссылке → скрываем тогглер
           if (langSwitcher) langSwitcher.style.display = 'none';
         } else {
-          // 2. Если языка нет в ссылке → используем localStorage или ru
+          // If no language in URL, use saved language or default
           const savedLang = localStorage.getItem('language') || 'ru';
           setLanguage(savedLang);
-
-          // 3. Навешиваем события на кнопки
-          if (langRuBtn)
-            langRuBtn.addEventListener('click', () => {
-              setLanguage('ru');
-              localStorage.setItem('language', 'ru');
-            });
-          if (langUzBtn)
-            langUzBtn.addEventListener('click', () => {
-              setLanguage('uz');
-              localStorage.setItem('language', 'uz');
-            });
-          if (langEnBtn)
-            langEnBtn.addEventListener('click', () => {
-              setLanguage('en');
-              localStorage.setItem('language', 'en');
-            });
         }
       });
     </script>

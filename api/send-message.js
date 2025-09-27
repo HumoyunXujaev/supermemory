@@ -76,6 +76,8 @@ export default async function handler(request, response) {
 
   // --- Обработка POST запроса с данными ---
   if (request.method === 'POST') {
+    console.log('=== INCOMING REQUEST ===', request.method);
+    console.log('=== RAW BODY ===', JSON.stringify(request.body, null, 2));
     const body = request.body;
     // Сразу после const body = request.body;
     console.log('=== RAW BODY FROM META ===');

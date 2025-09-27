@@ -3,9 +3,9 @@ async function sendTelegramMessage(name, phone, source) {
   const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
   if (!TOKEN || !CHAT_ID) {
-    console.error("Telegram TOKEN or CHAT_ID is not configured.");
+    console.error('Telegram TOKEN or CHAT_ID is not configured.');
     // throw new Error("Server configuration error: Telegram secrets are missing.");
-    return { ok: false, description: "Server configuration error." };
+    return { ok: false, description: 'Server configuration error.' };
   }
 
   // Формируем красивое сообщение
@@ -28,20 +28,18 @@ async function sendTelegramMessage(name, phone, source) {
     });
 
     const data = await response.json();
-    
-    if (!data.ok) {
-        // Логируем ошибку от Telegram для отладки
-        console.error("Telegram API Error:", data.description);
-    }
-    
-    return data; // Возвращаем ответ от Telegram
 
+    if (!data.ok) {
+      // Логируем ошибку от Telegram для отладки
+      console.error('Telegram API Error:', data.description);
+    }
+
+    return data; // Возвращаем ответ от Telegram
   } catch (error) {
-    console.error("Failed to send message to Telegram:", error);
-    return { ok: false, description: "Internal fetch error." };
+    console.error('Failed to send message to Telegram:', error);
+    return { ok: false, description: 'Internal fetch error.' };
   }
 }
-
 
 // Основной обработчик запросов
 export default async function handler(request, response) {
@@ -49,7 +47,10 @@ export default async function handler(request, response) {
   response.setHeader('Access-Control-Allow-Credentials', true);
   response.setHeader('Access-Control-Allow-Origin', '*'); // Разрешаем с любого источника
   response.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
-  response.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+  response.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
 
   // Браузеры отправляют OPTIONS запрос для проверки CORS перед POST
   if (request.method === 'OPTIONS') {
@@ -65,10 +66,10 @@ export default async function handler(request, response) {
 
     // Проверяем, что токен совпадает с нашим секретным токеном
     if (mode === 'subscribe' && token === process.env.META_VERIFY_TOKEN) {
-      console.log("Webhook verified successfully!");
+      console.log('Webhook verified successfully!');
       return response.status(200).send(challenge);
     } else {
-      console.error("Webhook verification failed.");
+      console.error('Webhook verification failed.');
       return response.status(403).json({ message: 'Verification failed' });
     }
   }
@@ -76,6 +77,9 @@ export default async function handler(request, response) {
   // --- Обработка POST запроса с данными ---
   if (request.method === 'POST') {
     const body = request.body;
+    // Сразу после const body = request.body;
+    console.log('=== RAW BODY FROM META ===');
+    console.log(JSON.stringify(body, null, 2));
 
     try {
       // Проверяем, является ли запрос вебхуком от Meta
@@ -83,18 +87,24 @@ export default async function handler(request, response) {
         const entry = body.entry[0];
         const change = entry.changes[0];
         const leadData = change.value.field_data;
+        console.log('=== ENTRY ===', JSON.stringify(entry, null, 2));
+        console.log('=== CHANGE ===', JSON.stringify(change, null, 2));
 
         // Вспомогательная функция для поиска нужного поля в данных от Meta
-        const findField = (fieldName) => leadData.find(f => f.name === fieldName)?.values[0] || 'не указано';
-        
+        const findField = (fieldName) =>
+          leadData.find((f) => f.name === fieldName)?.values[0] || 'не указано';
+
         // Meta может присылать имя в разных полях
         const fullName = findField('full_name');
         const firstName = findField('first_name');
         const lastName = findField('last_name');
-        
+
         let name = fullName;
-        if (name === 'не указано' && (firstName !== 'не указано' || lastName !== 'не указано')) {
-            name = `${firstName} ${lastName}`.trim();
+        if (
+          name === 'не указано' &&
+          (firstName !== 'не указано' || lastName !== 'не указано')
+        ) {
+          name = `${firstName} ${lastName}`.trim();
         }
 
         const phone = findField('phone_number');
@@ -105,35 +115,46 @@ export default async function handler(request, response) {
         const telegramResult = await sendTelegramMessage(name, phone, source);
 
         if (telegramResult.ok) {
-          return response.status(200).json({ message: 'Meta lead processed successfully!' });
+          return response
+            .status(200)
+            .json({ message: 'Meta lead processed successfully!' });
         } else {
-          return response.status(500).json({ message: 'Failed to send Meta lead to Telegram.' });
+          return response
+            .status(500)
+            .json({ message: 'Failed to send Meta lead to Telegram.' });
         }
-
       } else {
         // Это обычная заявка с вашего лендинга
         const { name, phone, productName } = body;
-        
+
         if (!name || !phone) {
-             return response.status(400).json({ message: 'Name and phone are required.' });
+          return response
+            .status(400)
+            .json({ message: 'Name and phone are required.' });
         }
 
         const source = productName || 'Лендинг'; // Источник - название продукта или просто "Лендинг"
-        
+
         const telegramResult = await sendTelegramMessage(name, phone, source);
 
         if (telegramResult.ok) {
-          return response.status(200).json({ message: 'Landing page lead processed successfully!' });
+          return response
+            .status(200)
+            .json({ message: 'Landing page lead processed successfully!' });
         } else {
-          return response.status(500).json({ message: 'Failed to send landing page lead to Telegram.' });
+          return response
+            .status(500)
+            .json({ message: 'Failed to send landing page lead to Telegram.' });
         }
       }
     } catch (error) {
-        console.error("Error processing POST request:", error);
-        return response.status(500).json({ message: 'Internal Server Error.' });
+      console.error('Error processing POST request:', error);
+      return response.status(500).json({ message: 'Internal Server Error.' });
     }
   }
 
   // Если метод не GET, POST или OPTIONS
-  return response.status(405).json({ message: `Method ${request.method} Not Allowed` });
+  return response
+    .status(405)
+    .json({ message: `Method ${request.method} Not Allowed` });
 }

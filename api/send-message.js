@@ -1,16 +1,15 @@
+// === Отправка сообщения в Telegram ===
 async function sendTelegramMessage(name, phone, source) {
   const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
   const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
   if (!TOKEN || !CHAT_ID) {
     console.error('Telegram TOKEN or CHAT_ID is not configured.');
-    // throw new Error("Server configuration error: Telegram secrets are missing.");
     return { ok: false, description: 'Server configuration error.' };
   }
 
-  // Формируем красивое сообщение
   let message = `<b>🔔 Новая заявка!</b>\n\n`;
-  message += `<b>Источник:</b> ${source}\n`; // Указываем, откуда пришел лид
+  message += `<b>Источник:</b> ${source}\n`;
   message += `<b>Имя клиента:</b> ${name}\n`;
   message += `<b>Телефон:</b> ${phone}`;
 
@@ -28,43 +27,36 @@ async function sendTelegramMessage(name, phone, source) {
     });
 
     const data = await response.json();
-
     if (!data.ok) {
-      // Логируем ошибку от Telegram для отладки
       console.error('Telegram API Error:', data.description);
     }
-
-    return data; // Возвращаем ответ от Telegram
+    return data;
   } catch (error) {
     console.error('Failed to send message to Telegram:', error);
     return { ok: false, description: 'Internal fetch error.' };
   }
 }
 
-// Основной обработчик запросов
+// === Основной обработчик ===
 export default async function handler(request, response) {
-  // Устанавливаем заголовки для CORS (важно для веб-форм)
   response.setHeader('Access-Control-Allow-Credentials', true);
-  response.setHeader('Access-Control-Allow-Origin', '*'); // Разрешаем с любого источника
+  response.setHeader('Access-Control-Allow-Origin', '*');
   response.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
   response.setHeader(
     'Access-Control-Allow-Headers',
     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   );
 
-  // Браузеры отправляют OPTIONS запрос для проверки CORS перед POST
   if (request.method === 'OPTIONS') {
     return response.status(200).end();
   }
 
-  // --- Обработка GET запроса для верификации Meta Webhook ---
-  // Это нужно только один раз при настройке в панели разработчика Meta
+  // === Верификация Webhook Meta ===
   if (request.method === 'GET') {
     const mode = request.query['hub.mode'];
     const token = request.query['hub.verify_token'];
     const challenge = request.query['hub.challenge'];
 
-    // Проверяем, что токен совпадает с нашим секретным токеном
     if (mode === 'subscribe' && token === process.env.META_VERIFY_TOKEN) {
       console.log('Webhook verified successfully!');
       return response.status(200).send(challenge);
@@ -74,34 +66,40 @@ export default async function handler(request, response) {
     }
   }
 
-  // --- Обработка POST запроса с данными ---
+  // === Обработка входящих POST-заявок ===
   if (request.method === 'POST') {
-    console.log('=== INCOMING REQUEST ===', request.method);
     console.log('=== RAW BODY ===', JSON.stringify(request.body, null, 2));
     const body = request.body;
-    // Сразу после const body = request.body;
-    console.log('=== RAW BODY FROM META ===');
-    console.log(JSON.stringify(body, null, 2));
 
     try {
-      // Проверяем, является ли запрос вебхуком от Meta
       if (body.object === 'page') {
-        const entry = body.entry[0];
-        const change = entry.changes[0];
-        const leadData = change.value.field_data;
-        console.log('=== ENTRY ===', JSON.stringify(entry, null, 2));
-        console.log('=== CHANGE ===', JSON.stringify(change, null, 2));
+        const entry = body.entry?.[0];
+        const change = entry?.changes?.[0];
+        const leadgenId = change?.value?.leadgen_id;
+        const formId = change?.value?.form_id;
 
-        // Вспомогательная функция для поиска нужного поля в данных от Meta
+        if (!leadgenId) {
+          console.error('No leadgen_id in webhook payload.');
+          return response.status(400).json({ message: 'leadgen_id missing' });
+        }
+
+        // === Запрашиваем данные лида через Graph API ===
+        const token = process.env.META_PAGE_ACCESS_TOKEN;
+        const leadResponse = await fetch(
+          `https://graph.facebook.com/v23.0/${leadgenId}?access_token=${token}`
+        );
+        const leadJson = await leadResponse.json();
+        console.log('=== LEAD DATA FROM GRAPH API ===', leadJson);
+
+        const leadData = leadJson.field_data || [];
         const findField = (fieldName) =>
-          leadData.find((f) => f.name === fieldName)?.values[0] || 'не указано';
+          leadData.find((f) => f.name === fieldName)?.values?.[0] ||
+          'не указано';
 
-        // Meta может присылать имя в разных полях
-        const fullName = findField('full_name');
+        // Имя
+        let name = findField('full_name');
         const firstName = findField('first_name');
         const lastName = findField('last_name');
-
-        let name = fullName;
         if (
           name === 'не указано' &&
           (firstName !== 'не указано' || lastName !== 'не указано')
@@ -109,13 +107,12 @@ export default async function handler(request, response) {
           name = `${firstName} ${lastName}`.trim();
         }
 
+        // Телефон
         const phone = findField('phone_number');
-        const formId = change.value.form_id;
         const source = `Meta Lead Ad (Form ID: ${formId})`;
 
-        // Отправляем данные в Telegram
+        // Отправляем в Telegram
         const telegramResult = await sendTelegramMessage(name, phone, source);
-
         if (telegramResult.ok) {
           return response
             .status(200)
@@ -126,17 +123,15 @@ export default async function handler(request, response) {
             .json({ message: 'Failed to send Meta lead to Telegram.' });
         }
       } else {
-        // Это обычная заявка с вашего лендинга
+        // === Обычная заявка с лендинга ===
         const { name, phone, productName } = body;
-
         if (!name || !phone) {
           return response
             .status(400)
             .json({ message: 'Name and phone are required.' });
         }
 
-        const source = productName || 'Лендинг'; // Источник - название продукта или просто "Лендинг"
-
+        const source = productName || 'Лендинг';
         const telegramResult = await sendTelegramMessage(name, phone, source);
 
         if (telegramResult.ok) {
@@ -155,7 +150,6 @@ export default async function handler(request, response) {
     }
   }
 
-  // Если метод не GET, POST или OPTIONS
   return response
     .status(405)
     .json({ message: `Method ${request.method} Not Allowed` });

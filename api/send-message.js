@@ -1,4 +1,14 @@
-// === Отправка сообщения в Telegram ===
+function escapeHtml(text) {
+  if (!text) return '';
+  return text
+    .toString()
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 async function sendTelegramMessage(name, phone, source) {
   const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
   const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
@@ -9,9 +19,9 @@ async function sendTelegramMessage(name, phone, source) {
   }
 
   let message = `<b>🔔 Новая заявка!</b>\n\n`;
-  message += `<b>Источник:</b> ${source}\n`;
-  message += `<b>Имя клиента:</b> ${name}\n`;
-  message += `<b>Телефон:</b> ${phone}`;
+  message += `<b>Источник:</b> ${escapeHtml(source)}\n`;
+  message += `<b>Имя клиента:</b> ${escapeHtml(name)}\n`;
+  message += `<b>Телефон:</b> ${escapeHtml(phone)}`;
 
   const url = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 

@@ -9,6 +9,16 @@ function escapeHtml(text) {
     .replace(/'/g, '&#039;');
 }
 
+// === Маппинг form_id → название продукта ===
+const FORM_NAMES = {
+  "4084186411799714": "geptrafit",
+  "664912399978587": "venofit",
+  "720026814402812": "diafit acc",
+  "814284541049637": "silamax",
+  "811798847934700": "stop-artroz",
+  "1152300420130073": "superpamyat"
+};
+
 async function sendTelegramMessage(name, phone, source) {
   const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
   const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
@@ -119,7 +129,10 @@ export default async function handler(request, response) {
 
         // Телефон
         const phone = findField('phone_number');
-        const source = `Meta Lead Ad (Form ID: ${formId})`;
+
+        // Берём название формы из словаря
+        const productName = FORM_NAMES[formId] || 'Неизвестный продукт';
+        const source = `Meta Lead Ad (${productName}, Form ID: ${formId})`;
 
         // Отправляем в Telegram
         const telegramResult = await sendTelegramMessage(name, phone, source);

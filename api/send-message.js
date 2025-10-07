@@ -19,9 +19,8 @@ const FORM_NAMES = {
   "1152300420130073": "superpamyat"
 };
 
-
-
-async function sendTelegramMessage(name, phone, source) {
+// === Функция отправки сообщения в Telegram ===
+async function sendTelegramMessage(name, phoneMain, phoneExtra, source) {
   const TOKEN = process.env.TELEGRAM_BOT_TOKEN;
   const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
@@ -33,7 +32,11 @@ async function sendTelegramMessage(name, phone, source) {
   let message = `<b>🔔 Новая заявка!</b>\n\n`;
   message += `<b>Источник:</b> ${escapeHtml(source)}\n`;
   message += `<b>Имя клиента:</b> ${escapeHtml(name)}\n`;
-  message += `<b>Телефон:</b> ${escapeHtml(phone)}`;
+  message += `<b>📞 Основной номер:</b> ${escapeHtml(phoneMain)}\n`;
+
+  if (phoneExtra && phoneExtra !== 'не указано' && phoneExtra !== phoneMain) {
+    message += `<b>📞 Доп. номер:</b> ${escapeHtml(phoneExtra)}\n`;
+  }
 
   const url = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
@@ -94,6 +97,7 @@ export default async function handler(request, response) {
     const body = request.body;
 
     try {
+      // === Если это лид с Meta (Facebook/Instagram) ===
       if (body.object === 'page') {
         const entry = body.entry?.[0];
         const change = entry?.changes?.[0];
@@ -112,63 +116,51 @@ export default async function handler(request, response) {
         );
         const leadJson = await leadResponse.json();
         console.log('=== LEAD DATA FROM GRAPH API ===', leadJson);
-        console.log('=== LEAD DATAaaa FROM GRAPH API ===', leadResponse);
-
 
         const leadData = leadJson.field_data || [];
         const findField = (fieldName) =>
-          leadData.find((f) => f.name === fieldName)?.values?.[0] ||
-          'не указано';
+          leadData.find((f) => f.name === fieldName)?.values?.[0] || 'не указано';
 
         // Имя
         let name = findField('full_name');
         const firstName = findField('first_name');
         const lastName = findField('last_name');
-        if (
-          name === 'не указано' &&
-          (firstName !== 'не указано' || lastName !== 'не указано')
-        ) {
+        if (name === 'не указано' && (firstName !== 'не указано' || lastName !== 'не указано')) {
           name = `${firstName} ${lastName}`.trim();
         }
 
-        // Телефон
-        const phone = findField('phone_number');
+        // Телефоны
+        const phoneMain = findField('phone_number');
+        const phoneExtra = findField('biz_sizga_telefon_qilishimiz_uchun,_raqamingizni_qoldiring.');
+
+        console.log('Main phone:', phoneMain);
+        console.log('Extra phone:', phoneExtra);
 
         // Берём название формы из словаря
         const productName = FORM_NAMES[formId] || 'Неизвестный продукт';
         const source = `Meta Lead Ad (${productName}, Form ID: ${formId})`;
 
         // Отправляем в Telegram
-        const telegramResult = await sendTelegramMessage(name, phone, source);
+        const telegramResult = await sendTelegramMessage(name, phoneMain, phoneExtra, source);
         if (telegramResult.ok) {
-          return response
-            .status(200)
-            .json({ message: 'Meta lead processed successfully!' });
+          return response.status(200).json({ message: 'Meta lead processed successfully!' });
         } else {
-          return response
-            .status(500)
-            .json({ message: 'Failed to send Meta lead to Telegram.' });
+          return response.status(500).json({ message: 'Failed to send Meta lead to Telegram.' });
         }
       } else {
         // === Обычная заявка с лендинга ===
         const { name, phone, productName } = body;
         if (!name || !phone) {
-          return response
-            .status(400)
-            .json({ message: 'Name and phone are required.' });
+          return response.status(400).json({ message: 'Name and phone are required.' });
         }
 
         const source = productName || 'Лендинг';
-        const telegramResult = await sendTelegramMessage(name, phone, source);
+        const telegramResult = await sendTelegramMessage(name, phone, null, source);
 
         if (telegramResult.ok) {
-          return response
-            .status(200)
-            .json({ message: 'Landing page lead processed successfully!' });
+          return response.status(200).json({ message: 'Landing page lead processed successfully!' });
         } else {
-          return response
-            .status(500)
-            .json({ message: 'Failed to send landing page lead to Telegram.' });
+          return response.status(500).json({ message: 'Failed to send landing page lead to Telegram.' });
         }
       }
     } catch (error) {
@@ -177,7 +169,5 @@ export default async function handler(request, response) {
     }
   }
 
-  return response
-    .status(405)
-    .json({ message: `Method ${request.method} Not Allowed` });
+  return response.status(405).json({ message: `Method ${request.method} Not Allowed` });
 }

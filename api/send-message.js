@@ -11,12 +11,12 @@ function escapeHtml(text) {
 
 // === Маппинг form_id → название продукта ===
 const FORM_NAMES = {
-  "4084186411799714": "geptrafit",
-  "664912399978587": "venofit",
-  "720026814402812": "diafit acc",
-  "814284541049637": "silamax",
-  "811798847934700": "stop-artroz",
-  "1152300420130073": "superpamyat"
+  4084186411799714: 'geptrafit',
+  664912399978587: 'venofit',
+  720026814402812: 'diafit acc',
+  814284541049637: 'silamax',
+  811798847934700: 'stop-artroz',
+  1152300420130073: 'superpamyat',
 };
 
 async function sendTelegramMessage(name, phone, source) {
@@ -110,6 +110,8 @@ export default async function handler(request, response) {
         );
         const leadJson = await leadResponse.json();
         console.log('=== LEAD DATA FROM GRAPH API ===', leadJson);
+        console.log('=== LEAD DATAaaa FROM GRAPH API ===', leadResponse);
+
 
         const leadData = leadJson.field_data || [];
         const findField = (fieldName) =>

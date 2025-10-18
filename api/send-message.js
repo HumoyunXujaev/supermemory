@@ -67,8 +67,8 @@ async function sendTelegramMessage(chatId, messageText) {
     console.error(
       `Failed to send message to Telegram (ChatID: ${chatId}):`,
       error
-    );
-    return { ok: false, description: 'Internal fetch error.' };
+    ); // Бросаем ошибку, чтобы Promise.allSettled мог ее поймать
+    throw error;
   }
 }
 
@@ -116,8 +116,9 @@ export default async function handler(request, response) {
         if (!leadgenId) {
           console.error('No leadgen_id in webhook payload.');
           return response.status(400).json({ message: 'leadgen_id missing' });
-        } // === Запрашиваем данные лида через Graph API ===
+        }
 
+        // === Запрашиваем данные лида через Graph API ===
         const token = process.env.META_PAGE_ACCESS_TOKEN;
         const leadResponse = await fetch(
           `https://graph.facebook.com/v23.0/${leadgenId}?access_token=${token}`
@@ -128,14 +129,12 @@ export default async function handler(request, response) {
         const leadData = leadJson.field_data || [];
         const findField = (fieldName) =>
           leadData.find((f) => f.name === fieldName)?.values?.[0] ||
-          'не указано'; // Имя
+          'не указано'; // --- ИСПРАВЛЕНИЕ 1: Добавляем проверку новых полей (узб.) --- // Имя
 
-        // --- ИСПРАВЛЕНИЕ 1: Добавляем проверку новых полей (узб.) ---
         let name = findField('full_name');
         if (name === 'не указано') {
           name = findField('исмингиз?'); // Поиск по узбекскому названию поля
         }
-
         const firstName = findField('first_name');
         const lastName = findField('last_name');
         if (
@@ -143,57 +142,54 @@ export default async function handler(request, response) {
           (firstName !== 'не указано' || lastName !== 'не указано')
         ) {
           name = `${firstName} ${lastName}`.trim();
-        } // Телефоны
+        }
 
+        // Телефоны
         let phoneMain = findField('phone_number');
         if (phoneMain === 'не указано') {
           phoneMain = findField('телефон_рақамингиз?'); // Поиск по узбекскому названию поля
         }
-
         const phoneExtra = findField(
           'biz_sizga_telefon_qilishimiz_uchun,_raqamingizni_qoldiring.'
         );
-        const phoneUzbek = findField('телефон_рақамингиз?'); // Также получаем это поле // === Определяем продукт и флаг новой формы ===
-        // --- КОНЕЦ ИСПРАВЛЕНИЯ 1 ---
-
+        const phoneUzbek = findField('телефон_рақамингиз?'); // Также получаем это поле // --- КОНЕЦ ИСПРАВЛЕНИЯ 1 --- // === Определяем продукт и флаг новой формы ===
         let productName;
-        let isNewForm = false;
+        let isNewForm = false; // --- ИСПРАВЛЕНИЕ 2: Меняем логику определения новой формы ---
 
-        // --- ИСПРАВЛЕНИЕ 2: Меняем логику определения новой формы ---
-        // Если формы НЕТ в старом списке, считаем ее НОВОЙ
         if (FORM_NAMES[formId]) {
           productName = FORM_NAMES[formId];
           isNewForm = false; // Это старая форма
         } else {
-          // Это НЕ старая форма, значит - новая.
           isNewForm = true;
-          // Пытаемся найти название в новом списке, или ставим "Неизвестный"
           productName = NEW_FORM_NAMES[formId] || 'Неизвестный продукт';
         } // === Готовим базовые части сообщения ===
         // --- КОНЕЦ ИСПРАВЛЕНИЯ 2 ---
+
         const namePart = `<b>Имя клиента:</b> ${escapeHtml(name)}\n`;
         const phoneMainPart = `<b>📞 Основной номер:</b> ${escapeHtml(
           phoneMain
         )}\n`;
-        let phoneExtraPart = '';
-        // --- ИСПРАВЛЕНИЕ 3: Улучшаем логику доп. номера ---
-        // Проверяем старое поле доп. номера
+        let phoneExtraPart = ''; // --- ИСПРАВЛЕНИЕ 3: Улучшаем логику доп. номера ---
+
         if (
           phoneExtra &&
           phoneExtra !== 'не указано' &&
           phoneExtra !== phoneMain
         ) {
           phoneExtraPart = `<b>📞 Доп. номер:</b> ${escapeHtml(phoneExtra)}\n`;
-        }
-        // Если его нет, проверяем новое узбекское поле (вдруг оно отличается от основного)
-        else if (
+        } else if (
           phoneUzbek &&
           phoneUzbek !== 'не указано' &&
           phoneUzbek !== phoneMain
         ) {
           phoneExtraPart = `<b>📞 Доп. номер:</b> ${escapeHtml(phoneUzbek)}\n`;
-        } // === 1. Отправка в СТАРЫЙ чат ===
+        }
         // --- КОНЕЦ ИСПРАВЛЕНИЯ 3 ---
+
+        // --- ИСПРАВЛЕНИЕ 4: Параллельная отправка сообщений ---
+
+        // Готовим список "обещаний" (promises) для отправки
+        const sendPromises = []; // 1. Готовим сообщение для СТАРОГО чата
 
         const sourceForOldChat = `Meta Lead Ad (${
           isNewForm ? '*' : ''
@@ -204,10 +200,9 @@ export default async function handler(request, response) {
           namePart +
           phoneMainPart +
           phoneExtraPart;
-        const telegramResult1 = await sendTelegramMessage(
-          OLD_CHAT_ID,
-          messageForOldChat
-        ); // === 2. Отправка в НОВЫЙ чат (только если форма новая) ===
+
+        // Добавляем promise для старого чата в массив
+        sendPromises.push(sendTelegramMessage(OLD_CHAT_ID, messageForOldChat)); // 2. Готовим сообщение для НОВОГО чата (только если форма новая)
 
         if (isNewForm) {
           const sourceForNewChat = `Meta Lead Ad (${productName}, Form ID: ${formId})`; // Без звезды
@@ -216,10 +211,48 @@ export default async function handler(request, response) {
             `<b>Источник:</b> ${escapeHtml(sourceForNewChat)}\n` +
             namePart +
             phoneMainPart +
-            phoneExtraPart; // Отправляем во второй чат, но не ждем ответа, чтобы не блокировать основной
-          sendTelegramMessage(NEW_CHAT_ID, messageForNewChat).catch((err) => {
-            console.error('Failed to send message to NEW chat:', err);
-          });
+            phoneExtraPart;
+
+          // Добавляем promise для нового чата в массив
+          sendPromises.push(
+            sendTelegramMessage(NEW_CHAT_ID, messageForNewChat)
+          );
+        }
+
+        // ЖДЕМ выполнения ВСЕХ отправок параллельно
+        const results = await Promise.allSettled(sendPromises);
+
+        // Анализируем результат. Нам важен результат ПЕРВОЙ отправки (в старый чат)
+        // results[0] - это всегда результат отправки в СТАРЫЙ чат.
+
+        let telegramResult1;
+        if (results[0].status === 'fulfilled') {
+          telegramResult1 = results[0].value; // { ok: true, ... } или { ok: false, ... }
+        } else {
+          // Это если sendTelegramMessage выбросила ошибку (наш catch error)
+          console.error(
+            'Failed to send message to OLD chat (Promise rejected):',
+            results[0].reason
+          );
+          telegramResult1 = {
+            ok: false,
+            description: results[0].reason?.message || 'Failed to send',
+          };
+        }
+
+        // Логируем ошибку, если отправка в НОВЫЙ чат не удалась (если она была)
+        if (isNewForm && results[1]) {
+          if (results[1].status === 'rejected') {
+            console.error(
+              'Failed to send message to NEW chat (Promise rejected):',
+              results[1].reason
+            );
+          } else if (!results[1].value.ok) {
+            console.error(
+              'Telegram API Error (NEW Chat):',
+              results[1].value.description
+            );
+          }
         } // Отвечаем серверу Meta на основе результата *первой* отправки
 
         if (telegramResult1.ok) {
@@ -231,6 +264,7 @@ export default async function handler(request, response) {
             .status(500)
             .json({ message: 'Failed to send Meta lead to main Telegram.' });
         }
+        // --- КОНЕЦ ИСПРАВЛЕНИЯ 4 ---
       } else {
         // === Обычная заявка с лендинга (отправляем только в СТАРЫЙ чат) ===
         const { name, phone, productName } = body;

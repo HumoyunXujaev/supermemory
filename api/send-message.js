@@ -145,25 +145,38 @@ export default async function handler(request, response) {
         }
 
         // Телефоны
-        let phoneMain = findField('phone_number');
-        if (phoneMain === 'не указано') {
-          phoneMain = findField('телефон_рақамингиз?'); // Поиск по узбекскому названию поля
-        }
-        const phoneExtra = findField(
+        // === Телефоны ===
+        const phoneNumber = findField('phone_number');
+        const phoneBiz = findField(
           'biz_sizga_telefon_qilishimiz_uchun,_raqamingizni_qoldiring.'
         );
-        const phoneUzbek = findField('телефон_рақамингиз?'); // Также получаем это поле // --- КОНЕЦ ИСПРАВЛЕНИЯ 1 --- // === Определяем продукт и флаг новой формы ===
+        const phoneUzbek = findField('телефон_рақамингиз?');
+
+        // === Определяем продукт и тип формы ===
         let productName;
-        let isNewForm = false; // --- ИСПРАВЛЕНИЕ 2: Меняем логику определения новой формы ---
+        let isNewForm = false;
 
         if (FORM_NAMES[formId]) {
           productName = FORM_NAMES[formId];
-          isNewForm = false; // Это старая форма
+          isNewForm = false;
         } else {
           isNewForm = true;
           productName = NEW_FORM_NAMES[formId] || 'Неизвестный продукт';
-        } // === Готовим базовые части сообщения ===
-        // --- КОНЕЦ ИСПРАВЛЕНИЯ 2 ---
+        }
+
+        // === Назначаем основной и дополнительный номер по типу формы ===
+        let phoneMain = 'не указано';
+        let phoneExtra = 'не указано';
+
+        if (isNewForm) {
+          // 🔵 Новые формы
+          phoneMain = phoneUzbek !== 'не указано' ? phoneUzbek : phoneNumber;
+          phoneExtra = phoneNumber !== 'не указано' ? phoneNumber : phoneUzbek;
+        } else {
+          // 🟠 Старые формы
+          phoneMain = phoneBiz !== 'не указано' ? phoneBiz : phoneNumber;
+          phoneExtra = phoneNumber !== 'не указано' ? phoneNumber : phoneBiz;
+        }
 
         const namePart = `<b>Имя клиента:</b> ${escapeHtml(name)}\n`;
         const phoneMainPart = `<b>📞 Основной номер:</b> ${escapeHtml(
@@ -194,24 +207,45 @@ export default async function handler(request, response) {
         const sourceForOldChat = `Meta Lead Ad (${
           isNewForm ? '*' : ''
         }${productName}${isNewForm ? '*' : ''}, Form ID: ${formId})`;
+        const healthProblem = findField(
+          'соғлиғингизда_қандай_муаммолар_безовта_қилмоқда?_илтимос,_тўлиқ_муаммоингизни_ёзинг.'
+        );
+        const healthPart =
+          healthProblem && healthProblem !== 'не указано'
+            ? `<b>🩺 Соғлиқдаги муаммолари:</b> ${escapeHtml(healthProblem)}\n`
+            : '';
+
         const messageForOldChat =
           `<b>🔔 Новая заявка!</b>\n\n` +
           `<b>Источник:</b> ${escapeHtml(sourceForOldChat)}\n` +
           namePart +
           phoneMainPart +
-          phoneExtraPart;
+          phoneExtraPart +
+          healthPart;
 
         // Добавляем promise для старого чата в массив
         sendPromises.push(sendTelegramMessage(OLD_CHAT_ID, messageForOldChat)); // 2. Готовим сообщение для НОВОГО чата (только если форма новая)
 
         if (isNewForm) {
           const sourceForNewChat = `Meta Lead Ad (${productName}, Form ID: ${formId})`; // Без звезды
+
+          const healthProblem = findField(
+            'соғлиғингизда_қандай_муаммолар_безовта_қилмоқда?_илтимос,_тўлиқ_муаммоингизни_ёзинг.'
+          );
+          const healthPart =
+            healthProblem && healthProblem !== 'не указано'
+              ? `<b>🩺 Соғлиқдаги муаммолари:</b> ${escapeHtml(
+                  healthProblem
+                )}\n`
+              : '';
+
           const messageForNewChat =
             `<b>🔔 Новая заявка!</b>\n\n` +
             `<b>Источник:</b> ${escapeHtml(sourceForNewChat)}\n` +
             namePart +
             phoneMainPart +
-            phoneExtraPart;
+            phoneExtraPart +
+            healthPart;
 
           // Добавляем promise для нового чата в массив
           sendPromises.push(

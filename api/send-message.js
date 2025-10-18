@@ -11,12 +11,12 @@ function escapeHtml(text) {
 
 // === Маппинг form_id → название продукта ===
 const FORM_NAMES = {
-  4084186411799714: "geptrafit",
-  664912399978587: "venofit",
-  720026814402812: "diafit acc",
-  814284541049637: "silamax",
-  811798847934700: "stop-artroz",
-  1152300420130073: "superpamyat"
+  4149632865255513: "geptrafit",
+  2197383904095104: "venofit",
+  2077372786002091: "diafit acc",
+  2006596446846389: "silamax",
+  1238732341637419: "stop-artroz",
+  1311527377012639: "superpamyat"
 };
 
 // === Функция отправки сообщения в Telegram ===

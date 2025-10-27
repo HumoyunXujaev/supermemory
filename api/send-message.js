@@ -12,22 +12,22 @@ function escapeHtml(text) {
 
 // === Маппинг СТАРЫХ form_id → название продукта ===
 const FORM_NAMES = {
-  4149632865255513: 'geptrafit',
-  2197383904095104: 'venofit',
-  2077372786002091: 'diafit acc',
-  2006596446846389: 'silamax',
-  1238732341637419: 'stop-artroz',
-  1311527377012639: 'superpamyat',
+  '4149632865255513': 'geptrafit',
+  '2197383904095104': 'venofit',
+  '2077372786002091': 'diafit acc',
+  '2006596446846389': 'silamax',
+  '1238732341637419': 'stop-artroz',
+  '1311527377012639': 'superpamyat',
 };
 
 // === Маппинг НОВЫХ form_id → название продукта ===
 const NEW_FORM_NAMES = {
-  1106929934547964: 'Venofit',
-  1522683212077748: 'Geptrafit',
-  25156805657278145: 'Diafit ACC',
-  657507350520152: 'Stopartroz',
-  1118745887100923: 'Silamax',
-  1503515184304874: 'Superpamyat',
+  '1106929934547964': 'Venofit',
+  '1522683212077748': 'Geptrafit',
+  '25156805657278145': 'Diafit ACC',
+  '657507350520152': 'Stopartroz',
+  '1118745887100923': 'Silamax',
+  '1503515184304874': 'Superpamyat',
 };
 
 // === ID Нового Telegram чата ===
